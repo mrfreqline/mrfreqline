@@ -1,0 +1,15 @@
+{
+  "links": [
+    { "id": "1", "title": "Tubi", "category": "Movies & Shows", "status": "TRUSTED", "url": "https://tubitv.com" },
+    { "id": "2", "title": "Pluto TV", "category": "Movies & Shows", "status": "TRUSTED", "url": "https://pluto.tv" },
+    { "id": "3", "title": "Crunchyroll (Free Tier)", "category": "Anime", "status": "TRUSTED", "url": "https://crunchyroll.com" },
+    { "id": "4", "title": "VIZ (Free Manga)", "category": "Manga", "status": "TRUSTED", "url": "https://www.viz.com" },
+    { "id": "5", "title": "Pluto TV Live", "category": "Live TV & Sports", "status": "TRUSTED", "url": "https://pluto.tv/live-tv" },
+    { "id": "6", "title": "GIMP", "category": "Apps", "status": "TRUSTED", "url": "https://www.gimp.org" },
+    { "id": "7", "title": "VLC Media Player", "category": "Apps", "status": "TRUSTED", "url": "https://www.videolan.org" },
+    { "id": "8", "title": "ProtonMail", "category": "Utilities", "status": "ACTIVE", "url": "https://proton.me" },
+    { "id": "9", "title": "Speedtest", "category": "Utilities", "status": "ACTIVE", "url": "https://www.speedtest.net" }
+  ],
+  "news": [],
+  "messages": []
+}

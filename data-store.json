@@ -1,0 +1,34 @@
+{
+  "links": [
+    {
+      "id": "1",
+      "title": "Tubi",
+      "category": "MOVIES & SHOWS",
+      "status": "TRUSTED",
+      "url": "https://tubitv.com"
+    },
+    {
+      "id": "2",
+      "title": "Pluto TV",
+      "category": "MOVIES & SHOWS",
+      "status": "TRUSTED",
+      "url": "https://pluto.tv"
+    }
+  ],
+  "news": [
+    {
+      "id": "1789056333516",
+      "title": "jfgewgffds",
+      "category": "Scam Alert",
+      "date": "2026-09-10",
+      "content": "jkfshdfhskdjfhsd"
+    },
+    {
+      "id": "1789056154125",
+      "title": "jhkdsshfkjdsf",
+      "category": "Site Update",
+      "date": "2026-09-10",
+      "content": "dsfdsjhfdsf"
+    }
+  ]
+}
