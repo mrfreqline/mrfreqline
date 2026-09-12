@@ -304,7 +304,7 @@ export default function EssentialsToolkit() {
             .filter((item) => ALLOWED_TOOL_CATEGORIES.includes(item.category));
 
           // Combine filtered API items with default tools, avoiding title duplicates
-          const combined = [...formattedApiTools];
+       const combined: ToolLink[] = [...formattedApiTools];
           DEFAULT_TOOLS.forEach((defTool) => {
             if (
               !combined.some(
