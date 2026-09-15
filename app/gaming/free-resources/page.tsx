@@ -26,6 +26,21 @@ const staticGamingResources: ResourceLink[] = [
     category: "Launchers",
     status: "TRUSTED",
     url: "https://github.com/onajlikezz/Nightlight-Launcher/releases",
+    
+  },
+  {
+    title: "hydralauncher",
+    category: "Launchers",
+    status: "TRUSTED",
+    url: "https://github.com/hydralauncher/hydra",
+    guide: {
+      steps: [
+        "Visit the official website and download the hydralauncher for your OS.",
+        "Run the latest installer and complete standard setup.",
+        "Install the official hydralauncher extension in Chrome or Edge.",
+      ],
+      youtubeUrl: "https://www.youtube.com/results?search_query=how+to+use+hydralauncher",
+    },
   },
   {
     title: "Free Download Manager",
