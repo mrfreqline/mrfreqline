@@ -31,7 +31,50 @@ const defaultLinks = [
   { title: "Autodesk Student Access", category: "Student Tools", status: "ACTIVE", url: "https://www.autodesk.com/education/edu-software" },
 
   // Movies & Shows
-  { title: "1shows.org", category: "Movies & Shows", status: "TRUSTED", url: "https://1shows.org" },
+  { title: "Dulo", category: "Movies & Shows", status: "ACTIVE", url: "https://dulo.tv" },
+  { title: "Flixeo", category: "Movies & Shows", status: "ACTIVE", url: "https://flixeo.tv" },
+  { title: "NightFlix", category: "Movies & Shows", status: "ACTIVE", url: "https://nightflix.to" },
+  { title: "Cinevaro", category: "Movies & Shows", status: "ACTIVE", url: "https://cinevaro.app" },
+  { title: "SkyFlix", category: "Movies & Shows", status: "ACTIVE", url: "https://skyflix.to" },
+  { title: "MoviesJoy", category: "Movies & Shows", status: "ACTIVE", url: "https://moviesjoy.bz/home" },
+  { title: "PantyFlix", category: "Movies & Shows", status: "ACTIVE", url: "https://pantyflix.com" },
+  { title: "RedFlix", category: "Movies & Shows", status: "ACTIVE", url: "https://redflix.one" },
+  { title: "SFlix", category: "Movies & Shows", status: "ACTIVE", url: "https://sflix.st/home" },
+  { title: "MyFlixer", category: "Movies & Shows", status: "ACTIVE", url: "https://myflixer.sc/home" },
+  { title: "Vidplay", category: "Movies & Shows", status: "ACTIVE", url: "https://vidplay.top" },
+  { title: "HydraHD", category: "Movies & Shows", status: "ACTIVE", url: "https://hydrahd.info" },
+  { title: "HiMovies", category: "Movies & Shows", status: "ACTIVE", url: "https://himovies.bz/home" },
+  { title: "Soapy", category: "Movies & Shows", status: "ACTIVE", url: "https://soapy.to/home" },
+  { title: "CoreFlix", category: "Movies & Shows", status: "ACTIVE", url: "https://coreflix.tv" },
+  { title: "HDToday", category: "Movies & Shows", status: "ACTIVE", url: "https://hdtoday.sc/home" },
+  { title: "StreamEx", category: "Movies & Shows", status: "ACTIVE", url: "https://streamex.net" },
+  { title: "Rivestream", category: "Movies & Shows", status: "ACTIVE", url: "https://rentry.co/rivestream" },
+  { title: "TheFlixBay", category: "Movies & Shows", status: "ACTIVE", url: "https://theflixbay.com" },
+  { title: "FlixBaba", category: "Movies & Shows", status: "ACTIVE", url: "https://flixbaba.info" },
+  { title: "StreamingUnity", category: "Movies & Shows", status: "ACTIVE", url: "https://streamingunity.dog" },
+  { title: "SmashyStream", category: "Movies & Shows", status: "ACTIVE", url: "https://smashystream.xyz" },
+  { title: "Nepu", category: "Movies & Shows", status: "ACTIVE", url: "https://nepu.to" },
+  { title: "Cineby", category: "Movies & Shows", status: "ACTIVE", url: "https://cineby.at" },
+  { title: "NetPrime", category: "Movies & Shows", status: "ACTIVE", url: "https://netprime.to" },
+  { title: "MoviePlex", category: "Movies & Shows", status: "ACTIVE", url: "https://movieplex.online" },
+  { title: "YesMovies", category: "Movies & Shows", status: "ACTIVE", url: "https://yesmovies.ag" },
+  { title: "2Flix", category: "Movies & Shows", status: "ACTIVE", url: "https://2flix.lol/home" },
+  { title: "SolarMovie", category: "Movies & Shows", status: "ACTIVE", url: "https://solarmovie2.com" },
+  { title: "7Mov", category: "Movies & Shows", status: "ACTIVE", url: "https://7mov.st/home" },
+  { title: "OFlix", category: "Movies & Shows", status: "ACTIVE", url: "https://oflix.st/home" },
+  { title: "123Movies Free", category: "Movies & Shows", status: "ACTIVE", url: "https://123moviesfree.net/home" },
+  { title: "CornClick", category: "Movies & Shows", status: "ACTIVE", url: "https://cornclick.com" },
+  { title: "PressPlayz", category: "Movies & Shows", status: "ACTIVE", url: "https://pressplayz.to" },
+  { title: "MyFlixerz", category: "Movies & Shows", status: "ACTIVE", url: "https://myflixerz.org/home" },
+  { title: "FMovies", category: "Movies & Shows", status: "ACTIVE", url: "https://fmovies.co/home" },
+  { title: "Flixer", category: "Movies & Shows", status: "ACTIVE", url: "https://flixer.su" },
+  { title: "1Shows", category: "Movies & Shows", status: "TRUSTED", url: "https://1shows.org" },
+  { title: "VidFlix", category: "Movies & Shows", status: "ACTIVE", url: "https://vidflix.live" },
+  { title: "BCine", category: "Movies & Shows", status: "ACTIVE", url: "https://bcine.ru" },
+  { title: "Movish", category: "Movies & Shows", status: "ACTIVE", url: "https://movish.to/home" },
+  { title: "SeeFlix", category: "Movies & Shows", status: "ACTIVE", url: "https://seeflix.to/home" },
+  { title: "BoredFlix", category: "Movies & Shows", status: "ACTIVE", url: "https://boredflix.tv" },
+  { title: "Noxx", category: "Movies & Shows", status: "ACTIVE", url: "https://noxx.to" },
   { title: "1flex.org", category: "Movies & Shows", status: "TRUSTED", url: "https://1flex.org" },
   { title: "1tube.org", category: "Movies & Shows", status: "TRUSTED", url: "https://1tube.org" },
   { title: "shuttletv.su", category: "Movies & Shows", status: "ACTIVE", url: "https://shuttletv.su" },
@@ -78,6 +121,11 @@ const defaultLinks = [
   { title: "anitaku.io", category: "Anime", status: "ACTIVE", url: "https://anitaku.io" },
   { title: "lunarx.to", category: "Anime", status: "ACTIVE", url: "https://lunarx.to" },
 
+  // Cartoons
+  { title: "Toonix", category: "Cartoons", status: "TRUSTED", url: "https://toonix.bond" },
+  { title: "Dorabash", category: "Cartoons", status: "TRUSTED", url: "https://dorabash.in" },
+  { title: "Kuroiru", category: "Cartoons", status: "TRUSTED", url: "https://kuroiru.co" },
+
   // Manga
   { title: "mangaball.net", category: "Manga", status: "TRUSTED", url: "https://mangaball.net" },
   { title: "atsu.moe", category: "Manga", status: "TRUSTED", url: "https://atsu.moe" },
@@ -105,6 +153,35 @@ const defaultLinks = [
   { title: "kingofshojo.com", category: "Manga", status: "NEW", url: "https://kingofshojo.com" },
 
   // Live TV & Sports
+   { title: "buffstreams24.com", category: "Live TV & Sports", status: "ACTIVE", url: "https://buffstreams24.com/home3" },
+  { title: "streamzy.foo", category: "Live TV & Sports", status: "ACTIVE", url: "https://streamzy.foo/" },
+  { title: "freetvgarden.com", category: "Live TV & Sports", status: "ACTIVE", url: "https://freetvgarden.com" },
+  { title: "totalsporteki.is", category: "Live TV & Sports", status: "ACTIVE", url: "https://totalsporteki.is/" },
+  { title: "Cricbuzz", category: "Live TV & Sports", status: "TRUSTED", url: "https://cricbuzz.com" },
+  { title: "ESPN", category: "Live TV & Sports", status: "TRUSTED", url: "https://www.espn.com" },
+  { title: "ESPNcricinfo", category: "Live TV & Sports", status: "TRUSTED", url: "https://www.espncricinfo.com" },
+  { title: "ICC Cricket", category: "Live TV & Sports", status: "TRUSTED", url: "https://www.icc-cricket.com" },
+  { title: "IPL T20", category: "Live TV & Sports", status: "TRUSTED", url: "https://www.iplt20.com" },
+  { title: "Sky Sports", category: "Live TV & Sports", status: "TRUSTED", url: "https://www.skysports.com" },
+  { title: "Flashscore", category: "Live TV & Sports", status: "TRUSTED", url: "https://www.flashscore.com" },
+  { title: "LiveScore", category: "Live TV & Sports", status: "TRUSTED", url: "https://www.livescore.com" },
+  { title: "Sofascore", category: "Live TV & Sports", status: "TRUSTED", url: "https://www.sofascore.com" },
+  { title: "FotMob", category: "Live TV & Sports", status: "TRUSTED", url: "https://www.fotmob.com" },
+  { title: "Goal", category: "Live TV & Sports", status: "TRUSTED", url: "https://www.goal.com" },
+  { title: "UEFA", category: "Live TV & Sports", status: "TRUSTED", url: "https://www.uefa.com" },
+  { title: "FIFA", category: "Live TV & Sports", status: "TRUSTED", url: "https://www.fifa.com" },
+  { title: "NBA", category: "Live TV & Sports", status: "TRUSTED", url: "https://www.nba.com" },
+  { title: "MLB", category: "Live TV & Sports", status: "TRUSTED", url: "https://www.mlb.com" },
+  { title: "Olympics", category: "Live TV & Sports", status: "TRUSTED", url: "https://www.olympics.com" },
+  { title: "Transfermarkt", category: "Live TV & Sports", status: "TRUSTED", url: "https://www.transfermarkt.com" },
+  { title: "Live Soccer TV", category: "Live TV & Sports", status: "TRUSTED", url: "https://www.livesoccertv.com" },
+  { title: "AiScore", category: "Live TV & Sports", status: "TRUSTED", url: "https://www.aiscore.com" },
+  { title: "365Scores", category: "Live TV & Sports", status: "TRUSTED", url: "https://www.365scores.com" },
+  { title: "Fox Sports", category: "Live TV & Sports", status: "TRUSTED", url: "https://www.foxsports.com" },
+  { title: "DAZN", category: "Live TV & Sports", status: "TRUSTED", url: "https://www.dazn.com" },
+  { title: "Marca", category: "Live TV & Sports", status: "TRUSTED", url: "https://www.marca.com" },
+  { title: "AS", category: "Live TV & Sports", status: "TRUSTED", url: "https://www.as.com" },
+  { title: "Vavel", category: "Live TV & Sports", status: "TRUSTED", url: "https://www.vavel.com" },
   { title: "dlive.sx", category: "Live TV & Sports", status: "TRUSTED", url: "https://dlive.sx" },
   { title: "ondemand.st", category: "Live TV & Sports", status: "TRUSTED", url: "https://ondemand.st" },
   { title: "streamed.pk", category: "Live TV & Sports", status: "TRUSTED", url: "https://streamed.pk" },
@@ -121,7 +198,8 @@ const defaultLinks = [
   { title: "stmify.com", category: "Live TV & Sports", status: "ACTIVE", url: "https://stmify.com" },
   { title: "ppv.st", category: "Live TV & Sports", status: "ACTIVE", url: "https://ppv.st" },
   { title: "fifstream1.gt.tc", category: "Live TV & Sports", status: "ACTIVE", url: "https://fifstream1.gt.tc" },
-  { title: "freetvgarden.com", category: "Live TV & Sports", status: "ACTIVE", url: "https://freetvgarden.com" },
+  
+
 
   // Apps
   { title: "playtorrio.pages.dev", category: "Apps", status: "ACTIVE", url: "https://playtorrio.pages.dev" },
@@ -163,6 +241,7 @@ const categories = [
   "All",
   "Movies & Shows",
   "Anime",
+  "Cartoons",
   "Manga",
   "Live TV & Sports",
   "Apps",
@@ -184,8 +263,6 @@ export default function BestFreeWebsites() {
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data) && data.length > 0) {
-          // Combine fetched links with default links, or replace them depending on preference
-          // Using a Map or filtering out duplicates by title/url if necessary, or just appending:
           setLinks([...defaultLinks, ...data]);
         }
       })
@@ -243,7 +320,7 @@ export default function BestFreeWebsites() {
                   className={`rounded-full px-5 py-2 text-xs font-bold uppercase tracking-wider transition-all duration-300 transform active:scale-95 ${
                     activeCategory.toLowerCase() === cat.toLowerCase()
                       ? "bg-[#00D2FF] text-black shadow-[0_0_20px_rgba(0,210,255,0.6)] scale-105 font-extrabold"
-                      : "border border-white/10 bg-white/5 text-white/70 hover:border-white/30 hover:bg-white/10"
+                      : "border border-white/10 bg-white/5 text-white/70 hover:border-white/30 hover:bg-white/15"
                   }`}
                 >
                   {cat}
