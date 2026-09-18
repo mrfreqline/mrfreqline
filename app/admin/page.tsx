@@ -112,6 +112,7 @@ async function uploadToSupabase(file: File): Promise<string> {
 export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const [activeTab, setActiveTab] = useState<"links" | "prompts" | "news" | "messages">("links");
 
@@ -163,13 +164,16 @@ export default function AdminPage() {
         body: JSON.stringify({ password }),
       });
 
+      const data = await res.json().catch(() => ({}));
+
       if (res.ok) {
         setIsAuthenticated(true);
       } else {
-        setError("Incorrect password.");
+        // Shows the server error (e.g. length check or server not configured)
+        setError(data.error || "Login failed");
       }
-    } catch (err) {
-      setError("Network error. Please try again.");
+    } catch (err: any) {
+      setError("Network error: " + err.message);
     }
   };
 
@@ -402,15 +406,27 @@ export default function AdminPage() {
           <p className="mt-1 text-sm text-white/50">MRFREQLINE control center</p>
 
           <form onSubmit={handleLogin} className="mt-6 space-y-4">
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password"
-              required
-              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/40 focus:border-[#00D2FF] focus:outline-none focus:ring-1 focus:ring-[#00D2FF]"
-            />
-            {error && <p className="text-sm text-red-400">{error}</p>}
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Enter admin password"
+                required
+                autoComplete="off"
+                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/40 focus:border-[#00D2FF] focus:outline-none focus:ring-1 focus:ring-[#00D2FF] pr-16"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-3 text-xs font-semibold text-gray-400 hover:text-[#00D2FF]"
+              >
+                {showPassword ? "Hide" : "Show"}
+              </button>
+            </div>
+
+            {error && <p className="text-xs text-red-400 leading-relaxed">{error}</p>}
+
             <button
               type="submit"
               className="w-full rounded-xl bg-[#00D2FF] py-3 text-sm font-bold text-black transition hover:opacity-90"

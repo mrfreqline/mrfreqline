@@ -2,31 +2,51 @@
 
 export async function POST(request: Request) {
   try {
-    const { password } = await request.json();
-    const correctPassword = process.env.ADMIN_PASSWORD;
+    const body = await request.json();
+    const entered = (body.password || "").trim();
 
-    if (!correctPassword) {
-      console.error("ADMIN_PASSWORD is not set in environment variables!");
-      return NextResponse.json({ error: "Server configuration error" }, { status: 500 });
+    // 1. Read secret from environment
+    let expected = (process.env.ADMIN_PASSWORD || "").trim();
+
+    // Remove outer quotes if wrapped in "..." or '...'
+    if (
+      (expected.startsWith('"') && expected.endsWith('"')) ||
+      (expected.startsWith("'") && expected.endsWith("'"))
+    ) {
+      expected = expected.slice(1, -1).trim();
     }
 
-    if (password === correctPassword) {
+    // 2. Check if .env.local is actually being read
+    if (!expected) {
+      return NextResponse.json(
+        { error: "Server error: ADMIN_PASSWORD is empty in .env.local or server was not restarted." },
+        { status: 500 }
+      );
+    }
+
+    // 3. Compare passwords
+    if (entered === expected) {
       const response = NextResponse.json({ success: true });
 
-      // Set cookie with path: "/" so it covers all pages and API routes
       response.cookies.set("admin_session", "authenticated", {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
         sameSite: "lax",
         path: "/",
-        maxAge: 60 * 60 * 24 * 7, // 7 days
+        maxAge: 60 * 60 * 24 * 7,
       });
 
       return response;
     }
 
-    return NextResponse.json({ error: "Incorrect password" }, { status: 401 });
-  } catch (error) {
-    return NextResponse.json({ error: "Server error" }, { status: 500 });
+    // 4. Safe Diagnostic (Reveals ONLY character count, NOT your password!)
+    return NextResponse.json(
+      {
+        error: `Incorrect password. (You typed ${entered.length} characters, but your server expects ${expected.length} characters).`,
+      },
+      { status: 401 }
+    );
+  } catch {
+    return NextResponse.json({ error: "Server communication error." }, { status: 500 });
   }
 }
