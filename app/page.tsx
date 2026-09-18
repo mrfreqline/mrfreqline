@@ -1,6 +1,7 @@
 import Header from "./Header";
 import Footer from "./Footer";
 import Link from "next/link";
+import AdsterraBanner from "./components/AdsterraBanner";
 
 export default function Home() {
   return (
@@ -84,6 +85,11 @@ export default function Home() {
               Optimized configs, game boosters, and free verified gaming assets.
             </p>
           </Link>
+        </div>
+
+        {/* Clean Native Adsterra Banner */}
+        <div className="mt-12 w-full max-w-5xl">
+          <AdsterraBanner format="native" />
         </div>
       </main>
 
