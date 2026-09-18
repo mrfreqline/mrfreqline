@@ -45,9 +45,9 @@ export default function Home() {
           </a>
         </div>
 
-        {/* ALL 3 Cards are now GLOWY CYAN ✨ */}
+        {/* ALL 3 Cards are GLOWY CYAN ✨ */}
         <div className="mt-16 grid w-full max-w-5xl grid-cols-1 gap-6 text-left md:grid-cols-3">
-          {/* Card 1: Best Free Websites (Glowy) */}
+          {/* Card 1: Best Free Websites */}
           <Link
             href="/resources/best-free-websites"
             className="group rounded-2xl border border-[#00D2FF]/40 bg-[#00D2FF]/5 p-6 shadow-[0_0_20px_rgba(0,210,255,0.12)] transition duration-200 hover:border-[#00D2FF] hover:bg-[#00D2FF]/10 hover:shadow-[0_0_30px_rgba(0,210,255,0.25)]"
@@ -60,7 +60,7 @@ export default function Home() {
             </p>
           </Link>
 
-          {/* Card 2: Best PC Optimization Tools (Now Glowy too! ✨) */}
+          {/* Card 2: Best PC Optimization Tools */}
           <Link
             href="/tech/best-pc-optimization-tools"
             className="group rounded-2xl border border-[#00D2FF]/40 bg-[#00D2FF]/5 p-6 shadow-[0_0_20px_rgba(0,210,255,0.12)] transition duration-200 hover:border-[#00D2FF] hover:bg-[#00D2FF]/10 hover:shadow-[0_0_30px_rgba(0,210,255,0.25)]"
@@ -73,7 +73,7 @@ export default function Home() {
             </p>
           </Link>
 
-          {/* Card 3: Free Gaming Resources (Glowy) */}
+          {/* Card 3: Free Gaming Resources */}
           <Link
             href="/gaming/free-resources"
             className="group rounded-2xl border border-[#00D2FF]/40 bg-[#00D2FF]/5 p-6 shadow-[0_0_20px_rgba(0,210,255,0.12)] transition duration-200 hover:border-[#00D2FF] hover:bg-[#00D2FF]/10 hover:shadow-[0_0_30px_rgba(0,210,255,0.25)]"

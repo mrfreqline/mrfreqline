@@ -300,11 +300,9 @@ export default function EssentialsToolkit() {
                 desc: String(rawDesc),
               };
             })
-            // STRICTLY filter out categories that don't belong in the Essentials Toolkit (like Manga, Movies & Shows)
             .filter((item) => ALLOWED_TOOL_CATEGORIES.includes(item.category));
 
-          // Combine filtered API items with default tools, avoiding title duplicates
-       const combined: ToolLink[] = [...formattedApiTools];
+          const combined: ToolLink[] = [...formattedApiTools];
           DEFAULT_TOOLS.forEach((defTool) => {
             if (
               !combined.some(
@@ -443,6 +441,7 @@ export default function EssentialsToolkit() {
 
                   <div className="mt-5 flex items-center gap-3">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-[#161c2b] p-1.5">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={getFaviconUrl(tool.url)}
                         alt={`${tool.title} logo`}

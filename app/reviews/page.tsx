@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Header from "../Header";
 import Footer from "../Footer";
 
@@ -27,11 +27,7 @@ export default function ReviewsPage() {
   const [phone, setPhone] = useState("");
   const [comment, setComment] = useState("");
 
-  useEffect(() => {
-    fetchReviews();
-  }, []);
-
-  const fetchReviews = async () => {
+  const fetchReviews = useCallback(async () => {
     try {
       const res = await fetch("/api/reviews");
       const data = await res.json();
@@ -43,7 +39,11 @@ export default function ReviewsPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    fetchReviews();
+  }, [fetchReviews]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -77,7 +77,7 @@ export default function ReviewsPage() {
         setComment("");
         setRating(5);
         if (data.review) {
-          setReviews([data.review, ...reviews]);
+          setReviews((prev) => [data.review, ...prev]);
         }
       } else {
         setErrorMsg(data.error || "Failed to submit review.");
@@ -151,6 +151,7 @@ export default function ReviewsPage() {
                       onClick={() => setRating(star)}
                       onMouseEnter={() => setHoverRating(star)}
                       onMouseLeave={() => setHoverRating(0)}
+                      aria-label={`Rate ${star} out of 5 stars`}
                       className="text-3xl transition-transform hover:scale-125 focus:outline-none"
                     >
                       <span
