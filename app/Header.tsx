@@ -26,12 +26,14 @@ export default function Header() {
             <span className="text-xl font-bold tracking-wide text-white">MR<span className="text-[--accent-cyan]">FREQLINE</span></span>
           </div>
 
-          <nav className="hidden items-center gap-8 md:flex">
+
+          <nav className="hidden items-center gap-7 md:flex">
             <a href="/" className="text-sm font-medium text-white/80 transition hover:text-[--accent-cyan]">Home</a>
             <a href="/prompts" className="text-sm font-medium text-white/80 transition hover:text-[--accent-cyan]">Prompts</a>
             <a href="/tech/best-pc-optimization-tools" className="text-sm font-medium text-white/80 transition hover:text-[--accent-cyan]">Tech</a>
-            <a href="/resources/best-free-websites" className="text-sm font-medium text-white/80 transition hover:text-[--accent-cyan]">Resources</a>
-            {/* Reviews Navigation Link */}
+            <a href="/resources/best-free-websites" className="text-sm font-medium text-white/80 transition hover:text-[--accent-cyan]">Websites</a>
+            <a href="/resources/essentials-toolkit" className="text-sm font-medium text-white/80 transition hover:text-[--accent-cyan]">Toolkit</a>
+            <a href="/gaming/free-resources" className="text-sm font-medium text-white/80 transition hover:text-[--accent-cyan]">Gaming</a>
             <a href="/reviews" className="text-sm font-medium text-white/80 transition hover:text-[--accent-cyan]">Reviews</a>
             <a href="/news" className="text-sm font-medium text-white/80 transition hover:text-[--accent-cyan]">News</a>
             <button type="button" onClick={() => setIsAdvertiseOpen(true)} className="text-sm font-medium text-[--accent-cyan] transition hover:opacity-80">Advertise</button>
@@ -63,8 +65,9 @@ export default function Header() {
               <a href="/" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-[--accent-cyan]">Home</a>
               <a href="/prompts" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-[--accent-cyan]">Prompts</a>
               <a href="/tech/best-pc-optimization-tools" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-[--accent-cyan]">Tech</a>
-              <a href="/resources/best-free-websites" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-[--accent-cyan]">Resources</a>
-              {/* Mobile Reviews Link */}
+              <a href="/resources/best-free-websites" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-[--accent-cyan]">Websites</a>
+              <a href="/resources/essentials-toolkit" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-[--accent-cyan]">Toolkit</a>
+              <a href="/gaming/free-resources" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-[--accent-cyan]">Gaming</a>
               <a href="/reviews" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-[--accent-cyan]">Reviews</a>
               <a href="/news" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-[--accent-cyan]">News</a>
               <button type="button" onClick={() => { setMobileOpen(false); setIsAdvertiseOpen(true); }} className="rounded-lg px-3 py-3 text-left text-sm font-medium text-[--accent-cyan] transition hover:bg-white/5">Advertise</button>
