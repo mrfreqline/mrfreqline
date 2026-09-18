@@ -45,49 +45,49 @@ export default function Home() {
           </a>
         </div>
 
-        {/* 3 Homepage Cards */}
+        {/* ALL 3 Cards are now GLOWY CYAN ✨ */}
         <div className="mt-16 grid w-full max-w-5xl grid-cols-1 gap-6 text-left md:grid-cols-3">
-          {/* Card 1: Best Free Websites */}
+          {/* Card 1: Best Free Websites (Glowy) */}
           <Link
-            href="/resources"
-            className="group rounded-2xl border border-white/10 bg-white/5 p-6 transition duration-200 hover:border-[#00D2FF]/50 hover:bg-white/[0.08]"
+            href="/resources/best-free-websites"
+            className="group rounded-2xl border border-[#00D2FF]/40 bg-[#00D2FF]/5 p-6 shadow-[0_0_20px_rgba(0,210,255,0.12)] transition duration-200 hover:border-[#00D2FF] hover:bg-[#00D2FF]/10 hover:shadow-[0_0_30px_rgba(0,210,255,0.25)]"
           >
-            <h3 className="text-lg font-bold text-white group-hover:text-[#00D2FF]">
+            <h3 className="text-lg font-bold text-[#00D2FF]">
               Best Free Websites
             </h3>
-            <p className="mt-2 text-sm text-white/60">
+            <p className="mt-2 text-sm text-white/70">
               Verified, tested links across streaming, anime, and utility sites.
             </p>
           </Link>
 
-          {/* Card 2: Best PC Optimization Tools */}
+          {/* Card 2: Best PC Optimization Tools (Now Glowy too! ✨) */}
           <Link
-            href="/tech"
-            className="group rounded-2xl border border-white/10 bg-white/5 p-6 transition duration-200 hover:border-[#00D2FF]/50 hover:bg-white/[0.08]"
+            href="/tech/best-pc-optimization-tools"
+            className="group rounded-2xl border border-[#00D2FF]/40 bg-[#00D2FF]/5 p-6 shadow-[0_0_20px_rgba(0,210,255,0.12)] transition duration-200 hover:border-[#00D2FF] hover:bg-[#00D2FF]/10 hover:shadow-[0_0_30px_rgba(0,210,255,0.25)]"
           >
-            <h3 className="text-lg font-bold text-white group-hover:text-[#00D2FF]">
+            <h3 className="text-lg font-bold text-[#00D2FF]">
               Best PC Optimization Tools
             </h3>
-            <p className="mt-2 text-sm text-white/60">
+            <p className="mt-2 text-sm text-white/70">
               Open-source tweaks and boosters to squeeze out extra FPS.
             </p>
           </Link>
 
-          {/* Card 3: Free Gaming Resources (Restored!) */}
+          {/* Card 3: Free Gaming Resources (Glowy) */}
           <Link
             href="/gaming/free-resources"
-            className="group rounded-2xl border border-white/10 bg-white/5 p-6 transition duration-200 hover:border-[#00D2FF]/50 hover:bg-white/[0.08]"
+            className="group rounded-2xl border border-[#00D2FF]/40 bg-[#00D2FF]/5 p-6 shadow-[0_0_20px_rgba(0,210,255,0.12)] transition duration-200 hover:border-[#00D2FF] hover:bg-[#00D2FF]/10 hover:shadow-[0_0_30px_rgba(0,210,255,0.25)]"
           >
-            <h3 className="text-lg font-bold text-white group-hover:text-[#00D2FF]">
+            <h3 className="text-lg font-bold text-[#00D2FF]">
               Free Gaming Resources
             </h3>
-            <p className="mt-2 text-sm text-white/60">
-              Optimized configs, game boosters, and free verified gaming assets.
+            <p className="mt-2 text-sm text-white/70">
+              Free game utilities, boosters, asset packs, and verified tools.
             </p>
           </Link>
         </div>
 
-        {/* Clean Native Adsterra Banner */}
+        {/* Adsterra Native Banner */}
         <div className="mt-12 w-full max-w-5xl">
           <AdsterraBanner format="native" />
         </div>
