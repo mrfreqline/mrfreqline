@@ -8,7 +8,7 @@ export default function Home() {
 
       <main className="flex min-h-screen flex-col items-center px-6 pt-24 pb-16 text-center">
         <p className="mb-2 text-sm font-semibold tracking-widest text-[#00D2FF]">
-          GAMING • TECH • DIGITAL
+          AI PROMPTS • TECH • DIGITAL
         </p>
 
         <h1 className="text-5xl font-extrabold text-white md:text-6xl">
@@ -16,7 +16,7 @@ export default function Home() {
         </h1>
 
         <p className="mt-4 max-w-xl text-white/70">
-          Curated tech resources, gaming tools, and guides — verified and updated regularly.
+          Curated tech resources, AI prompts, and guides — verified and updated regularly.
         </p>
 
         <div className="mt-8 flex gap-4">
@@ -66,15 +66,16 @@ export default function Home() {
             </p>
           </a>
 
+          {/* 3rd Card: AI Prompts */}
           <a
-            href="/gaming/free-resources"
-            className="rounded-2xl border border-white/10 bg-white/5 p-6 text-left backdrop-blur-sm transition hover:border-[#00D2FF] hover:bg-white/10"
+            href="/prompts"
+            className="rounded-2xl border border-[#00D2FF]/30 bg-[#00D2FF]/5 p-6 text-left backdrop-blur-sm transition hover:border-[#00D2FF] hover:bg-[#00D2FF]/10"
           >
-            <h3 className="text-lg font-bold text-white">
-              Free Gaming Resources
+            <h3 className="text-lg font-bold text-[#00D2FF]">
+              AI Prompts & Workflows
             </h3>
             <p className="mt-2 text-sm text-white/60">
-              Configs, crosshairs, and tools for your favorite games.
+              Tested prompts for image & video AI models with before/after results and 1-click copy.
             </p>
           </a>
         </div>

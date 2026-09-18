@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import InstallAppBanner from "./components/InstallAppBanner";
@@ -13,24 +13,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const viewport: Viewport = {
-  themeColor: "#00d2ff",
-  width: "device-width",
-  initialScale: 1,
-};
-
 export const metadata: Metadata = {
-  title: "MRFREQLINE | Tech Resources & AI Prompts",
-  description: "Curated tech resources, AI prompts, tools, and guides.",
-  manifest: "/manifest.json",
-  icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
-  },
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: "black-translucent",
-    title: "MRFREQLINE",
+  title: "MrFreqline | Tech & AI Prompts",
+  description: "Curated tech resources, AI prompts, and guides by MrFreqline.",
+  verification: {
+    google: "cgHoN6YlQzfxEnJT7ZKza1JljfExRX8CjszmOdZ793Q",
   },
 };
 
@@ -45,13 +32,14 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="mobile-web-app-capable" content="yes" />
+        <meta
+          name="google-site-verification"
+          content="cgHoN6YlQzfxEnJT7ZKza1JljfExRX8CjszmOdZ793Q"
+        />
       </head>
       <body className="min-h-full flex flex-col bg-[#0b0f19] text-white">
-        {children}
-        {/* 1-Tap App Install Banner for Phone & Browser */}
         <InstallAppBanner />
+        {children}
       </body>
     </html>
   );

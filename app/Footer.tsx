@@ -5,7 +5,7 @@ export default function Footer() {
         <span>© 2026 MrFreqline</span>
         <nav className="flex gap-6">
           <a href="/" className="transition hover:text-[--accent-cyan]">Home</a>
-          <a href="/gaming" className="transition hover:text-[--accent-cyan]">Gaming</a>
+          <a href="/prompts" className="transition hover:text-[--accent-cyan]">Prompts</a>
           <a href="/tech" className="transition hover:text-[--accent-cyan]">Tech</a>
           <a href="/resources" className="transition hover:text-[--accent-cyan]">Resources</a>
           <a href="/contact" className="transition hover:text-[--accent-cyan]">Contact</a>
