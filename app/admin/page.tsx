@@ -47,6 +47,15 @@ interface PromptItem {
   resultImageUrl?: string;
 }
 
+interface ReviewItem {
+  id: string;
+  name: string;
+  phone?: string;
+  rating: number;
+  comment: string;
+  created_at: string;
+}
+
 const adminSections = [
   { label: "Essential Toolkit", value: "essential-toolkit" },
   { label: "Gaming Resources", value: "gaming" },
@@ -89,7 +98,6 @@ const adminCategories = [
 
 // Helper to upload files directly to Supabase Storage bucket
 async function uploadToSupabase(file: File): Promise<string> {
-  const fileExt = file.name.split(".").pop();
   const cleanName = file.name.replace(/[^a-zA-Z0-9.-]/g, "_");
   const filePath = `${Date.now()}_${cleanName}`;
 
@@ -114,12 +122,13 @@ export default function AdminPage() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
-  const [activeTab, setActiveTab] = useState<"links" | "prompts" | "news" | "messages">("links");
+  const [activeTab, setActiveTab] = useState<"links" | "prompts" | "news" | "messages" | "reviews">("links");
 
   const [links, setLinks] = useState<ResourceLink[]>([]);
   const [prompts, setPrompts] = useState<PromptItem[]>([]);
   const [news, setNews] = useState<NewsItem[]>([]);
   const [messages, setMessages] = useState<AnonymousMessage[]>([]);
+  const [reviews, setReviews] = useState<ReviewItem[]>([]);
 
   // Links Form State
   const [title, setTitle] = useState("");
@@ -169,7 +178,6 @@ export default function AdminPage() {
       if (res.ok) {
         setIsAuthenticated(true);
       } else {
-        // Shows the server error (e.g. length check or server not configured)
         setError(data.error || "Login failed");
       }
     } catch (err: any) {
@@ -200,6 +208,13 @@ export default function AdminPage() {
       const resMessages = await fetch(`/api/links?type=messages&t=${Date.now()}`);
       const dataMessages = await resMessages.json();
       if (Array.isArray(dataMessages)) setMessages(dataMessages);
+
+      // Fetch Reviews
+      const resReviews = await fetch(`/api/reviews?t=${Date.now()}`);
+      const dataReviews = await resReviews.json();
+      if (dataReviews && Array.isArray(dataReviews.reviews)) {
+        setReviews(dataReviews.reviews);
+      }
     } catch (err) {
       console.error("Failed to fetch data:", err);
     }
@@ -386,11 +401,13 @@ export default function AdminPage() {
     }
   };
 
-  const handleDelete = async (id: string, type: "link" | "news" | "messages" | "prompt") => {
+  const handleDelete = async (id: string, type: "link" | "news" | "messages" | "prompt" | "review") => {
     if (!confirm("Are you sure you want to delete this item?")) return;
 
     if (type === "prompt") {
       await fetch(`/api/prompts?id=${id}`, { method: "DELETE" });
+    } else if (type === "review") {
+      await fetch(`/api/reviews?id=${id}`, { method: "DELETE" });
     } else {
       const query = `?id=${id}&type=${type}`;
       await fetch(`/api/links${query}`, { method: "DELETE" });
@@ -446,7 +463,7 @@ export default function AdminPage() {
           <div>
             <h1 className="text-3xl font-extrabold">MRFREQLINE Control Center</h1>
             <p className="mt-1 text-sm text-gray-400">
-              Full control over website links, AI prompts, news, and anonymous messages.
+              Full control over website links, AI prompts, news, inbox, and community reviews.
             </p>
           </div>
           <button
@@ -457,20 +474,20 @@ export default function AdminPage() {
           </button>
         </div>
 
-        <div className="mt-8 flex flex-wrap gap-4">
+        <div className="mt-8 flex flex-wrap gap-3">
           <button
             onClick={() => setActiveTab("links")}
-            className={`rounded-xl px-5 py-2.5 text-sm font-bold transition ${
+            className={`rounded-xl px-4 py-2.5 text-sm font-bold transition ${
               activeTab === "links"
                 ? "bg-[#00d2ff] text-black"
                 : "bg-white/5 text-gray-400 hover:bg-white/10"
             }`}
           >
-            Manage Links & Files ({links.length})
+            Manage Links ({links.length})
           </button>
           <button
             onClick={() => setActiveTab("prompts")}
-            className={`rounded-xl px-5 py-2.5 text-sm font-bold transition ${
+            className={`rounded-xl px-4 py-2.5 text-sm font-bold transition ${
               activeTab === "prompts"
                 ? "bg-[#00d2ff] text-black"
                 : "bg-white/5 text-gray-400 hover:bg-white/10"
@@ -480,7 +497,7 @@ export default function AdminPage() {
           </button>
           <button
             onClick={() => setActiveTab("news")}
-            className={`rounded-xl px-5 py-2.5 text-sm font-bold transition ${
+            className={`rounded-xl px-4 py-2.5 text-sm font-bold transition ${
               activeTab === "news"
                 ? "bg-[#00d2ff] text-black"
                 : "bg-white/5 text-gray-400 hover:bg-white/10"
@@ -490,13 +507,24 @@ export default function AdminPage() {
           </button>
           <button
             onClick={() => setActiveTab("messages")}
-            className={`rounded-xl px-5 py-2.5 text-sm font-bold transition ${
+            className={`rounded-xl px-4 py-2.5 text-sm font-bold transition ${
               activeTab === "messages"
                 ? "bg-[#00d2ff] text-black"
                 : "bg-white/5 text-gray-400 hover:bg-white/10"
             }`}
           >
-            Anonymous Inbox ({messages.length})
+            Inbox ({messages.length})
+          </button>
+          {/* New Reviews Tab */}
+          <button
+            onClick={() => setActiveTab("reviews")}
+            className={`rounded-xl px-4 py-2.5 text-sm font-bold transition ${
+              activeTab === "reviews"
+                ? "bg-[#00d2ff] text-black"
+                : "bg-white/5 text-gray-400 hover:bg-white/10"
+            }`}
+          >
+            ⭐ Reviews ({reviews.length})
           </button>
         </div>
 
@@ -737,9 +765,7 @@ export default function AdminPage() {
                 />
               </div>
 
-              {/* Before & Result Images */}
               <div className="grid gap-4 md:grid-cols-2">
-                {/* Before Image */}
                 <div className="rounded-xl border border-white/10 bg-[#10141e] p-4 space-y-2">
                   <label className="block text-xs font-semibold text-gray-300">
                     Input / Before Image (Optional)
@@ -759,7 +785,6 @@ export default function AdminPage() {
                   />
                 </div>
 
-                {/* Result Image / Video */}
                 <div className="rounded-xl border border-[#00d2ff]/30 bg-[#10141e] p-4 space-y-2">
                   <label className="block text-xs font-semibold text-[#00d2ff]">
                     Result / Output Image (Optional)
@@ -780,7 +805,6 @@ export default function AdminPage() {
                 </div>
               </div>
 
-              {/* Steps / Guide */}
               <div className="rounded-xl border border-[#00d2ff]/20 bg-[#111622] p-5 space-y-3">
                 <h3 className="text-sm font-bold text-[#00d2ff]">
                   📝 How to use this prompt (Optional Steps)
@@ -973,6 +997,86 @@ export default function AdminPage() {
                   <p className="text-sm font-medium text-white">{item.message}</p>
                 </div>
               ))
+            )}
+          </div>
+        )}
+
+        {/* 5. NEW: MANAGE REVIEWS TAB */}
+        {activeTab === "reviews" && (
+          <div className="mt-8 space-y-4">
+            <div className="flex items-center justify-between">
+              <div>
+                <h2 className="text-xl font-bold text-[#00d2ff]">
+                  Community Reviews & Suggestions ({reviews.length})
+                </h2>
+                <p className="text-xs text-gray-400">
+                  Real-time ratings, comments, and private phone numbers submitted by users.
+                </p>
+              </div>
+              <button
+                onClick={fetchData}
+                className="rounded-xl border border-white/10 bg-[#10141e] px-4 py-2 text-xs font-bold text-[#00d2ff] hover:bg-[#151b29]"
+              >
+                ↻ Refresh Reviews
+              </button>
+            </div>
+
+            {reviews.length === 0 ? (
+              <p className="text-sm text-gray-400 py-8 text-center">
+                No user reviews submitted yet.
+              </p>
+            ) : (
+              <div className="space-y-4">
+                {reviews.map((item) => (
+                  <div
+                    key={item.id}
+                    className="flex flex-col md:flex-row md:items-center justify-between gap-4 rounded-xl border border-white/10 bg-[#0d121d] p-5"
+                  >
+                    <div className="space-y-2">
+                      <div className="flex flex-wrap items-center gap-3">
+                        <span className="font-bold text-white text-base">
+                          {item.name || "Anonymous User"}
+                        </span>
+                        <span className="text-yellow-400 text-sm tracking-wider">
+                          {"★".repeat(item.rating)}
+                          <span className="text-gray-600">
+                            {"★".repeat(5 - item.rating)}
+                          </span>
+                        </span>
+                        <span className="text-xs text-gray-400">
+                          {new Date(item.created_at).toLocaleDateString()}
+                        </span>
+                      </div>
+
+                      {/* Phone / WhatsApp (Visible only to Admin) */}
+                      {item.phone && (
+                        <div className="inline-flex items-center gap-2 rounded-lg bg-[#00d2ff]/10 px-2.5 py-1 text-xs font-mono text-[#00d2ff]">
+                          <span>📞 WhatsApp / Phone:</span>
+                          <a
+                            href={`https://wa.me/${item.phone.replace(/[^0-9]/g, "")}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline hover:text-white"
+                          >
+                            {item.phone}
+                          </a>
+                        </div>
+                      )}
+
+                      <p className="text-sm text-gray-200 max-w-2xl leading-relaxed">
+                        {item.comment}
+                      </p>
+                    </div>
+
+                    <button
+                      onClick={() => handleDelete(item.id, "review")}
+                      className="self-start md:self-center shrink-0 rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-2 text-xs font-bold text-red-400 hover:bg-red-500/20"
+                    >
+                      🗑️ Delete Review
+                    </button>
+                  </div>
+                ))}
+              </div>
             )}
           </div>
         )}

@@ -1,0 +1,6 @@
+cat << 'EOF' > public/robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://mrfreqline.vercel.app/sitemap.xml
+EOF

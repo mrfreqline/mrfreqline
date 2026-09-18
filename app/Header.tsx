@@ -28,10 +28,11 @@ export default function Header() {
 
           <nav className="hidden items-center gap-8 md:flex">
             <a href="/" className="text-sm font-medium text-white/80 transition hover:text-[--accent-cyan]">Home</a>
-            {/* Replaced Gaming with Prompts */}
             <a href="/prompts" className="text-sm font-medium text-white/80 transition hover:text-[--accent-cyan]">Prompts</a>
             <a href="/tech/best-pc-optimization-tools" className="text-sm font-medium text-white/80 transition hover:text-[--accent-cyan]">Tech</a>
             <a href="/resources/best-free-websites" className="text-sm font-medium text-white/80 transition hover:text-[--accent-cyan]">Resources</a>
+            {/* Reviews Navigation Link */}
+            <a href="/reviews" className="text-sm font-medium text-white/80 transition hover:text-[--accent-cyan]">Reviews</a>
             <a href="/news" className="text-sm font-medium text-white/80 transition hover:text-[--accent-cyan]">News</a>
             <button type="button" onClick={() => setIsAdvertiseOpen(true)} className="text-sm font-medium text-[--accent-cyan] transition hover:opacity-80">Advertise</button>
             <details className="relative list-none [&::-webkit-details-marker]:hidden">
@@ -60,10 +61,11 @@ export default function Header() {
           <div className="border-t border-white/10 bg-[--background] px-6 py-4 md:hidden">
             <nav className="flex flex-col gap-1">
               <a href="/" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-[--accent-cyan]">Home</a>
-              {/* Replaced Gaming with Prompts for mobile */}
               <a href="/prompts" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-[--accent-cyan]">Prompts</a>
               <a href="/tech/best-pc-optimization-tools" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-[--accent-cyan]">Tech</a>
               <a href="/resources/best-free-websites" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-[--accent-cyan]">Resources</a>
+              {/* Mobile Reviews Link */}
+              <a href="/reviews" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-[--accent-cyan]">Reviews</a>
               <a href="/news" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-[--accent-cyan]">News</a>
               <button type="button" onClick={() => { setMobileOpen(false); setIsAdvertiseOpen(true); }} className="rounded-lg px-3 py-3 text-left text-sm font-medium text-[--accent-cyan] transition hover:bg-white/5">Advertise</button>
               <a href="/contact" onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-3 text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-[--accent-cyan]">Contact</a>
