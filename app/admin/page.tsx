@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import { useState, useEffect } from "react";
+import { supabase } from "@/lib/supabase";
 
 interface GuideData {
   steps: string[];
@@ -33,6 +34,17 @@ interface AnonymousMessage {
   id: string;
   message: string;
   timestamp: string;
+}
+
+interface PromptItem {
+  id?: string;
+  title: string;
+  category: string;
+  promptText: string;
+  toolUrl?: string;
+  steps: string[];
+  beforeImageUrl?: string;
+  resultImageUrl?: string;
 }
 
 const adminSections = [
@@ -75,16 +87,40 @@ const adminCategories = [
   "LAUNCHERS",
 ];
 
+// Helper to upload files directly to Supabase Storage bucket
+async function uploadToSupabase(file: File): Promise<string> {
+  const fileExt = file.name.split(".").pop();
+  const cleanName = file.name.replace(/[^a-zA-Z0-9.-]/g, "_");
+  const filePath = `${Date.now()}_${cleanName}`;
+
+  const { error: uploadError } = await supabase.storage
+    .from("media")
+    .upload(filePath, file, {
+      cacheControl: "3600",
+      upsert: false,
+    });
+
+  if (uploadError) {
+    console.error("Storage upload error:", uploadError);
+    throw new Error(uploadError.message);
+  }
+
+  const { data } = supabase.storage.from("media").getPublicUrl(filePath);
+  return data.publicUrl;
+}
+
 export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [activeTab, setActiveTab] = useState<"links" | "news" | "messages">("links");
+  const [activeTab, setActiveTab] = useState<"links" | "prompts" | "news" | "messages">("links");
 
   const [links, setLinks] = useState<ResourceLink[]>([]);
+  const [prompts, setPrompts] = useState<PromptItem[]>([]);
   const [news, setNews] = useState<NewsItem[]>([]);
   const [messages, setMessages] = useState<AnonymousMessage[]>([]);
 
+  // Links Form State
   const [title, setTitle] = useState("");
   const [section, setSection] = useState("essential-toolkit");
   const [category, setCategory] = useState("MOVIES & SHOWS");
@@ -94,11 +130,27 @@ export default function AdminPage() {
   const [steps, setSteps] = useState<string[]>([""]);
   const [warning, setWarning] = useState("");
   const [youtubeUrl, setYoutubeUrl] = useState("");
+  const [isUploadingLink, setIsUploadingLink] = useState(false);
 
+  // News Form State
   const [newsTitle, setNewsTitle] = useState("");
   const [newsCategory, setNewsCategory] = useState("SCAM ALERT");
   const [newsContent, setNewsContent] = useState("");
   const [newsImage, setNewsImage] = useState("");
+  const [newsMediaFile, setNewsMediaFile] = useState<File | null>(null);
+  const [isUploadingNews, setIsUploadingNews] = useState(false);
+
+  // Prompts Form State
+  const [promptTitle, setPromptTitle] = useState("");
+  const [promptCategory, setPromptCategory] = useState("Image Generation");
+  const [promptText, setPromptText] = useState("");
+  const [promptToolUrl, setPromptToolUrl] = useState("");
+  const [promptSteps, setPromptSteps] = useState<string[]>([""]);
+  const [beforeFile, setBeforeFile] = useState<File | null>(null);
+  const [beforeUrl, setBeforeUrl] = useState("");
+  const [resultFile, setResultFile] = useState<File | null>(null);
+  const [resultUrl, setResultUrl] = useState("");
+  const [isUploadingPrompt, setIsUploadingPrompt] = useState(false);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -133,6 +185,10 @@ export default function AdminPage() {
       const dataLinks = await resLinks.json();
       if (Array.isArray(dataLinks)) setLinks(dataLinks);
 
+      const resPrompts = await fetch(`/api/prompts?t=${Date.now()}`);
+      const dataPrompts = await resPrompts.json();
+      if (Array.isArray(dataPrompts)) setPrompts(dataPrompts);
+
       const resNews = await fetch(`/api/links?type=news&t=${Date.now()}`);
       const dataNews = await resNews.json();
       if (Array.isArray(dataNews)) setNews(dataNews);
@@ -145,6 +201,7 @@ export default function AdminPage() {
     }
   };
 
+  // Steps Handlers for Links
   const handleAddStep = () => setSteps([...steps, ""]);
   const handleStepChange = (index: number, val: string) => {
     const updated = [...steps];
@@ -155,89 +212,185 @@ export default function AdminPage() {
     setSteps(steps.filter((_, i) => i !== index));
   };
 
+  // Steps Handlers for Prompts
+  const handleAddPromptStep = () => setPromptSteps([...promptSteps, ""]);
+  const handlePromptStepChange = (index: number, val: string) => {
+    const updated = [...promptSteps];
+    updated[index] = val;
+    setPromptSteps(updated);
+  };
+  const handleRemovePromptStep = (index: number) => {
+    setPromptSteps(promptSteps.filter((_, i) => i !== index));
+  };
+
   const handleLinkSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsUploadingLink(true);
 
-    let base64File = "";
-    if (file) {
-      base64File = await new Promise((resolve) => {
-        const reader = new FileReader();
-        reader.onloadend = () => resolve(reader.result as string);
-        reader.readAsDataURL(file);
+    try {
+      let uploadedFileUrl = "";
+      let uploadedFileName = "";
+
+      if (file) {
+        uploadedFileName = file.name;
+        uploadedFileUrl = await uploadToSupabase(file);
+      }
+
+      const cleanedSteps = steps.filter((step) => step.trim() !== "");
+
+      const payload = {
+        type: "link",
+        title,
+        section,
+        category,
+        status,
+        url: url.trim(),
+        fileUrl: uploadedFileUrl,
+        fileName: uploadedFileName,
+        ...(cleanedSteps.length > 0 && {
+          guide: {
+            steps: cleanedSteps,
+            warning: warning.trim() || undefined,
+            youtubeUrl: youtubeUrl.trim() || undefined,
+          },
+        }),
+      };
+
+      const res = await fetch("/api/links", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
-    }
 
-    const cleanedSteps = steps.filter((step) => step.trim() !== "");
-
-    const payload = {
-      type: "link",
-      title,
-      section,
-      category,
-      status,
-      url,
-      fileUrl: base64File,
-      fileName: file ? file.name : "",
-      ...(cleanedSteps.length > 0 && {
-        guide: {
-          steps: cleanedSteps,
-          warning: warning.trim() || undefined,
-          youtubeUrl: youtubeUrl.trim() || undefined,
-        },
-      }),
-    };
-
-    const res = await fetch("/api/links", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-
-    if (res.ok) {
-      setTitle("");
-      setUrl("");
-      setFile(null);
-      setSection("essential-toolkit");
-      setCategory("MOVIES & SHOWS");
-      setSteps([""]);
-      setWarning("");
-      setYoutubeUrl("");
-      fetchData();
-    } else {
-      alert("Failed to save link/file.");
+      if (res.ok) {
+        setTitle("");
+        setUrl("");
+        setFile(null);
+        setSection("essential-toolkit");
+        setCategory("MOVIES & SHOWS");
+        setSteps([""]);
+        setWarning("");
+        setYoutubeUrl("");
+        fetchData();
+        alert("Resource / File published successfully!");
+      } else {
+        const errorData = await res.json();
+        alert("Failed to save: " + (errorData.error || "Server error"));
+      }
+    } catch (err: any) {
+      alert("Upload failed: " + err.message);
+    } finally {
+      setIsUploadingLink(false);
     }
   };
 
   const handleNewsSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsUploadingNews(true);
 
-    const payload = {
-      type: "news",
-      title: newsTitle,
-      category: newsCategory,
-      content: newsContent,
-      imageUrl: newsImage,
-    };
+    try {
+      let mediaUrl = newsImage.trim();
 
-    const res = await fetch("/api/links", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
+      if (newsMediaFile) {
+        mediaUrl = await uploadToSupabase(newsMediaFile);
+      }
 
-    if (res.ok) {
-      setNewsTitle("");
-      setNewsContent("");
-      setNewsImage("");
-      fetchData();
-    } else {
-      alert("Failed to save news.");
+      const payload = {
+        type: "news",
+        title: newsTitle,
+        category: newsCategory,
+        content: newsContent,
+        imageUrl: mediaUrl,
+      };
+
+      const res = await fetch("/api/links", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        setNewsTitle("");
+        setNewsContent("");
+        setNewsImage("");
+        setNewsMediaFile(null);
+        fetchData();
+        alert("Announcement published successfully!");
+      } else {
+        const errorData = await res.json();
+        alert("Failed to save: " + (errorData.error || "Server error"));
+      }
+    } catch (err: any) {
+      alert("Media upload failed: " + err.message);
+    } finally {
+      setIsUploadingNews(false);
     }
   };
 
-  const handleDelete = async (id: string, type: "link" | "news" | "messages") => {
-    const query = `?id=${id}&type=${type}`;
-    await fetch(`/api/links${query}`, { method: "DELETE" });
+  const handlePromptSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsUploadingPrompt(true);
+
+    try {
+      let finalBeforeUrl = beforeUrl.trim();
+      let finalResultUrl = resultUrl.trim();
+
+      if (beforeFile) {
+        finalBeforeUrl = await uploadToSupabase(beforeFile);
+      }
+      if (resultFile) {
+        finalResultUrl = await uploadToSupabase(resultFile);
+      }
+
+      const cleanedSteps = promptSteps.filter((s) => s.trim() !== "");
+
+      const payload = {
+        title: promptTitle,
+        category: promptCategory,
+        promptText: promptText.trim(),
+        toolUrl: promptToolUrl.trim(),
+        steps: cleanedSteps,
+        beforeImageUrl: finalBeforeUrl,
+        resultImageUrl: finalResultUrl,
+      };
+
+      const res = await fetch("/api/prompts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        setPromptTitle("");
+        setPromptText("");
+        setPromptToolUrl("");
+        setPromptSteps([""]);
+        setBeforeFile(null);
+        setBeforeUrl("");
+        setResultFile(null);
+        setResultUrl("");
+        fetchData();
+        alert("AI Prompt published successfully!");
+      } else {
+        const errData = await res.json();
+        alert("Failed to save prompt: " + (errData.error || "Server error"));
+      }
+    } catch (err: any) {
+      alert("Prompt upload failed: " + err.message);
+    } finally {
+      setIsUploadingPrompt(false);
+    }
+  };
+
+  const handleDelete = async (id: string, type: "link" | "news" | "messages" | "prompt") => {
+    if (!confirm("Are you sure you want to delete this item?")) return;
+
+    if (type === "prompt") {
+      await fetch(`/api/prompts?id=${id}`, { method: "DELETE" });
+    } else {
+      const query = `?id=${id}&type=${type}`;
+      await fetch(`/api/links${query}`, { method: "DELETE" });
+    }
     fetchData();
   };
 
@@ -277,7 +430,7 @@ export default function AdminPage() {
           <div>
             <h1 className="text-3xl font-extrabold">MRFREQLINE Control Center</h1>
             <p className="mt-1 text-sm text-gray-400">
-              Full control over website links, games, tech tips, files, and anonymous messages.
+              Full control over website links, AI prompts, news, and anonymous messages.
             </p>
           </div>
           <button
@@ -300,6 +453,16 @@ export default function AdminPage() {
             Manage Links & Files ({links.length})
           </button>
           <button
+            onClick={() => setActiveTab("prompts")}
+            className={`rounded-xl px-5 py-2.5 text-sm font-bold transition ${
+              activeTab === "prompts"
+                ? "bg-[#00d2ff] text-black"
+                : "bg-white/5 text-gray-400 hover:bg-white/10"
+            }`}
+          >
+            Manage Prompts ({prompts.length})
+          </button>
+          <button
             onClick={() => setActiveTab("news")}
             className={`rounded-xl px-5 py-2.5 text-sm font-bold transition ${
               activeTab === "news"
@@ -307,7 +470,7 @@ export default function AdminPage() {
                 : "bg-white/5 text-gray-400 hover:bg-white/10"
             }`}
           >
-            Manage News & Scam Alerts ({news.length})
+            Manage News ({news.length})
           </button>
           <button
             onClick={() => setActiveTab("messages")}
@@ -321,6 +484,7 @@ export default function AdminPage() {
           </button>
         </div>
 
+        {/* 1. MANAGE LINKS TAB */}
         {activeTab === "links" && (
           <>
             <form
@@ -328,7 +492,7 @@ export default function AdminPage() {
               className="mt-6 rounded-2xl border border-white/10 bg-[#0d121d] p-6 space-y-6"
             >
               <h2 className="text-xl font-bold text-[#00d2ff]">
-                + Add New Link or Direct File / Zip Folder
+                + Add New Link or Direct File / Media
               </h2>
 
               <div className="grid gap-4 md:grid-cols-3">
@@ -336,7 +500,7 @@ export default function AdminPage() {
                   <label className="block text-xs font-semibold text-gray-400 mb-1">Title</label>
                   <input
                     type="text"
-                    placeholder="e.g. Cyberpunk Game..."
+                    placeholder="e.g. Optimizer Tool, Game Config..."
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     required
@@ -377,7 +541,7 @@ export default function AdminPage() {
 
               <div className="grid gap-4 md:grid-cols-2">
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 mb-1">Risk / Trust Status Tag</label>
+                  <label className="block text-xs font-semibold text-gray-400 mb-1">Status Tag</label>
                   <select
                     value={status}
                     onChange={(e) => setStatus(e.target.value)}
@@ -392,7 +556,7 @@ export default function AdminPage() {
 
                 <div>
                   <label className="block text-xs font-semibold text-gray-400 mb-1">
-                    Target URL Link (Optional if uploading file)
+                    Target URL Link (or External Drive/Mega Link)
                   </label>
                   <input
                     type="url"
@@ -404,27 +568,31 @@ export default function AdminPage() {
                 </div>
               </div>
 
-              <div>
-                <label className="block text-xs font-semibold text-gray-400 mb-1">
-                  Upload File / Zip Folder (.zip, .rar, .exe, .pdf, .txt)
+              <div className="rounded-xl border border-white/10 bg-[#10141e] p-4">
+                <label className="block text-xs font-semibold text-[#00d2ff] mb-1">
+                  📁 Or Upload Direct File / Zip to Cloud Storage
                 </label>
                 <input
                   type="file"
                   onChange={(e) => setFile(e.target.files?.[0] || null)}
-                  className="w-full rounded-xl border border-white/10 bg-[#10141e] p-2 text-xs text-gray-400"
+                  className="w-full rounded-xl border border-white/10 bg-[#0d121d] p-2.5 text-xs text-gray-300 file:mr-4 file:rounded-lg file:border-0 file:bg-[#00d2ff] file:px-4 file:py-1.5 file:text-xs file:font-bold file:text-black file:cursor-pointer"
                 />
+                {file && (
+                  <p className="mt-2 text-xs text-green-400">
+                    Selected: {file.name} ({(file.size / (1024 * 1024)).toFixed(2)} MB)
+                  </p>
+                )}
               </div>
 
               <div className="rounded-xl border border-[#00d2ff]/20 bg-[#111622] p-5 space-y-4">
                 <h3 className="text-sm font-bold text-[#00d2ff]">
                   🛠 How To Use / Installation Steps (Optional)
                 </h3>
-
                 {steps.map((step, idx) => (
                   <div key={idx} className="flex gap-2">
                     <input
                       type="text"
-                      placeholder={`Step ${idx + 1}: e.g. Disable Antivirus / Extract Zip / Run setup.exe`}
+                      placeholder={`Step ${idx + 1}`}
                       value={step}
                       onChange={(e) => handleStepChange(idx, e.target.value)}
                       className="w-full rounded-xl border border-white/10 bg-[#0d121d] px-4 py-2 text-sm outline-none focus:border-[#00d2ff]"
@@ -440,7 +608,6 @@ export default function AdminPage() {
                     )}
                   </div>
                 ))}
-
                 <button
                   type="button"
                   onClick={handleAddStep}
@@ -448,41 +615,14 @@ export default function AdminPage() {
                 >
                   + Add Another Step
                 </button>
-
-                <div className="grid gap-4 md:grid-cols-2 pt-2">
-                  <div>
-                    <label className="block text-xs font-semibold text-gray-400 mb-1">
-                      Safety Warning Note
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="e.g. Always run setup as administrator."
-                      value={warning}
-                      onChange={(e) => setWarning(e.target.value)}
-                      className="w-full rounded-xl border border-white/10 bg-[#0d121d] px-4 py-2 text-sm outline-none"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-gray-400 mb-1">
-                      Video / Tutorial URL
-                    </label>
-                    <input
-                      type="url"
-                      placeholder="https://youtube.com/..."
-                      value={youtubeUrl}
-                      onChange={(e) => setYoutubeUrl(e.target.value)}
-                      className="w-full rounded-xl border border-white/10 bg-[#0d121d] px-4 py-2 text-sm outline-none"
-                    />
-                  </div>
-                </div>
               </div>
 
               <button
                 type="submit"
-                className="w-full rounded-xl bg-[#00d2ff] py-3 text-sm font-extrabold text-black transition hover:opacity-90"
+                disabled={isUploadingLink}
+                className="w-full rounded-xl bg-[#00d2ff] py-3 text-sm font-extrabold text-black transition hover:opacity-90 disabled:opacity-50"
               >
-                PUBLISH RESOURCE / FILE
+                {isUploadingLink ? "UPLOADING FILE & SAVING..." : "PUBLISH RESOURCE / FILE"}
               </button>
             </form>
 
@@ -496,8 +636,12 @@ export default function AdminPage() {
                   <div>
                     <h4 className="font-bold">{item.title}</h4>
                     <p className="text-xs text-gray-400">
-                      Section: {item.section || "essential-toolkit"} | Category: {item.category} | Status: {item.status}
-                      {item.guide && ` | Steps: ${item.guide.steps.length}`}
+                      Section: {item.section || "essential-toolkit"} | Category: {item.category}
+                      {item.fileUrl && (
+                        <a href={item.fileUrl} target="_blank" rel="noreferrer" className="ml-2 text-[#00d2ff] underline">
+                          [View File]
+                        </a>
+                      )}
                     </p>
                   </div>
                   <button
@@ -512,6 +656,188 @@ export default function AdminPage() {
           </>
         )}
 
+        {/* 2. MANAGE PROMPTS TAB */}
+        {activeTab === "prompts" && (
+          <>
+            <form
+              onSubmit={handlePromptSubmit}
+              className="mt-6 rounded-2xl border border-white/10 bg-[#0d121d] p-6 space-y-6"
+            >
+              <h2 className="text-xl font-bold text-[#00d2ff]">
+                + Add New AI Prompt
+              </h2>
+
+              <div className="grid gap-4 md:grid-cols-2">
+                <div>
+                  <label className="block text-xs font-semibold text-gray-400 mb-1">Prompt Title</label>
+                  <input
+                    type="text"
+                    placeholder="e.g. Ultra-Realistic Cyberpunk Portrait"
+                    value={promptTitle}
+                    onChange={(e) => setPromptTitle(e.target.value)}
+                    required
+                    className="w-full rounded-xl border border-white/10 bg-[#10141e] px-4 py-2.5 text-sm outline-none focus:border-[#00d2ff]"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-gray-400 mb-1">Category</label>
+                  <select
+                    value={promptCategory}
+                    onChange={(e) => setPromptCategory(e.target.value)}
+                    className="w-full rounded-xl border border-white/10 bg-[#10141e] px-4 py-2.5 text-sm outline-none focus:border-[#00d2ff] text-white"
+                  >
+                    <option value="Image Generation">🎨 Image Generation</option>
+                    <option value="Video Generation">🎥 Video Generation</option>
+                    <option value="Others">⚡ Others / LLMs</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-gray-400 mb-1">
+                  AI Prompt Text (Required)
+                </label>
+                <textarea
+                  rows={4}
+                  placeholder="Paste the exact prompt text here..."
+                  value={promptText}
+                  onChange={(e) => setPromptText(e.target.value)}
+                  required
+                  className="w-full rounded-xl border border-white/10 bg-[#10141e] p-3.5 font-mono text-sm outline-none focus:border-[#00d2ff]"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-gray-400 mb-1">
+                  AI Tool / Website URL (Optional)
+                </label>
+                <input
+                  type="url"
+                  placeholder="https://midjourney.com, https://klingai.com..."
+                  value={promptToolUrl}
+                  onChange={(e) => setPromptToolUrl(e.target.value)}
+                  className="w-full rounded-xl border border-white/10 bg-[#10141e] px-4 py-2.5 text-sm outline-none focus:border-[#00d2ff]"
+                />
+              </div>
+
+              {/* Before & Result Images */}
+              <div className="grid gap-4 md:grid-cols-2">
+                {/* Before Image */}
+                <div className="rounded-xl border border-white/10 bg-[#10141e] p-4 space-y-2">
+                  <label className="block text-xs font-semibold text-gray-300">
+                    Input / Before Image (Optional)
+                  </label>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) => setBeforeFile(e.target.files?.[0] || null)}
+                    className="w-full text-xs text-gray-400 file:mr-2 file:rounded-md file:border-0 file:bg-white/10 file:px-3 file:py-1 file:text-xs file:text-white"
+                  />
+                  <input
+                    type="url"
+                    placeholder="Or paste image URL"
+                    value={beforeUrl}
+                    onChange={(e) => setBeforeUrl(e.target.value)}
+                    className="w-full rounded-lg border border-white/10 bg-[#0d121d] px-3 py-1.5 text-xs outline-none focus:border-[#00d2ff]"
+                  />
+                </div>
+
+                {/* Result Image / Video */}
+                <div className="rounded-xl border border-[#00d2ff]/30 bg-[#10141e] p-4 space-y-2">
+                  <label className="block text-xs font-semibold text-[#00d2ff]">
+                    Result / Output Image (Optional)
+                  </label>
+                  <input
+                    type="file"
+                    accept="image/*,video/*"
+                    onChange={(e) => setResultFile(e.target.files?.[0] || null)}
+                    className="w-full text-xs text-gray-400 file:mr-2 file:rounded-md file:border-0 file:bg-[#00d2ff] file:px-3 file:py-1 file:text-xs file:font-bold file:text-black"
+                  />
+                  <input
+                    type="url"
+                    placeholder="Or paste result image/video URL"
+                    value={resultUrl}
+                    onChange={(e) => setResultUrl(e.target.value)}
+                    className="w-full rounded-lg border border-white/10 bg-[#0d121d] px-3 py-1.5 text-xs outline-none focus:border-[#00d2ff]"
+                  />
+                </div>
+              </div>
+
+              {/* Steps / Guide */}
+              <div className="rounded-xl border border-[#00d2ff]/20 bg-[#111622] p-5 space-y-3">
+                <h3 className="text-sm font-bold text-[#00d2ff]">
+                  📝 How to use this prompt (Optional Steps)
+                </h3>
+                {promptSteps.map((step, idx) => (
+                  <div key={idx} className="flex gap-2">
+                    <input
+                      type="text"
+                      placeholder={`Step ${idx + 1}: e.g. Open Midjourney / Set aspect ratio to --ar 16:9`}
+                      value={step}
+                      onChange={(e) => handlePromptStepChange(idx, e.target.value)}
+                      className="w-full rounded-xl border border-white/10 bg-[#0d121d] px-4 py-2 text-sm outline-none focus:border-[#00d2ff]"
+                    />
+                    {promptSteps.length > 1 && (
+                      <button
+                        type="button"
+                        onClick={() => handleRemovePromptStep(idx)}
+                        className="rounded-xl border border-red-500/30 bg-red-500/10 px-3 text-xs text-red-400"
+                      >
+                        ✕
+                      </button>
+                    )}
+                  </div>
+                ))}
+                <button
+                  type="button"
+                  onClick={handleAddPromptStep}
+                  className="text-xs font-bold text-[#00d2ff] hover:underline"
+                >
+                  + Add Another Step
+                </button>
+              </div>
+
+              <button
+                type="submit"
+                disabled={isUploadingPrompt}
+                className="w-full rounded-xl bg-[#00d2ff] py-3 text-sm font-extrabold text-black transition hover:opacity-90 disabled:opacity-50"
+              >
+                {isUploadingPrompt ? "UPLOADING MEDIA & SAVING PROMPT..." : "PUBLISH AI PROMPT"}
+              </button>
+            </form>
+
+            <div className="mt-10 space-y-3">
+              <h2 className="text-xl font-bold">Active Prompts ({prompts.length})</h2>
+              {prompts.map((item) => (
+                <div
+                  key={item.id}
+                  className="flex items-center justify-between rounded-xl border border-white/10 bg-[#0d121d] p-4"
+                >
+                  <div className="space-y-1">
+                    <h4 className="font-bold">{item.title}</h4>
+                    <p className="text-xs text-gray-400">
+                      Category: <span className="text-[#00d2ff]">{item.category}</span>
+                      {item.resultImageUrl && " | Has Result Image"}
+                      {item.beforeImageUrl && " | Has Before Image"}
+                    </p>
+                    <p className="line-clamp-1 font-mono text-xs text-gray-500 max-w-xl">
+                      {item.promptText}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => item.id && handleDelete(item.id, "prompt")}
+                    className="rounded-lg border border-red-500/30 bg-red-500/10 px-3 py-1.5 text-xs text-red-400 hover:bg-red-500/20"
+                  >
+                    Delete
+                  </button>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+
+        {/* 3. MANAGE NEWS TAB */}
         {activeTab === "news" && (
           <>
             <form
@@ -529,6 +855,7 @@ export default function AdminPage() {
                   value={newsTitle}
                   onChange={(e) => setNewsTitle(e.target.value)}
                   required
+                  placeholder="e.g. Major Phishing Warning..."
                   className="w-full rounded-xl border border-white/10 bg-[#10141e] px-4 py-2.5 text-sm outline-none focus:border-[#00d2ff]"
                 />
               </div>
@@ -558,26 +885,36 @@ export default function AdminPage() {
                 />
               </div>
 
-              <div>
-                <label className="block text-xs font-semibold text-gray-400 mb-1">Image URL (Optional)</label>
+              <div className="rounded-xl border border-white/10 bg-[#10141e] p-4 space-y-3">
+                <label className="block text-xs font-semibold text-[#00d2ff]">
+                  Attach Image or Video
+                </label>
+                <input
+                  type="file"
+                  accept="image/*,video/*"
+                  onChange={(e) => setNewsMediaFile(e.target.files?.[0] || null)}
+                  className="w-full text-xs text-gray-300"
+                />
                 <input
                   type="url"
+                  placeholder="Or paste media URL"
                   value={newsImage}
                   onChange={(e) => setNewsImage(e.target.value)}
-                  className="w-full rounded-xl border border-white/10 bg-[#10141e] px-4 py-2.5 text-sm outline-none focus:border-[#00d2ff]"
+                  className="w-full rounded-xl border border-white/10 bg-[#0d121d] px-4 py-2 text-xs outline-none"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full rounded-xl bg-[#00d2ff] py-3 text-sm font-extrabold text-black transition hover:opacity-90"
+                disabled={isUploadingNews}
+                className="w-full rounded-xl bg-[#00d2ff] py-3 text-sm font-extrabold text-black transition hover:opacity-90 disabled:opacity-50"
               >
-                PUBLISH ANNOUNCEMENT
+                {isUploadingNews ? "PUBLISHING..." : "PUBLISH ANNOUNCEMENT"}
               </button>
             </form>
 
             <div className="mt-10 space-y-3">
-              <h2 className="text-xl font-bold">Active News & Scam Alerts</h2>
+              <h2 className="text-xl font-bold">Active News</h2>
               {news.map((item) => (
                 <div
                   key={item.id}
@@ -589,7 +926,7 @@ export default function AdminPage() {
                   </div>
                   <button
                     onClick={() => item.id && handleDelete(item.id, "news")}
-                    className="rounded-lg border border-red-500/30 bg-red-500/10 px-3 py-1.5 text-xs text-red-400 hover:bg-red-500/20"
+                    className="rounded-lg border border-red-500/30 bg-red-500/10 px-3 py-1.5 text-xs text-red-400"
                   >
                     Delete
                   </button>
@@ -599,6 +936,7 @@ export default function AdminPage() {
           </>
         )}
 
+        {/* 4. INBOX TAB */}
         {activeTab === "messages" && (
           <div className="mt-8 space-y-4">
             <h2 className="text-xl font-bold text-[#00d2ff]">Incoming Anonymous Messages</h2>
