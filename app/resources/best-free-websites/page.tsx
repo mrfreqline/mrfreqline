@@ -5,6 +5,7 @@ import Link from "next/link";
 import Header from "../../Header";
 import Footer from "../../Footer";
 import AdsterraBanner from "../../components/AdsterraBanner";
+import AdsterraPopunder from "../../components/AdsterraPopunder";
 import { handleMonetizedClick } from "../../../lib/adsterra";
 
 export const dynamic = "force-dynamic";
@@ -292,6 +293,7 @@ export default function BestFreeWebsites() {
   return (
     <>
       <Header />
+      <AdsterraPopunder activeCategory={activeCategory} />
       <main className="min-h-screen px-6 pt-24 pb-16 bg-[#07090e] text-white font-sans">
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col gap-4 border-b border-white/10 pb-6 md:flex-row md:items-center md:justify-between">

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Header from "../../Header";
 import Footer from "../../Footer";
 import AdsterraBanner from "../../components/AdsterraBanner";
+import AdsterraPopunder from "../../components/AdsterraPopunder";
 import { handleMonetizedClick } from "../../../lib/adsterra";
 
 interface GuideData {
@@ -165,6 +166,7 @@ export default function GamingFreeResources() {
   return (
     <>
       <Header />
+      <AdsterraPopunder />
       <main className="min-h-screen bg-[#07090e] px-6 pt-28 pb-20 font-sans text-white">
         <div className="mx-auto max-w-6xl">
           {/* Header Title Bar */}
