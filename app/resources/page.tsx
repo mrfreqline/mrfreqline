@@ -36,6 +36,15 @@ const categoriesList = [
   "APPS & SOFTWARES",
 ];
 
+const getFaviconUrl = (siteUrl: string) => {
+  try {
+    const domain = new URL(siteUrl).hostname;
+    return `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
+  } catch {
+    return "";
+  }
+};
+
 export default function ResourcesPage() {
   const [links, setLinks] = useState<ResourceLink[]>([]);
   const [selectedCategory, setSelectedCategory] = useState("ALL");
@@ -159,24 +168,38 @@ export default function ResourcesPage() {
                 key={item.id}
                 className="flex flex-col gap-4 justify-between rounded-2xl border border-white/10 bg-[#0d121d] p-5 transition sm:flex-row sm:items-center hover:border-white/20"
               >
-                <div>
-                  <div className="flex flex-wrap items-center gap-2">
-                    <h3 className="text-lg font-bold text-white">{item.title}</h3>
-                    <span
-                      className={`rounded-md border px-2 py-0.5 text-[10px] font-bold ${
-                        item.status === "RISK" ||
-                        item.status === "SCAM WARNING" ||
-                        item.status === "SCAM / AVOID"
-                          ? "border-red-500/30 bg-red-500/20 text-red-400"
-                          : "border-white/10 bg-white/5 text-gray-400"
-                      }`}
-                    >
-                      {item.status}
-                    </span>
+                <div className="flex items-center gap-3">
+                  {item.url && (
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-black/30 p-1">
+                      <img
+                        src={getFaviconUrl(item.url)}
+                        alt=""
+                        className="h-full w-full object-contain"
+                        onError={(e) => {
+                          e.currentTarget.style.display = "none";
+                        }}
+                      />
+                    </div>
+                  )}
+                  <div>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <h3 className="text-lg font-bold text-white">{item.title}</h3>
+                      <span
+                        className={`rounded-md border px-2 py-0.5 text-[10px] font-bold ${
+                          item.status === "RISK" ||
+                          item.status === "SCAM WARNING" ||
+                          item.status === "SCAM / AVOID"
+                            ? "border-red-500/30 bg-red-500/20 text-red-400"
+                            : "border-white/10 bg-white/5 text-gray-400"
+                        }`}
+                      >
+                        {item.status}
+                      </span>
+                    </div>
+                    <p className="mt-1 text-xs font-semibold text-[#00d2ff]">
+                      {item.category}
+                    </p>
                   </div>
-                  <p className="mt-1 text-xs font-semibold text-[#00d2ff]">
-                    {item.category}
-                  </p>
                 </div>
 
                 {/* Action Buttons */}

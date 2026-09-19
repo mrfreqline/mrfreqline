@@ -11,6 +11,7 @@ export default function Footer() {
           <Link href="/reviews" className="transition hover:text-[#00D2FF]">Reviews</Link>
           <Link href="/resources" className="transition hover:text-[#00D2FF]">Resources</Link>
           <Link href="/contact" className="transition hover:text-[#00D2FF]">Contact</Link>
+          <Link href="/settings" className="transition hover:text-[#00D2FF]">Setting</Link>
         </nav>
       </div>
     </footer>

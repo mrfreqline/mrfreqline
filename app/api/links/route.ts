@@ -1,4 +1,4 @@
-﻿import { NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { supabase, supabaseAdmin } from "@/lib/supabase";
 
@@ -16,6 +16,7 @@ function normalizeSection(sec: string | null | undefined): string {
 
   if (s.includes("gaming") || s.includes("game")) return "gaming";
   if (s.includes("tech") || s.includes("opti") || s.includes("pc")) return "tech";
+  if (s.includes("vault") || s.includes("internet-vault")) return "vault";
   if (s.includes("website") || s.includes("best-free") || s.includes("resources")) return "best-free-websites";
   if (s.includes("essential") || s.includes("toolkit") || s.includes("tools")) return "essential-toolkit";
 

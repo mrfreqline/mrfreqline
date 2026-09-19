@@ -6,6 +6,7 @@ import Footer from "../../Footer";
 import AdsterraBanner from "../../components/AdsterraBanner";
 import AdsterraPopunder from "../../components/AdsterraPopunder";
 import { handleMonetizedClick } from "../../../lib/adsterra";
+import gamingJsonData from "@/data/gaming-resources.json";
 
 interface GuideData {
   steps: string[];
@@ -107,10 +108,34 @@ const staticGamingResources: ResourceLink[] = [
   },
 ];
 
-const categories = ["ALL", "REPACKS & DOWNLOADS", "LAUNCHERS", "DOWNLOAD MANAGERS"];
+const categories = [
+  "ALL",
+  "REPACKS & DOWNLOADS",
+  "LAUNCHERS",
+  "DOWNLOAD MANAGERS",
+  "OPTIMIZATION & FPS",
+  "CONTROLLER & INPUT",
+  "MULTIPLAYER & LAN",
+  "MOD MANAGERS & TRAINERS",
+  "SAVE MANAGERS",
+  "MINECRAFT TOOLS",
+  "CONSOLE HOMEBREW",
+  "WIKIS & TRACKERS",
+  "FRANCHISE TOOLS",
+];
+
+const initialGamingList: ResourceLink[] = [
+  ...staticGamingResources,
+  ...((gamingJsonData as ResourceLink[]).filter(
+    (item) =>
+      !staticGamingResources.some(
+        (s) => s.title.toLowerCase() === item.title.toLowerCase()
+      )
+  )),
+];
 
 export default function GamingFreeResources() {
-  const [gamingResources, setGamingResources] = useState<ResourceLink[]>(staticGamingResources);
+  const [gamingResources, setGamingResources] = useState<ResourceLink[]>(initialGamingList);
   const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState("ALL");
   const [searchQuery, setSearchQuery] = useState("");

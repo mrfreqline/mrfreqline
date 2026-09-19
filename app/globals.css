@@ -1,10 +1,663 @@
 @import "tailwindcss";
 
 :root {
+  /* Default Dark Mode (Obsidian) */
   --background: #050811;
+  --surface-canvas: #07090e;
+  --surface-card: #0d121d;
+  --surface-card-sub: #0d111a;
+  --surface-card-hover: #121826;
+  --surface-border: rgba(255, 255, 255, 0.1);
   --foreground: #ededed;
-  --accent-blue: #00A3FF;
+  --text-main: #ffffff;
+  --text-muted: #9ca3af;
+  --text-subtle: #6b7280;
+
+  /* Theme Accents (Default Cyber Neon) */
+  --accent-primary: #00D2FF;
+  --accent-secondary: #0070F3;
+  --accent-glow: rgba(0, 210, 255, 0.4);
+  --accent-glow-subtle: rgba(0, 210, 255, 0.15);
+  --accent-badge-bg: rgba(0, 210, 255, 0.15);
+  --accent-badge-text: #00D2FF;
+
+  /* Legacy and Tailwind bridge */
+  --accent-blue: var(--accent-secondary);
+  --accent-cyan: var(--accent-primary);
+}
+
+/* Light Mode (Crisp Full Pure White Canvas & Cards) */
+html[data-mode="light"] {
+  color-scheme: light;
+  --background: #ffffff;
+  --surface-canvas: #ffffff;
+  --surface-card: #ffffff;
+  --surface-card-sub: #f8fafc;
+  --surface-card-hover: #f1f5f9;
+  --surface-border: #e2e8f0;
+  --foreground: #0f172a;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-subtle: #64748b;
+
+  --accent-primary: #0088be;
+  --accent-secondary: #005bb5;
+  --accent-glow: rgba(0, 136, 190, 0.25);
+  --accent-glow-subtle: rgba(0, 136, 190, 0.08);
+  --accent-badge-bg: rgba(0, 136, 190, 0.12);
+  --accent-badge-text: #006b94;
+  --accent-blue: var(--accent-secondary);
+  --accent-cyan: var(--accent-primary);
+}
+
+/* 10 Handcrafted Aesthetic Themes */
+
+/* 1. Cyber Neon (Default) */
+html[data-theme="default"] {
+  --accent-primary: #00D2FF;
+  --accent-secondary: #0070F3;
+  --accent-glow: rgba(0, 210, 255, 0.45);
+  --accent-glow-subtle: rgba(0, 210, 255, 0.15);
+  --accent-badge-bg: rgba(0, 210, 255, 0.15);
+  --accent-badge-text: #00D2FF;
   --accent-cyan: #00D2FF;
+  --accent-blue: #0070F3;
+}
+html[data-mode="light"][data-theme="default"] {
+  --accent-primary: #0088be;
+  --accent-secondary: #005bb5;
+  --accent-glow: rgba(0, 136, 190, 0.25);
+  --accent-glow-subtle: rgba(0, 136, 190, 0.08);
+  --accent-badge-bg: rgba(0, 136, 190, 0.12);
+  --accent-badge-text: #006b94;
+  --accent-cyan: #0088be;
+  --accent-blue: #005bb5;
+}
+
+/* 2. Purple Dark */
+html[data-theme="synthwave"] {
+  --accent-primary: #8B5CF6;
+  --accent-secondary: #6D28D9;
+  --accent-glow: rgba(139, 92, 246, 0.5);
+  --accent-glow-subtle: rgba(139, 92, 246, 0.18);
+  --accent-badge-bg: rgba(139, 92, 246, 0.18);
+  --accent-badge-text: #8B5CF6;
+  --accent-cyan: #8B5CF6;
+  --accent-blue: #6D28D9;
+}
+html[data-mode="light"][data-theme="synthwave"] {
+  --accent-primary: #7C3AED;
+  --accent-secondary: #5B21B6;
+  --accent-glow: rgba(124, 58, 237, 0.25);
+  --accent-glow-subtle: rgba(124, 58, 237, 0.08);
+  --accent-badge-bg: rgba(124, 58, 237, 0.12);
+  --accent-badge-text: #5B21B6;
+  --accent-cyan: #7C3AED;
+  --accent-blue: #5B21B6;
+}
+
+/* 3. Midnight */
+html[data-theme="stealth"] {
+  --accent-primary: #38BDF8;
+  --accent-secondary: #1E293B;
+  --accent-glow: rgba(56, 189, 248, 0.45);
+  --accent-glow-subtle: rgba(56, 189, 248, 0.18);
+  --accent-badge-bg: rgba(56, 189, 248, 0.18);
+  --accent-badge-text: #38BDF8;
+  --accent-cyan: #38BDF8;
+  --accent-blue: #1E293B;
+}
+html[data-mode="light"][data-theme="stealth"] {
+  --accent-primary: #0284C7;
+  --accent-secondary: #0F172A;
+  --accent-glow: rgba(2, 132, 199, 0.25);
+  --accent-glow-subtle: rgba(2, 132, 199, 0.08);
+  --accent-badge-bg: rgba(2, 132, 199, 0.12);
+  --accent-badge-text: #0369A1;
+  --accent-cyan: #0284C7;
+  --accent-blue: #0F172A;
+}
+
+/* 4. Crimson */
+html[data-theme="crimson"] {
+  --accent-primary: #EF4444;
+  --accent-secondary: #DC2626;
+  --accent-glow: rgba(239, 68, 68, 0.5);
+  --accent-glow-subtle: rgba(239, 68, 68, 0.18);
+  --accent-badge-bg: rgba(239, 68, 68, 0.18);
+  --accent-badge-text: #EF4444;
+  --accent-cyan: #EF4444;
+  --accent-blue: #DC2626;
+}
+html[data-mode="light"][data-theme="crimson"] {
+  --accent-primary: #DC2626;
+  --accent-secondary: #991B1B;
+  --accent-glow: rgba(220, 38, 38, 0.25);
+  --accent-glow-subtle: rgba(220, 38, 38, 0.08);
+  --accent-badge-bg: rgba(220, 38, 38, 0.12);
+  --accent-badge-text: #991B1B;
+  --accent-cyan: #DC2626;
+  --accent-blue: #991B1B;
+}
+
+/* 5. Synthwave */
+html[data-theme="sakura"] {
+  --accent-primary: #EC4899;
+  --accent-secondary: #D946EF;
+  --accent-glow: rgba(236, 72, 153, 0.5);
+  --accent-glow-subtle: rgba(236, 72, 153, 0.18);
+  --accent-badge-bg: rgba(236, 72, 153, 0.18);
+  --accent-badge-text: #EC4899;
+  --accent-cyan: #EC4899;
+  --accent-blue: #D946EF;
+}
+html[data-mode="light"][data-theme="sakura"] {
+  --accent-primary: #DB2777;
+  --accent-secondary: #9333EA;
+  --accent-glow: rgba(219, 39, 119, 0.25);
+  --accent-glow-subtle: rgba(219, 39, 119, 0.08);
+  --accent-badge-bg: rgba(219, 39, 119, 0.12);
+  --accent-badge-text: #9D174D;
+  --accent-cyan: #DB2777;
+  --accent-blue: #9333EA;
+}
+
+/* 6. Terminal */
+html[data-theme="matrix"] {
+  --accent-primary: #10B981;
+  --accent-secondary: #059669;
+  --accent-glow: rgba(16, 185, 129, 0.5);
+  --accent-glow-subtle: rgba(16, 185, 129, 0.18);
+  --accent-badge-bg: rgba(16, 185, 129, 0.18);
+  --accent-badge-text: #10B981;
+  --accent-cyan: #10B981;
+  --accent-blue: #059669;
+}
+html[data-mode="light"][data-theme="matrix"] {
+  --accent-primary: #059669;
+  --accent-secondary: #047857;
+  --accent-glow: rgba(5, 150, 105, 0.25);
+  --accent-glow-subtle: rgba(5, 150, 105, 0.08);
+  --accent-badge-bg: rgba(5, 150, 105, 0.12);
+  --accent-badge-text: #047857;
+  --accent-cyan: #059669;
+  --accent-blue: #047857;
+}
+
+/* 7. Lavender */
+html[data-theme="lavender"] {
+  --accent-primary: #C084FC;
+  --accent-secondary: #818CF8;
+  --accent-glow: rgba(192, 132, 252, 0.5);
+  --accent-glow-subtle: rgba(192, 132, 252, 0.18);
+  --accent-badge-bg: rgba(192, 132, 252, 0.18);
+  --accent-badge-text: #C084FC;
+  --accent-cyan: #C084FC;
+  --accent-blue: #818CF8;
+}
+html[data-mode="light"][data-theme="lavender"] {
+  --accent-primary: #7C3AED;
+  --accent-secondary: #6366F1;
+  --accent-glow: rgba(124, 58, 237, 0.25);
+  --accent-glow-subtle: rgba(124, 58, 237, 0.08);
+  --accent-badge-bg: rgba(124, 58, 237, 0.12);
+  --accent-badge-text: #6D28D9;
+  --accent-cyan: #7C3AED;
+  --accent-blue: #6366F1;
+}
+
+/* 8. Peach Glow */
+html[data-theme="peach"] {
+  --accent-primary: #FB923C;
+  --accent-secondary: #F472B6;
+  --accent-glow: rgba(251, 146, 60, 0.5);
+  --accent-glow-subtle: rgba(251, 146, 60, 0.18);
+  --accent-badge-bg: rgba(251, 146, 60, 0.18);
+  --accent-badge-text: #FB923C;
+  --accent-cyan: #FB923C;
+  --accent-blue: #F472B6;
+}
+html[data-mode="light"][data-theme="peach"] {
+  --accent-primary: #EA580C;
+  --accent-secondary: #DB2777;
+  --accent-glow: rgba(234, 88, 12, 0.25);
+  --accent-glow-subtle: rgba(234, 88, 12, 0.08);
+  --accent-badge-bg: rgba(234, 88, 12, 0.12);
+  --accent-badge-text: #C2410C;
+  --accent-cyan: #EA580C;
+  --accent-blue: #DB2777;
+}
+
+/* 9. Nordic Glacier */
+html[data-theme="glacier"] {
+  --accent-primary: #0EA5E9;
+  --accent-secondary: #2563EB;
+  --accent-glow: rgba(14, 165, 233, 0.5);
+  --accent-glow-subtle: rgba(14, 165, 233, 0.18);
+  --accent-badge-bg: rgba(14, 165, 233, 0.18);
+  --accent-badge-text: #0EA5E9;
+  --accent-cyan: #0EA5E9;
+  --accent-blue: #2563EB;
+}
+html[data-mode="light"][data-theme="glacier"] {
+  --accent-primary: #0284C7;
+  --accent-secondary: #1D4ED8;
+  --accent-glow: rgba(2, 132, 199, 0.25);
+  --accent-glow-subtle: rgba(2, 132, 199, 0.08);
+  --accent-badge-bg: rgba(2, 132, 199, 0.12);
+  --accent-badge-text: #0369A1;
+  --accent-cyan: #0284C7;
+  --accent-blue: #1D4ED8;
+}
+
+/* 10. Golden Sunset */
+html[data-theme="gold"] {
+  --accent-primary: #F59E0B;
+  --accent-secondary: #EA580C;
+  --accent-glow: rgba(245, 158, 11, 0.5);
+  --accent-glow-subtle: rgba(245, 158, 11, 0.18);
+  --accent-badge-bg: rgba(245, 158, 11, 0.18);
+  --accent-badge-text: #F59E0B;
+  --accent-cyan: #F59E0B;
+  --accent-blue: #EA580C;
+}
+html[data-mode="light"][data-theme="gold"] {
+  --accent-primary: #D97706;
+  --accent-secondary: #C2410C;
+  --accent-glow: rgba(217, 119, 6, 0.25);
+  --accent-glow-subtle: rgba(217, 119, 6, 0.08);
+  --accent-badge-bg: rgba(217, 119, 6, 0.12);
+  --accent-badge-text: #B45309;
+  --accent-cyan: #D97706;
+  --accent-blue: #C2410C;
+}
+
+/* Performance Modes */
+html[data-glow="off"] * {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  animation: none !important;
+  transition-duration: 0.05s !important;
+}
+
+html[data-glow="neon"] .neon-glow-card {
+  box-shadow: 0 0 25px var(--accent-glow), inset 0 0 15px rgba(255, 255, 255, 0.05) !important;
+}
+
+/* ==========================================================================
+   UNIVERSAL THEME COLOR PROPAGATION ENGINE
+   Ensures theme changes propagate instantly across every page and component
+   ========================================================================== */
+
+/* 1. Exact Text Color */
+.text-\[\#00D2FF\],
+.text-\[\#00d2ff\],
+[class~="text-[#00D2FF]"],
+[class~="text-[#00d2ff]"] {
+  color: var(--accent-primary) !important;
+}
+
+/* 2. Exact Background Color (Solid) */
+.bg-\[\#00D2FF\],
+.bg-\[\#00d2ff\],
+[class~="bg-[#00D2FF]"],
+[class~="bg-[#00d2ff]"] {
+  background-color: var(--accent-primary) !important;
+}
+
+/* 3. Opacity Backgrounds (/10, /20, /30, /5) */
+.bg-\[\#00D2FF\]\/10,
+.bg-\[\#00d2ff\]\/10,
+[class~="bg-[#00D2FF]/10"],
+[class~="bg-[#00d2ff]/10"] {
+  background-color: var(--accent-badge-bg) !important;
+}
+
+.bg-\[\#00D2FF\]\/20,
+.bg-\[\#00d2ff\]\/20,
+[class~="bg-[#00D2FF]/20"],
+[class~="bg-[#00d2ff]/20"] {
+  background-color: var(--accent-glow-subtle) !important;
+}
+
+.bg-\[\#00D2FF\]\/30,
+.bg-\[\#00d2ff\]\/30,
+[class~="bg-[#00D2FF]/30"],
+[class~="bg-[#00d2ff]/30"] {
+  background-color: var(--accent-glow-subtle) !important;
+}
+
+.bg-\[\#00D2FF\]\/5,
+.bg-\[\#00d2ff\]\/5,
+[class~="bg-[#00D2FF]/5"],
+[class~="bg-[#00d2ff]/5"] {
+  background-color: var(--accent-badge-bg) !important;
+}
+
+/* 4. Exact Border Colors */
+.border-\[\#00D2FF\],
+.border-\[\#00d2ff\],
+[class~="border-[#00D2FF]"],
+[class~="border-[#00d2ff]"] {
+  border-color: var(--accent-primary) !important;
+}
+
+.border-\[\#00D2FF\]\/20,
+.border-\[\#00d2ff\]\/20,
+[class~="border-[#00D2FF]/20"],
+[class~="border-[#00d2ff]/20"] {
+  border-color: var(--accent-glow-subtle) !important;
+}
+
+.border-\[\#00D2FF\]\/30,
+.border-\[\#00d2ff\]\/30,
+[class~="border-[#00D2FF]/30"],
+[class~="border-[#00d2ff]/30"] {
+  border-color: var(--accent-glow-subtle) !important;
+}
+
+.border-\[\#00D2FF\]\/40,
+.border-\[\#00d2ff\]\/40,
+[class~="border-[#00D2FF]/40"],
+[class~="border-[#00d2ff]/40"] {
+  border-color: var(--accent-glow) !important;
+}
+
+/* 5. Hover & Group Hover States */
+.hover\:text-\[\#00D2FF\]:hover,
+.hover\:text-\[\#00d2ff\]:hover,
+[class*="hover:text-[#00D2FF]" i]:hover,
+[class*="hover:text-[#00d2ff]" i]:hover,
+.group:hover .group-hover\:text-\[\#00D2FF\],
+.group:hover .group-hover\:text-\[\#00d2ff\],
+[class*="group"]:hover [class*="group-hover:text-[#00D2FF]" i],
+[class*="group"]:hover [class*="group-hover:text-[#00d2ff]" i] {
+  color: var(--accent-primary) !important;
+}
+
+.hover\:bg-\[\#00D2FF\]:hover,
+.hover\:bg-\[\#00d2ff\]:hover,
+[class~="hover:bg-[#00D2FF]"]:hover,
+[class~="hover:bg-[#00d2ff]"]:hover {
+  background-color: var(--accent-primary) !important;
+}
+
+.hover\:bg-\[\#00D2FF\]\/10:hover,
+.hover\:bg-\[\#00d2ff\]\/10:hover,
+[class~="hover:bg-[#00D2FF]/10"]:hover,
+[class~="hover:bg-[#00d2ff]/10"]:hover {
+  background-color: var(--accent-badge-bg) !important;
+}
+
+.hover\:bg-\[\#00D2FF\]\/20:hover,
+.hover\:bg-\[\#00d2ff\]\/20:hover,
+[class~="hover:bg-[#00D2FF]/20"]:hover,
+[class~="hover:bg-[#00d2ff]/20"]:hover {
+  background-color: var(--accent-glow-subtle) !important;
+}
+
+.hover\:border-\[\#00D2FF\]:hover,
+.hover\:border-\[\#00d2ff\]:hover,
+[class~="hover:border-[#00D2FF]"]:hover,
+[class~="hover:border-[#00d2ff]"]:hover {
+  border-color: var(--accent-primary) !important;
+}
+
+.hover\:border-\[\#00D2FF\]\/40:hover,
+.hover\:border-\[\#00d2ff\]\/40:hover,
+[class~="hover:border-[#00D2FF]/40"]:hover,
+[class~="hover:border-[#00d2ff]/40"]:hover {
+  border-color: var(--accent-glow) !important;
+}
+
+/* 6. Focus States */
+.focus\:border-\[\#00D2FF\]:focus,
+.focus\:border-\[\#00d2ff\]:focus,
+[class*="focus:border-[#00D2FF]" i]:focus,
+[class*="focus:border-[#00d2ff]" i]:focus {
+  border-color: var(--accent-primary) !important;
+}
+
+.focus\:ring-\[\#00D2FF\]:focus,
+.focus\:ring-\[\#00d2ff\]:focus,
+[class*="focus:ring-[#00D2FF]" i]:focus,
+[class*="focus:ring-[#00d2ff]" i]:focus {
+  --tw-ring-color: var(--accent-primary) !important;
+}
+
+/* 7. Gradients */
+[class*="from-[#00A3FF]" i],
+[class*="from-[#00a3ff]" i] {
+  --tw-gradient-from: var(--accent-secondary) !important;
+  --tw-gradient-to: var(--accent-primary) !important;
+  --tw-gradient-stops: var(--accent-secondary), var(--accent-primary) !important;
+}
+
+[class*="to-[#00D2FF]" i],
+[class*="to-[#00d2ff]" i] {
+  --tw-gradient-to: var(--accent-primary) !important;
+}
+
+.bg-gradient-to-r.from-\[\#00A3FF\].to-\[\#00D2FF\],
+[class*="bg-gradient-to-r"][class*="from-[#00A3FF]" i],
+[class*="bg-gradient-to-r"][class*="from-[#00a3ff]" i],
+[class*="bg-gradient-to-r"][class*="to-[#00D2FF]" i],
+[class*="bg-gradient-to-r"][class*="to-[#00d2ff]" i] {
+  background-image: linear-gradient(to right, var(--accent-secondary), var(--accent-primary)) !important;
+}
+
+/* ==========================================================================
+   PURE FULL WHITE LIGHT MODE
+   Transforms every page, background, card, and text into crisp, high-contrast pure white
+   ========================================================================== */
+html[data-mode="light"] {
+  color-scheme: light;
+}
+
+html[data-mode="light"] body {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+html[data-mode="light"] main {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+/* Canvas Backgrounds to Pure White */
+html[data-mode="light"] .bg-\[\#07090e\],
+html[data-mode="light"] .bg-\[\#08090b\],
+html[data-mode="light"] .bg-\[\#050811\],
+html[data-mode="light"] .bg-\[\#0b0f19\],
+html[data-mode="light"] .bg-\[\#0a0d14\],
+html[data-mode="light"] .bg-\[\#090d16\],
+html[data-mode="light"] .bg-\[\#0a0e17\],
+html[data-mode="light"] [class*="bg-[#07090e]"],
+html[data-mode="light"] [class*="bg-[#08090b]"],
+html[data-mode="light"] [class*="bg-[#050811]"],
+html[data-mode="light"] [class*="bg-[#0b0f19]"] {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+/* Card & Surface Containers in Light Mode */
+html[data-mode="light"] .bg-\[\#0d111a\],
+html[data-mode="light"] .bg-\[\#0d121d\],
+html[data-mode="light"] .bg-\[\#10141e\],
+html[data-mode="light"] .bg-\[\#111622\],
+html[data-mode="light"] .bg-\[\#12161f\],
+html[data-mode="light"] .bg-\[\#121826\],
+html[data-mode="light"] .bg-\[\#161c2b\],
+html[data-mode="light"] .bg-\[\#101522\],
+html[data-mode="light"] .bg-\[\#141a29\],
+html[data-mode="light"] .bg-\[\#181f30\],
+html[data-mode="light"] .bg-\[\#1a2236\],
+html[data-mode="light"] .bg-\[\#1a202c\],
+html[data-mode="light"] [class*="bg-[#0d111a]"],
+html[data-mode="light"] [class*="bg-[#0d121d]"],
+html[data-mode="light"] [class*="bg-[#10141e]"],
+html[data-mode="light"] [class*="bg-[#111622]"],
+html[data-mode="light"] [class*="bg-[#12161f]"],
+html[data-mode="light"] [class*="bg-[#121826]"],
+html[data-mode="light"] [class*="bg-[#161c2b]"],
+html[data-mode="light"] [class*="bg-[#101522]"] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Card Hover in Light Mode */
+html[data-mode="light"] .hover\:bg-\[\#121826\]:hover,
+html[data-mode="light"] .hover\:bg-\[\#181f30\]:hover,
+html[data-mode="light"] .hover\:bg-\[\#1a202c\]:hover {
+  background-color: #f8fafc !important;
+}
+
+/* Clean Cool Slate for Inactive Chips, Search Bars, and Wells */
+html[data-mode="light"] .bg-white\/5,
+html[data-mode="light"] .bg-white\/10,
+html[data-mode="light"] .bg-black\/20,
+html[data-mode="light"] .bg-black\/30,
+html[data-mode="light"] .bg-black\/40,
+html[data-mode="light"] .bg-black\/50,
+html[data-mode="light"] [class*="bg-[#111622]/80"],
+html[data-mode="light"] [class*="bg-[#10141e]/80"] {
+  background-color: #f1f5f9 !important;
+  color: #1e293b !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Borders in Light Mode */
+html[data-mode="light"] .border-white\/5,
+html[data-mode="light"] .border-white\/10,
+html[data-mode="light"] .border-white\/15,
+html[data-mode="light"] .border-white\/20,
+html[data-mode="light"] .border-white\/30,
+html[data-mode="light"] .border-white\/40,
+html[data-mode="light"] [class*="border-white/"] {
+  border-color: #e2e8f0 !important;
+}
+
+/* HIGH-CONTRAST LIGHT MODE TEXT HIERARCHY */
+html[data-mode="light"] .text-white,
+html[data-mode="light"] .text-white\/90,
+html[data-mode="light"] .text-gray-100,
+html[data-mode="light"] .text-gray-200,
+html[data-mode="light"] .text-slate-100,
+html[data-mode="light"] .text-slate-200,
+html[data-mode="light"] .text-zinc-100,
+html[data-mode="light"] .text-zinc-200 {
+  color: #0f172a !important; /* Rich obsidian slate for headings */
+}
+
+html[data-mode="light"] .text-white\/80,
+html[data-mode="light"] .text-white\/70,
+html[data-mode="light"] .text-gray-300,
+html[data-mode="light"] .text-slate-300,
+html[data-mode="light"] .text-zinc-300 {
+  color: #1e293b !important; /* Deep slate for high-readability body text */
+}
+
+html[data-mode="light"] .text-white\/60,
+html[data-mode="light"] .text-white\/50,
+html[data-mode="light"] .text-gray-400,
+html[data-mode="light"] .text-gray-500,
+html[data-mode="light"] .text-slate-400,
+html[data-mode="light"] .text-slate-500,
+html[data-mode="light"] .text-zinc-400,
+html[data-mode="light"] .text-zinc-500 {
+  color: #334155 !important; /* Deep slate for high-readability muted descriptions */
+}
+
+html[data-mode="light"] .text-white\/40 {
+  color: #475569 !important; /* Clear meta labels and secondary text */
+}
+
+/* Safety Reminders, Warning Boxes, Amber Callouts in Light Mode */
+html[data-mode="light"] .text-yellow-100,
+html[data-mode="light"] .text-yellow-200,
+html[data-mode="light"] .text-yellow-300,
+html[data-mode="light"] .text-amber-100,
+html[data-mode="light"] .text-amber-200,
+html[data-mode="light"] .text-amber-300,
+html[data-mode="light"] [class*="text-yellow-200"],
+html[data-mode="light"] [class*="text-yellow-300"],
+html[data-mode="light"] [class*="text-amber-200"],
+html[data-mode="light"] [class*="text-amber-300"] {
+  color: #78350f !important; /* High-contrast warm dark amber text */
+}
+
+html[data-mode="light"] .bg-yellow-500\/5,
+html[data-mode="light"] .bg-yellow-500\/10,
+html[data-mode="light"] .bg-yellow-500\/20,
+html[data-mode="light"] .bg-amber-500\/10,
+html[data-mode="light"] [class*="bg-yellow-500/"],
+html[data-mode="light"] [class*="bg-amber-500/"] {
+  background-color: #fef3c7 !important; /* Warm, highly legible amber card background */
+  border-color: #fde68a !important;
+}
+
+html[data-mode="light"] .border-yellow-500\/20,
+html[data-mode="light"] .border-yellow-500\/30,
+html[data-mode="light"] .border-amber-500\/30,
+html[data-mode="light"] [class*="border-yellow-500/"],
+html[data-mode="light"] [class*="border-amber-500/"] {
+  border-color: #d97706 !important;
+}
+
+/* Electric Cyan #00D2FF in Light Mode: deep saturated ocean blue for AAA contrast */
+html[data-mode="light"] .text-\[\#00D2FF\],
+html[data-mode="light"] [class*="text-[#00D2FF]"] {
+  color: #007099 !important;
+}
+
+html[data-mode="light"] .bg-\[\#00D2FF\]\/20,
+html[data-mode="light"] .bg-\[\#00D2FF\]\/10,
+html[data-mode="light"] [class*="bg-[#00D2FF]/"] {
+  background-color: rgba(0, 136, 190, 0.12) !important;
+  color: #007099 !important;
+}
+
+/* Inputs & Form Controls in Light Mode */
+html[data-mode="light"] input,
+html[data-mode="light"] textarea,
+html[data-mode="light"] select {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html[data-mode="light"] input::placeholder,
+html[data-mode="light"] textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Header & Navigation in Light Mode */
+html[data-mode="light"] header {
+  background-color: rgba(255, 255, 255, 0.96) !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+html[data-mode="light"] header .text-white {
+  color: #0f172a !important;
+}
+
+html[data-mode="light"] header .text-white\/80 {
+  color: #334155 !important;
+}
+
+html[data-mode="light"] header details > div > div {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Footer in Light Mode */
+html[data-mode="light"] footer {
+  background-color: #ffffff !important;
+  border-top: 1px solid #e2e8f0 !important;
+  color: #64748b !important;
 }
 
 @theme inline {
@@ -20,4 +673,5 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
