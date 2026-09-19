@@ -1,7 +1,7 @@
 "use client";
 
 interface AdProps {
-  format?: "native" | "300x250" | "728x90" | "320x50";
+  format?: "native" | "300x250" | "728x90" | "468x60" | "320x50" | "responsive";
   className?: string;
 }
 
@@ -19,7 +19,45 @@ export default function AdsterraBanner({
         Advertisement
       </span>
 
-      {/* 1. NATIVE BANNER */}
+      {/* 1. RESPONSIVE BANNER */}
+      {format === "responsive" && (
+        <div className="w-full flex justify-center">
+          {/* Desktop 728x90 */}
+          <div className="hidden lg:flex h-[110px] w-full max-w-[750px] items-center justify-center rounded-2xl border border-white/10 bg-white/5 p-2">
+            <iframe
+              srcDoc={`<!DOCTYPE html><html><head><style>body{margin:0;padding:0;display:flex;justify-content:center;align-items:center;background:transparent;overflow:hidden;}</style></head><body><script type="text/javascript">atOptions = {'key' : '86fefc8761b896371da1568aef53cba4','format' : 'iframe','height' : 90,'width' : 728,'params' : {}};</script><script type="text/javascript" src="https://www.highrevenueformat.com/86fefc8761b896371da1568aef53cba4/invoke.js"></script></body></html>`}
+              width={728}
+              height={90}
+              className="border-0 overflow-hidden"
+              title="Leaderboard Advertisement"
+            />
+          </div>
+
+          {/* Tablet 468x60 */}
+          <div className="hidden sm:flex lg:hidden h-[80px] w-[480px] items-center justify-center rounded-xl border border-white/10 bg-white/5 p-2">
+            <iframe
+              srcDoc={`<!DOCTYPE html><html><head><style>body{margin:0;padding:0;display:flex;justify-content:center;align-items:center;background:transparent;overflow:hidden;}</style></head><body><script type="text/javascript">atOptions = {'key' : '2fc4519fd440d9dd5267d110e20e4b1e','format' : 'iframe','height' : 60,'width' : 468,'params' : {}};</script><script type="text/javascript" src="https://www.highrevenueformat.com/2fc4519fd440d9dd5267d110e20e4b1e/invoke.js"></script></body></html>`}
+              width={468}
+              height={60}
+              className="border-0 overflow-hidden"
+              title="Classic Banner Advertisement"
+            />
+          </div>
+
+          {/* Mobile 320x50 */}
+          <div className="flex sm:hidden h-[70px] w-[340px] items-center justify-center rounded-xl border border-white/10 bg-white/5 p-2">
+            <iframe
+              srcDoc={`<!DOCTYPE html><html><head><style>body{margin:0;padding:0;display:flex;justify-content:center;align-items:center;background:transparent;overflow:hidden;}</style></head><body><script type="text/javascript">atOptions = {'key' : 'b3a5419d2021a60899442c169a42e0c8','format' : 'iframe','height' : 50,'width' : 320,'params' : {}};</script><script type="text/javascript" src="https://www.highrevenueformat.com/b3a5419d2021a60899442c169a42e0c8/invoke.js"></script></body></html>`}
+              width={320}
+              height={50}
+              className="border-0 overflow-hidden"
+              title="Mobile Advertisement"
+            />
+          </div>
+        </div>
+      )}
+
+      {/* 2. NATIVE BANNER */}
       {format === "native" && (
         <div className="w-full max-w-5xl overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
           <iframe
@@ -32,7 +70,7 @@ export default function AdsterraBanner({
         </div>
       )}
 
-      {/* 2. 300x250 BANNER */}
+      {/* 3. 300x250 BANNER */}
       {format === "300x250" && (
         <div className="flex h-[270px] w-[320px] items-center justify-center rounded-2xl border border-white/10 bg-white/5 p-2">
           <iframe
@@ -45,7 +83,7 @@ export default function AdsterraBanner({
         </div>
       )}
 
-      {/* 3. 728x90 LEADERBOARD */}
+      {/* 4. 728x90 LEADERBOARD */}
       {format === "728x90" && (
         <div className="hidden md:flex h-[110px] w-full max-w-[750px] items-center justify-center rounded-2xl border border-white/10 bg-white/5 p-2">
           <iframe
@@ -58,7 +96,20 @@ export default function AdsterraBanner({
         </div>
       )}
 
-      {/* 4. 320x50 MOBILE BANNER */}
+      {/* 5. 468x60 CLASSIC */}
+      {format === "468x60" && (
+        <div className="flex h-[80px] w-[480px] items-center justify-center rounded-xl border border-white/10 bg-white/5 p-2">
+          <iframe
+            srcDoc={`<!DOCTYPE html><html><head><style>body{margin:0;padding:0;display:flex;justify-content:center;align-items:center;background:transparent;overflow:hidden;}</style></head><body><script type="text/javascript">atOptions = {'key' : '2fc4519fd440d9dd5267d110e20e4b1e','format' : 'iframe','height' : 60,'width' : 468,'params' : {}};</script><script type="text/javascript" src="https://www.highrevenueformat.com/2fc4519fd440d9dd5267d110e20e4b1e/invoke.js"></script></body></html>`}
+            width={468}
+            height={60}
+            className="border-0 overflow-hidden"
+            title="Classic Banner Advertisement"
+          />
+        </div>
+      )}
+
+      {/* 6. 320x50 MOBILE BANNER */}
       {format === "320x50" && (
         <div className="flex md:hidden h-[70px] w-[340px] items-center justify-center rounded-xl border border-white/10 bg-white/5 p-2">
           <iframe

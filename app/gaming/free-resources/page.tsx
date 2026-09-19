@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import Header from "../../Header";
 import Footer from "../../Footer";
+import AdsterraBanner from "../../components/AdsterraBanner";
+import { handleMonetizedClick } from "../../../lib/adsterra";
 
 interface GuideData {
   steps: string[];
@@ -220,6 +222,9 @@ export default function GamingFreeResources() {
             })}
           </div>
 
+          {/* Adsterra Responsive Banner */}
+          <AdsterraBanner format="responsive" />
+
           {/* Grid Cards */}
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-2">
             {filteredLinks.map((link, index) => (
@@ -266,6 +271,7 @@ export default function GamingFreeResources() {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(e) => handleMonetizedClick(e, link.url, "Gaming")}
                     className="inline-flex items-center text-xs font-bold text-[#00d2ff] transition-transform group-hover:translate-x-1"
                   >
                     Visit Website <span className="ml-1.5">▼</span>
@@ -276,6 +282,7 @@ export default function GamingFreeResources() {
                       href={link.fileUrl}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={(e) => handleMonetizedClick(e, link.fileUrl!, "Gaming")}
                       className="inline-flex items-center text-xs font-bold text-[#00d2ff] transition-transform group-hover:translate-x-1"
                     >
                       {link.fileName || "Download File"} <span className="ml-1.5">↓</span>
@@ -305,6 +312,11 @@ export default function GamingFreeResources() {
               No matching websites found for your search query.
             </div>
           )}
+
+          {/* Adsterra Native Banner */}
+          <div className="mt-14 w-full">
+            <AdsterraBanner format="native" />
+          </div>
         </div>
 
         {/* Step-by-Step Guide Modal */}

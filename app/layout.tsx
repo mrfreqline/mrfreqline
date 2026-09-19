@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 import InstallAppBanner from "./components/InstallAppBanner";
+import StickyMobileAd from "./components/StickyMobileAd";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -108,8 +110,15 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-[#0b0f19] text-white">
+        {process.env.NEXT_PUBLIC_SHOW_ADS !== "false" && (
+          <Script
+            src="https://pl31410687.profitableratecpmnetwork.com/86/76/e9/8676e922298f48c2eb74a4fdc24202b6.js"
+            strategy="afterInteractive"
+          />
+        )}
         <InstallAppBanner />
         {children}
+        <StickyMobileAd />
       </body>
     </html>
   );

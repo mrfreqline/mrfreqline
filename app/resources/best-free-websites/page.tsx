@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Header from "../../Header";
 import Footer from "../../Footer";
+import AdsterraBanner from "../../components/AdsterraBanner";
+import { handleMonetizedClick } from "../../../lib/adsterra";
 
 export const dynamic = "force-dynamic";
 
@@ -338,6 +340,9 @@ export default function BestFreeWebsites() {
             </div>
           </div>
 
+          {/* Adsterra Responsive Banner */}
+          <AdsterraBanner format="responsive" />
+
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {filteredLinks.map((link, index) => (
               <div
@@ -370,6 +375,7 @@ export default function BestFreeWebsites() {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(e) => handleMonetizedClick(e, link.url, link.category)}
                     className="text-xs font-bold text-[#00D2FF] transition-colors hover:underline"
                   >
                     Visit Website ↗
@@ -392,6 +398,11 @@ export default function BestFreeWebsites() {
               No matching sites found. Try a different search term.
             </div>
           )}
+
+          {/* Adsterra Native Banner */}
+          <div className="mt-14 w-full">
+            <AdsterraBanner format="native" />
+          </div>
         </div>
       </main>
 

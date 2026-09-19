@@ -45,8 +45,13 @@ export default function Home() {
           </a>
         </div>
 
+        {/* Adsterra Responsive Banner */}
+        <div className="mt-12 w-full max-w-5xl">
+          <AdsterraBanner format="responsive" />
+        </div>
+
         {/* ALL 3 Cards are GLOWY CYAN ✨ */}
-        <div className="mt-16 grid w-full max-w-5xl grid-cols-1 gap-6 text-left md:grid-cols-3">
+        <div className="mt-10 grid w-full max-w-5xl grid-cols-1 gap-6 text-left md:grid-cols-3">
           {/* Card 1: Best Free Websites */}
           <Link
             href="/resources/best-free-websites"

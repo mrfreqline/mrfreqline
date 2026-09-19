@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Header from "../../Header";
 import Footer from "../../Footer";
+import AdsterraBanner from "../../components/AdsterraBanner";
 
 const categories = ["All", "FPS & Gaming", "RAM Optimization", "SSD & Disk Cleaning", "Windows Debloat", "GPU Drivers & Settings", "Network & Latency", "System Stability", "Utility Tools"];
 
@@ -115,6 +116,9 @@ export default function PCOptimizationTools() {
             </div>
           </div>
 
+          {/* Adsterra Responsive Banner */}
+          <AdsterraBanner format="responsive" />
+
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             {filteredData.map((item) => {
               const isExpanded = expandedId === item.id;
@@ -147,6 +151,11 @@ export default function PCOptimizationTools() {
           </div>
 
           {filteredData.length === 0 && (<div className="mt-12 py-12 text-center text-gray-500">No matching tips found. Try searching for broader terms like "RAM", "GPU", or "Clean".</div>)}
+
+          {/* Adsterra Native Banner */}
+          <div className="mt-14 w-full">
+            <AdsterraBanner format="native" />
+          </div>
         </div>
       </main>
       <Footer />
