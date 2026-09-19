@@ -10,7 +10,7 @@ export default function EssentialsToolkit() {
     <>
       <Header />
 
-      <main className="min-h-screen bg-[var(--surface-canvas)] px-6 pt-28 pb-20 font-sans text-[var(--text-main)] transition-colors duration-200">
+      <main className="min-h-screen bg-[var(--surface-canvas)] px-4 sm:px-6 pt-24 sm:pt-28 pb-16 sm:pb-20 font-sans text-[var(--text-main)] transition-colors duration-200">
         <div className="mx-auto max-w-6xl">
           {/* Header */}
           <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">

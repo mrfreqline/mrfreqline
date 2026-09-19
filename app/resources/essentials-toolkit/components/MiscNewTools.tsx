@@ -394,7 +394,7 @@ export function TextCleanerTool() {
           placeholder="Find text..."
           value={findWord}
           onChange={(e) => setFindWord(e.target.value)}
-          className="rounded-lg border border-[var(--surface-border)] bg-[var(--surface-card)] px-2.5 py-1 text-xs text-[var(--text-main)] focus:outline-none"
+          className="flex-1 min-w-[110px] rounded-lg border border-[var(--surface-border)] bg-[var(--surface-card)] px-2.5 py-1 text-xs text-[var(--text-main)] focus:outline-none"
         />
         <span className="text-xs font-bold text-[var(--text-muted)]">Replace with:</span>
         <input
@@ -402,12 +402,12 @@ export function TextCleanerTool() {
           placeholder="Replace..."
           value={replaceWord}
           onChange={(e) => setReplaceWord(e.target.value)}
-          className="rounded-lg border border-[var(--surface-border)] bg-[var(--surface-card)] px-2.5 py-1 text-xs text-[var(--text-main)] focus:outline-none"
+          className="flex-1 min-w-[110px] rounded-lg border border-[var(--surface-border)] bg-[var(--surface-card)] px-2.5 py-1 text-xs text-[var(--text-main)] focus:outline-none"
         />
         <button
           type="button"
           onClick={doFindReplace}
-          className="rounded-lg bg-[var(--accent-primary)] px-3 py-1 text-xs font-bold text-black"
+          className="w-full sm:w-auto rounded-lg bg-[var(--accent-primary)] px-3 py-1 text-xs font-bold text-black"
         >
           Replace All
         </button>
@@ -782,20 +782,20 @@ export function StopwatchCountdownTool() {
         </div>
       ) : (
         <div className="text-center space-y-5">
-          <div className="flex justify-center gap-2">
+          <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2">
             {[1, 3, 5, 10, 15, 30].map((m) => (
               <button
                 key={m}
                 type="button"
                 onClick={() => startCd(m)}
-                className="rounded-lg border border-[var(--surface-border)] bg-[var(--surface-canvas)] px-3 py-1 text-xs font-bold hover:border-[var(--accent-primary)]"
+                className="rounded-lg border border-[var(--surface-border)] bg-[var(--surface-canvas)] px-2.5 sm:px-3 py-1 text-xs font-bold hover:border-[var(--accent-primary)]"
               >
                 {m}m
               </button>
             ))}
           </div>
 
-          <div className="py-4 text-5xl md:text-6xl font-black font-mono tracking-wider text-[var(--text-main)]">
+          <div className="py-3 sm:py-4 text-4xl sm:text-5xl md:text-6xl font-black font-mono tracking-wider text-[var(--text-main)]">
             {String(Math.floor(cdLeft / 60)).padStart(2, "0")}:{String(cdLeft % 60).padStart(2, "0")}
           </div>
 

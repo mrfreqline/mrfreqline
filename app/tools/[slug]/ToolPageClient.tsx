@@ -47,15 +47,15 @@ export default function ToolPageClient({ tool }: { tool: ToolSEOItem }) {
   return (
     <div className="space-y-6">
       {/* Tool Header & Actions Card */}
-      <div className="flex flex-col gap-4 rounded-3xl border border-[var(--surface-border)] bg-[var(--surface-card)] p-6 md:p-8 shadow-sm">
+      <div className="flex flex-col gap-4 rounded-3xl border border-[var(--surface-border)] bg-[var(--surface-card)] p-4 sm:p-6 md:p-8 shadow-sm">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-start gap-4">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[var(--accent-badge-bg)] text-[var(--accent-primary)] shadow-sm">
-              <ToolSvgIcon id={tool.id} className="h-7 w-7" />
+          <div className="flex items-start gap-3 sm:gap-4">
+            <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-[var(--accent-badge-bg)] text-[var(--accent-primary)] shadow-sm">
+              <ToolSvgIcon id={tool.id} className="h-6 w-6 sm:h-7 sm:w-7" />
             </div>
 
             <div>
-              <div className="flex flex-wrap items-center gap-2.5">
+              <div className="flex flex-wrap items-center gap-2">
                 <h1 className="text-xl font-black tracking-tight text-[var(--text-main)] sm:text-2xl md:text-3xl">
                   {tool.name}
                 </h1>
@@ -68,18 +68,18 @@ export default function ToolPageClient({ tool }: { tool: ToolSEOItem }) {
                   </span>
                 )}
               </div>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)] md:text-base">
+              <p className="mt-2 text-xs sm:text-sm leading-relaxed text-[var(--text-muted)] md:text-base">
                 {tool.shortDescription}
               </p>
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2.5">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
             {/* Bookmark button */}
             <button
               type="button"
               onClick={toggleFavorite}
-              className={`flex items-center gap-1.5 rounded-xl border px-3.5 py-2 text-xs font-bold transition-all shadow-sm ${
+              className={`flex items-center gap-1.5 rounded-xl border px-3 py-1.5 sm:px-3.5 sm:py-2 text-xs font-bold transition-all shadow-sm ${
                 isFavorite
                   ? "border-amber-400/40 bg-amber-400/10 text-amber-400"
                   : "border-[var(--surface-border)] bg-[var(--surface-canvas)] text-[var(--text-muted)] hover:border-[var(--accent-primary)] hover:text-[var(--text-main)]"
@@ -94,7 +94,7 @@ export default function ToolPageClient({ tool }: { tool: ToolSEOItem }) {
             <button
               type="button"
               onClick={copyUrl}
-              className="flex items-center gap-1.5 rounded-xl border border-[var(--surface-border)] bg-[var(--surface-canvas)] px-3.5 py-2 text-xs font-bold text-[var(--text-muted)] transition-all hover:border-[var(--accent-primary)] hover:text-[var(--text-main)] shadow-sm"
+              className="flex items-center gap-1.5 rounded-xl border border-[var(--surface-border)] bg-[var(--surface-canvas)] px-3 py-1.5 sm:px-3.5 sm:py-2 text-xs font-bold text-[var(--text-muted)] transition-all hover:border-[var(--accent-primary)] hover:text-[var(--text-main)] shadow-sm"
               title="Copy link to this tool"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -106,7 +106,7 @@ export default function ToolPageClient({ tool }: { tool: ToolSEOItem }) {
             {/* Open in All-in-One Studio */}
             <Link
               href="/resources/essentials-toolkit"
-              className="flex items-center gap-1.5 rounded-xl border border-[var(--surface-border)] bg-[var(--surface-canvas)] px-3.5 py-2 text-xs font-bold text-[var(--text-muted)] transition-all hover:border-[var(--accent-primary)] hover:text-[var(--text-main)] shadow-sm"
+              className="flex items-center gap-1.5 rounded-xl border border-[var(--surface-border)] bg-[var(--surface-canvas)] px-3 py-1.5 sm:px-3.5 sm:py-2 text-xs font-bold text-[var(--text-muted)] transition-all hover:border-[var(--accent-primary)] hover:text-[var(--text-main)] shadow-sm"
               title="Open full studio with all tools"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -118,24 +118,24 @@ export default function ToolPageClient({ tool }: { tool: ToolSEOItem }) {
         </div>
 
         {/* Security & Privacy Guarantee Badge */}
-        <div className="flex flex-wrap items-center gap-3 border-t border-[var(--surface-border)] pt-4 text-xs">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3 border-t border-[var(--surface-border)] pt-4 text-[11px] sm:text-xs">
           <div className="flex items-center gap-1.5 font-semibold text-emerald-500">
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
             </svg>
-            <span>100% Client-Side Privacy: Runs locally in your browser</span>
+            <span>100% Client-Side: Runs in browser</span>
           </div>
-          <span className="text-[var(--surface-border)]">•</span>
-          <span className="text-[var(--text-subtle)]">Zero Server Uploads</span>
+          <span className="hidden sm:inline text-[var(--surface-border)]">•</span>
+          <span className="text-[var(--text-subtle)]">Zero Uploads</span>
           <span className="text-[var(--surface-border)]">•</span>
           <span className="text-[var(--text-subtle)]">Free Forever ($0)</span>
           <span className="text-[var(--surface-border)]">•</span>
-          <span className="text-[var(--text-subtle)]">No Registration Needed</span>
+          <span className="text-[var(--text-subtle)]">No Registration</span>
         </div>
       </div>
 
       {/* Interactive Tool Container */}
-      <div className="rounded-3xl border border-[var(--surface-border)] bg-[var(--surface-card)] p-6 md:p-8 shadow-md">
+      <div className="rounded-3xl border border-[var(--surface-border)] bg-[var(--surface-card)] p-4 sm:p-6 md:p-8 shadow-md">
         <ToolRenderer toolId={tool.id} />
       </div>
     </div>

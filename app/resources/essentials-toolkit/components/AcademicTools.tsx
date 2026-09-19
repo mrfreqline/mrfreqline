@@ -70,8 +70,8 @@ export function SeeGpaTool() {
         <p className="text-xs text-[var(--text-muted)]">Calculate your Secondary Education Examination (Class 10) GPA based on the latest 4.0 grading system.</p>
       </div>
 
-      <div className="overflow-x-auto">
-        <table className="w-full text-left text-xs">
+      <div className="overflow-x-auto -mx-1 px-1">
+        <table className="min-w-[500px] w-full text-left text-xs">
           <thead>
             <tr className="border-b border-[var(--surface-border)] text-[var(--text-muted)]">
               <th className="pb-2 font-semibold">Subject</th>
@@ -235,8 +235,8 @@ export function NebGpaTool() {
         </div>
       </div>
 
-      <div className="overflow-x-auto">
-        <table className="w-full text-left text-xs">
+      <div className="overflow-x-auto -mx-1 px-1">
+        <table className="min-w-[500px] w-full text-left text-xs">
           <thead>
             <tr className="border-b border-[var(--surface-border)] text-[var(--text-muted)]">
               <th className="pb-2 font-semibold">Subject</th>
@@ -443,24 +443,24 @@ export function MarksGpaTool() {
         <p className="text-xs text-[var(--text-muted)]">Convert between exam percentage marks, letter grades, and 4.0 / 10.0 scale GPA.</p>
       </div>
 
-      <div className="flex gap-2 rounded-xl border border-[var(--surface-border)] bg-[var(--surface-canvas)] p-1">
+      <div className="flex flex-wrap sm:flex-nowrap gap-1.5 sm:gap-2 rounded-xl border border-[var(--surface-border)] bg-[var(--surface-canvas)] p-1">
         <button
           type="button"
           onClick={() => { setMode("marks-to-gpa"); setInputVal(85); }}
-          className={`flex-1 rounded-lg py-2 text-xs font-bold ${mode === "marks-to-gpa" ? "bg-[var(--accent-primary)] text-black" : "text-[var(--text-muted)]"}`}
+          className={`flex-1 min-w-[140px] rounded-lg py-2 text-[11px] sm:text-xs font-bold ${mode === "marks-to-gpa" ? "bg-[var(--accent-primary)] text-black" : "text-[var(--text-muted)]"}`}
         >
           Percentage Marks ➔ GPA
         </button>
         <button
           type="button"
           onClick={() => { setMode("gpa-to-marks"); setInputVal(3.6); }}
-          className={`flex-1 rounded-lg py-2 text-xs font-bold ${mode === "gpa-to-marks" ? "bg-[var(--accent-primary)] text-black" : "text-[var(--text-muted)]"}`}
+          className={`flex-1 min-w-[140px] rounded-lg py-2 text-[11px] sm:text-xs font-bold ${mode === "gpa-to-marks" ? "bg-[var(--accent-primary)] text-black" : "text-[var(--text-muted)]"}`}
         >
           GPA ➔ Percentage Marks
         </button>
       </div>
 
-      <div className="rounded-2xl border border-[var(--surface-border)] bg-[var(--surface-canvas)] p-5 space-y-4">
+      <div className="rounded-2xl border border-[var(--surface-border)] bg-[var(--surface-canvas)] p-4 sm:p-5 space-y-4">
         <div>
           <label className="block text-xs font-semibold text-[var(--text-muted)] mb-1">
             {mode === "marks-to-gpa" ? "Enter Percentage Marks (0 - 100%):" : "Enter GPA (0.00 - 4.00):"}
@@ -477,7 +477,7 @@ export function MarksGpaTool() {
         </div>
 
         {mode === "marks-to-gpa" ? (
-          <div className="grid grid-cols-3 gap-3 pt-2 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-2 text-center">
             <div className="rounded-xl border border-[var(--surface-border)] bg-[var(--surface-card)] p-3">
               <span className="text-[10px] text-[var(--text-muted)] uppercase">GPA (4.0)</span>
               <div className="mt-1 text-2xl font-black text-[var(--accent-primary)] font-mono">{calculateGpa(inputVal).gpa}</div>
@@ -492,7 +492,7 @@ export function MarksGpaTool() {
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-2 gap-3 pt-2 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 pt-2 text-center">
             <div className="rounded-xl border border-[var(--surface-border)] bg-[var(--surface-card)] p-3">
               <span className="text-[10px] text-[var(--text-muted)] uppercase">Equivalent Percentage</span>
               <div className="mt-1 text-2xl font-black text-[var(--accent-primary)] font-mono">{calculatePercentage(inputVal).directPct}%</div>
@@ -585,7 +585,7 @@ export function TargetMarksTool() {
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <div className="rounded-2xl border border-[var(--surface-border)] bg-[var(--surface-canvas)] p-5 text-center">
+        <div className="rounded-2xl border border-[var(--surface-border)] bg-[var(--surface-canvas)] p-4 sm:p-5 text-center">
           <span className="text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider">Score Needed to Pass ({passingThreshold}%)</span>
           <div className="mt-2 text-3xl font-black text-emerald-400 font-mono">
             {passNeededFinalScore <= 0 ? "Already Passed!" : `${Math.min(100, passNeededFinalScore).toFixed(1)}%`}
@@ -593,7 +593,7 @@ export function TargetMarksTool() {
           <p className="mt-1 text-xs text-[var(--text-muted)]">On remaining {finalExamWeight}% final exam</p>
         </div>
 
-        <div className="rounded-2xl border border-[var(--surface-border)] bg-[var(--surface-canvas)] p-5 text-center">
+        <div className="rounded-2xl border border-[var(--surface-border)] bg-[var(--surface-canvas)] p-4 sm:p-5 text-center">
           <span className="text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider">Score Needed for Target ({targetFinalGrade}%)</span>
           <div className="mt-2 text-3xl font-black text-[var(--accent-primary)] font-mono">
             {neededFinalScore > 100 ? "Mathematically Impossible" : neededFinalScore <= 0 ? "Goal Achieved!" : `${neededFinalScore.toFixed(1)}%`}
@@ -655,32 +655,32 @@ export function PomodoroTool() {
         <p className="text-xs text-[var(--text-muted)]">Boost study retention with 25-minute focus intervals and 5-minute restorative breaks.</p>
       </div>
 
-      <div className="flex justify-center gap-2">
+      <div className="flex flex-wrap justify-center gap-2">
         <button
           type="button"
           onClick={() => selectMode("work")}
-          className={`rounded-xl px-4 py-1.5 text-xs font-bold transition ${mode === "work" ? "bg-[var(--accent-primary)] text-black font-extrabold" : "border border-[var(--surface-border)] text-[var(--text-muted)]"}`}
+          className={`rounded-xl px-3.5 sm:px-4 py-1.5 text-xs font-bold transition ${mode === "work" ? "bg-[var(--accent-primary)] text-black font-extrabold" : "border border-[var(--surface-border)] text-[var(--text-muted)]"}`}
         >
           Focus (25m)
         </button>
         <button
           type="button"
           onClick={() => selectMode("shortBreak")}
-          className={`rounded-xl px-4 py-1.5 text-xs font-bold transition ${mode === "shortBreak" ? "bg-emerald-400 text-black font-extrabold" : "border border-[var(--surface-border)] text-[var(--text-muted)]"}`}
+          className={`rounded-xl px-3.5 sm:px-4 py-1.5 text-xs font-bold transition ${mode === "shortBreak" ? "bg-emerald-400 text-black font-extrabold" : "border border-[var(--surface-border)] text-[var(--text-muted)]"}`}
         >
           Short Break (5m)
         </button>
         <button
           type="button"
           onClick={() => selectMode("longBreak")}
-          className={`rounded-xl px-4 py-1.5 text-xs font-bold transition ${mode === "longBreak" ? "bg-indigo-400 text-black font-extrabold" : "border border-[var(--surface-border)] text-[var(--text-muted)]"}`}
+          className={`rounded-xl px-3.5 sm:px-4 py-1.5 text-xs font-bold transition ${mode === "longBreak" ? "bg-indigo-400 text-black font-extrabold" : "border border-[var(--surface-border)] text-[var(--text-muted)]"}`}
         >
           Long Break (15m)
         </button>
       </div>
 
-      <div className="py-6">
-        <div className="text-6xl md:text-7xl font-black tracking-widest font-mono text-[var(--text-main)]">
+      <div className="py-4 sm:py-6">
+        <div className="text-5xl sm:text-6xl md:text-7xl font-black tracking-widest font-mono text-[var(--text-main)]">
           {formattedTime}
         </div>
         <p className="mt-3 text-xs font-semibold text-[var(--text-muted)] uppercase tracking-wider">
@@ -688,18 +688,18 @@ export function PomodoroTool() {
         </p>
       </div>
 
-      <div className="flex justify-center gap-3">
+      <div className="flex flex-wrap justify-center gap-3">
         <button
           type="button"
           onClick={() => setIsRunning(!isRunning)}
-          className={`rounded-2xl px-8 py-3 text-sm font-black transition shadow-md ${isRunning ? "bg-amber-400 text-black" : "bg-[var(--accent-primary)] text-black"}`}
+          className={`rounded-2xl px-6 sm:px-8 py-3 text-xs sm:text-sm font-black transition shadow-md ${isRunning ? "bg-amber-400 text-black" : "bg-[var(--accent-primary)] text-black"}`}
         >
           {isRunning ? "Pause" : "Start Focus"}
         </button>
         <button
           type="button"
           onClick={() => selectMode(mode)}
-          className="rounded-2xl border border-[var(--surface-border)] bg-[var(--surface-canvas)] px-6 py-3 text-xs font-bold text-[var(--text-muted)] hover:text-[var(--text-main)]"
+          className="rounded-2xl border border-[var(--surface-border)] bg-[var(--surface-canvas)] px-5 sm:px-6 py-3 text-xs font-bold text-[var(--text-muted)] hover:text-[var(--text-main)]"
         >
           Reset
         </button>
@@ -752,23 +752,23 @@ export function ExamCountdownTool() {
         <p className="text-xs text-[var(--text-muted)]">Keep track of your exam timetable with live days-remaining countdowns.</p>
       </div>
 
-      <form onSubmit={addExam} className="flex flex-wrap gap-2.5 rounded-2xl border border-[var(--surface-border)] bg-[var(--surface-canvas)] p-3.5">
+      <form onSubmit={addExam} className="flex flex-col sm:flex-row flex-wrap gap-2.5 rounded-2xl border border-[var(--surface-border)] bg-[var(--surface-canvas)] p-3 sm:p-3.5">
         <input
           type="text"
           placeholder="Exam Subject / Test Name..."
           value={newSub}
           onChange={(e) => setNewSub(e.target.value)}
-          className="flex-1 min-w-[200px] rounded-xl border border-[var(--surface-border)] bg-[var(--surface-card)] px-3 py-2 text-xs text-[var(--text-main)] focus:outline-none"
+          className="flex-1 min-w-[180px] rounded-xl border border-[var(--surface-border)] bg-[var(--surface-card)] px-3 py-2 text-xs text-[var(--text-main)] focus:outline-none"
         />
         <input
           type="date"
           value={newDate}
           onChange={(e) => setNewDate(e.target.value)}
-          className="rounded-xl border border-[var(--surface-border)] bg-[var(--surface-card)] px-3 py-2 text-xs text-[var(--text-main)] focus:outline-none"
+          className="w-full sm:w-auto rounded-xl border border-[var(--surface-border)] bg-[var(--surface-card)] px-3 py-2 text-xs text-[var(--text-main)] focus:outline-none"
         />
         <button
           type="submit"
-          className="rounded-xl bg-[var(--accent-primary)] px-4 py-2 text-xs font-black text-black"
+          className="w-full sm:w-auto rounded-xl bg-[var(--accent-primary)] px-4 py-2 text-xs font-black text-black transition hover:opacity-90"
         >
           Add Exam
         </button>

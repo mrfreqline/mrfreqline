@@ -37,34 +37,34 @@ export default function DonatePage() {
     <>
       <Header />
 
-      <main className="min-h-screen bg-[var(--surface-canvas)] px-6 pt-28 pb-20 font-sans text-[var(--text-main)] transition-colors duration-200">
-        <div className="mx-auto max-w-4xl space-y-12">
+      <main className="min-h-screen bg-[var(--surface-canvas)] px-4 sm:px-6 pt-24 sm:pt-28 pb-16 sm:pb-20 font-sans text-[var(--text-main)] transition-colors duration-200">
+        <div className="mx-auto max-w-4xl space-y-8 sm:space-y-12">
           {/* Header & Hero */}
           <div className="text-center space-y-4">
             <div className="inline-flex items-center gap-2 rounded-full border border-[var(--accent-primary)]/30 bg-[var(--accent-badge-bg)] px-4 py-1.5 text-xs font-extrabold uppercase tracking-wider text-[var(--accent-primary)]">
               <span>☕ Support MrFreqline</span>
             </div>
 
-            <h1 className="text-4xl font-extrabold tracking-tight text-[var(--text-main)] sm:text-5xl md:text-6xl">
+            <h1 className="text-3xl font-extrabold tracking-tight text-[var(--text-main)] sm:text-5xl md:text-6xl">
               Keep MrFreqline <span className="bg-gradient-to-r from-[var(--accent-primary)] to-cyan-300 bg-clip-text text-transparent">Free &amp; Ad-Free</span>
             </h1>
 
-            <p className="mx-auto max-w-2xl text-sm leading-relaxed text-[var(--text-muted)] md:text-base">
+            <p className="mx-auto max-w-2xl text-xs sm:text-sm leading-relaxed text-[var(--text-muted)] md:text-base">
               All 65+ browser tools and the curated Internet Vault are 100% free, private, and require no signup.
               Your support fuels hosting, domain costs, and new tool development.
             </p>
           </div>
 
           {/* Primary Action: Buy Us a Coffee via WhatsApp QR */}
-          <div className="relative overflow-hidden rounded-3xl border border-[var(--accent-primary)]/40 bg-gradient-to-b from-[var(--accent-primary)]/10 via-[var(--surface-card)] to-[var(--surface-card)] p-8 md:p-10 shadow-xl shadow-[var(--accent-glow-subtle)] text-center space-y-6">
-            <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-[#25D366]/20 text-[#25D366] shadow-md shadow-[#25D366]/20">
-              <svg className="h-10 w-10 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+          <div className="relative overflow-hidden rounded-3xl border border-[var(--accent-primary)]/40 bg-gradient-to-b from-[var(--accent-primary)]/10 via-[var(--surface-card)] to-[var(--surface-card)] p-5 sm:p-8 md:p-10 shadow-xl shadow-[var(--accent-glow-subtle)] text-center space-y-6">
+            <div className="mx-auto flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-2xl bg-[#25D366]/20 text-[#25D366] shadow-md shadow-[#25D366]/20">
+              <svg className="h-8 w-8 sm:h-10 sm:w-10 fill-current" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.979-.275-.1-.476-.15-.676.15s-.777.979-.953 1.18-.352.226-.653.076a8.249 8.249 0 0 1-2.42-1.493c-.943-.842-1.58-1.884-1.765-2.203-.185-.319-.02-.491.13-.641.136-.135.301-.351.452-.527.15-.175.2-.301.301-.502.1-.201.05-.376-.025-.526-.075-.15-.677-1.632-.928-2.235-.245-.588-.493-.508-.677-.518-.175-.008-.376-.01-.577-.01s-.527.075-.802.376c-.276.301-1.054 1.03-1.054 2.512s1.08 2.912 1.23 3.113c.15.201 2.124 3.243 5.145 4.548.719.311 1.28.497 1.718.636.722.23 1.378.197 1.898.12.58-.087 1.78-.727 2.03-1.43.251-.703.251-1.305.176-1.43-.076-.125-.276-.201-.577-.351zM12.052 0C5.4 0 .004 5.394.004 12.046c0 2.124.553 4.197 1.604 6.02L0 24l6.109-1.602a11.968 11.968 0 0 0 5.943 1.57h.005c6.647 0 12.043-5.395 12.043-12.048C24.095 5.394 18.704 0 12.052 0zm.004 22.043h-.004a9.98 9.98 0 0 1-5.09-1.397l-.365-.216-3.784.992 1.01-3.69-.238-.378a9.99 9.99 0 0 1-1.534-5.312C2.05 6.52 6.53 2.04 12.056 2.04c2.67 0 5.18 1.04 7.07 2.93a9.94 9.94 0 0 1 2.93 7.07c0 5.52-4.48 10.003-10.004 10.003z"/>
               </svg>
             </div>
 
             <div className="space-y-2">
-              <h2 className="text-2xl font-black text-[var(--text-main)] sm:text-3xl">
+              <h2 className="text-xl font-black text-[var(--text-main)] sm:text-3xl">
                 Buy Us a Coffee (eSewa / Khalti / Bank QR)
               </h2>
               <p className="mx-auto max-w-lg text-xs leading-relaxed text-[var(--text-muted)] sm:text-sm">
@@ -77,12 +77,12 @@ export default function DonatePage() {
                 href={whatsappCoffeeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 rounded-2xl bg-[#25D366] px-8 py-4 text-sm font-black uppercase tracking-wider text-black shadow-lg shadow-[#25D366]/25 transition-all hover:scale-105 hover:bg-[#22c35e] active:scale-95"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-[#25D366] px-5 py-3.5 sm:px-8 sm:py-4 text-xs sm:text-sm font-black uppercase tracking-wider text-black shadow-lg shadow-[#25D366]/25 transition-all hover:scale-105 hover:bg-[#22c35e] active:scale-95"
               >
-                <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <svg className="h-5 w-5 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.979-.275-.1-.476-.15-.676.15s-.777.979-.953 1.18-.352.226-.653.076a8.249 8.249 0 0 1-2.42-1.493c-.943-.842-1.58-1.884-1.765-2.203-.185-.319-.02-.491.13-.641.136-.135.301-.351.452-.527.15-.175.2-.301.301-.502.1-.201.05-.376-.025-.526-.075-.15-.677-1.632-.928-2.235-.245-.588-.493-.508-.677-.518-.175-.008-.376-.01-.577-.01s-.527.075-.802.376c-.276.301-1.054 1.03-1.054 2.512s1.08 2.912 1.23 3.113c.15.201 2.124 3.243 5.145 4.548.719.311 1.28.497 1.718.636.722.23 1.378.197 1.898.12.58-.087 1.78-.727 2.03-1.43.251-.703.251-1.305.176-1.43-.076-.125-.276-.201-.577-.351zM12.052 0C5.4 0 .004 5.394.004 12.046c0 2.124.553 4.197 1.604 6.02L0 24l6.109-1.602a11.968 11.968 0 0 0 5.943 1.57h.005c6.647 0 12.043-5.395 12.043-12.048C24.095 5.394 18.704 0 12.052 0zm.004 22.043h-.004a9.98 9.98 0 0 1-5.09-1.397l-.365-.216-3.784.992 1.01-3.69-.238-.378a9.99 9.99 0 0 1-1.534-5.312C2.05 6.52 6.53 2.04 12.056 2.04c2.67 0 5.18 1.04 7.07 2.93a9.94 9.94 0 0 1 2.93 7.07c0 5.52-4.48 10.003-10.004 10.003z"/>
                 </svg>
-                <span>Message Us on WhatsApp for QR &rarr;</span>
+                <span>Message on WhatsApp for QR &rarr;</span>
               </a>
               <p className="mt-3 text-[11px] text-[var(--text-subtle)]">
                 Direct WhatsApp • Scan via eSewa, Khalti, or Any Mobile Banking App
@@ -91,7 +91,7 @@ export default function DonatePage() {
           </div>
 
           {/* Secondary Action: Free Ways to Support */}
-          <div className="rounded-3xl border border-[var(--surface-border)] bg-[var(--surface-card)] p-6 md:p-8 space-y-6">
+          <div className="rounded-3xl border border-[var(--surface-border)] bg-[var(--surface-card)] p-4 sm:p-6 md:p-8 space-y-6">
             <div className="flex flex-col gap-1 text-center sm:text-left">
               <h2 className="text-xl font-black text-[var(--text-main)] sm:text-2xl">
                 Support for Free — Spread the Word
@@ -207,7 +207,7 @@ export default function DonatePage() {
           </div>
 
           {/* Have a Tool Idea / Direct Message */}
-          <div className="rounded-3xl border border-[var(--surface-border)] bg-[var(--surface-card)] p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div className="rounded-3xl border border-[var(--surface-border)] bg-[var(--surface-card)] p-4 sm:p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div className="space-y-1">
               <h3 className="text-lg font-bold text-[var(--text-main)]">Have a New Tool Request or Feedback?</h3>
               <p className="text-xs text-[var(--text-muted)] max-w-xl">

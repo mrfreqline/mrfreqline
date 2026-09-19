@@ -179,7 +179,7 @@ export default async function ToolPage({ params }: PageProps) {
               {tool.howToSteps.map((step) => (
                 <div
                   key={step.step}
-                  className="relative rounded-2xl border border-[var(--surface-border)] bg-[var(--surface-card)] p-5 shadow-sm"
+                  className="relative rounded-2xl border border-[var(--surface-border)] bg-[var(--surface-card)] p-4 sm:p-5 shadow-sm"
                 >
                   <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--accent-badge-bg)] text-xs font-black text-[var(--accent-primary)]">
                     {step.step}
@@ -228,7 +228,7 @@ export default async function ToolPage({ params }: PageProps) {
               {tool.faqs.map((faq, idx) => (
                 <div
                   key={idx}
-                  className="rounded-2xl border border-[var(--surface-border)] bg-[var(--surface-card)] p-5 shadow-sm"
+                  className="rounded-2xl border border-[var(--surface-border)] bg-[var(--surface-card)] p-4 sm:p-5 shadow-sm"
                 >
                   <h3 className="text-sm font-bold text-[var(--text-main)]">
                     {faq.question}
@@ -297,12 +297,12 @@ export default async function ToolPage({ params }: PageProps) {
           )}
 
           {/* Master Hub Promotion CTA */}
-          <div className="rounded-3xl border border-[var(--surface-border)] bg-gradient-to-br from-[var(--surface-card)] to-[var(--surface-canvas)] p-6 md:p-8 text-center shadow-sm">
+          <div className="rounded-3xl border border-[var(--surface-border)] bg-gradient-to-br from-[var(--surface-card)] to-[var(--surface-canvas)] p-5 sm:p-6 md:p-8 text-center shadow-sm">
             <h3 className="text-base font-black text-[var(--text-main)] md:text-lg">
               Explore The Full Essentials Studio
             </h3>
             <p className="mx-auto mt-2 max-w-xl text-xs text-[var(--text-muted)]">
-              All 36 live built-in tools are also accessible inside the unified, all-in-one Essentials Toolkit Studio with keyboard shortcuts, quick switching, and bookmarks.
+              All 65+ live built-in tools are also accessible inside the unified, all-in-one Essentials Toolkit Studio with keyboard shortcuts, quick switching, and bookmarks.
             </p>
             <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
               <Link
