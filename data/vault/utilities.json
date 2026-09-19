@@ -1,0 +1,135 @@
+[
+  {
+    "title": "iLovePDF",
+    "category": "PDF TOOLS",
+    "status": "TRUSTED",
+    "url": "https://www.ilovepdf.com",
+    "desc": "Merge, split, compress, and convert PDF files online with cloud integration."
+  },
+  {
+    "title": "Smallpdf",
+    "category": "PDF TOOLS",
+    "status": "TRUSTED",
+    "url": "https://smallpdf.com",
+    "desc": "Easy-to-use online suite for editing, signing, and converting PDF documents."
+  },
+  {
+    "title": "PDF24 Tools",
+    "category": "PDF TOOLS",
+    "status": "TRUSTED",
+    "url": "https://tools.pdf24.org",
+    "desc": "100% free online PDF tools for merging, converting, unlocking, and editing documents."
+  },
+  {
+    "title": "Sejda PDF",
+    "category": "PDF TOOLS",
+    "status": "ACTIVE",
+    "url": "https://www.sejda.com",
+    "desc": "Online PDF editor, document form filler, and converter with optical character recognition."
+  },
+  {
+    "title": "CloudConvert",
+    "category": "FILE CONVERTERS",
+    "status": "TRUSTED",
+    "url": "https://cloudconvert.com",
+    "desc": "Universal file converter supporting 200+ formats across audio, video, document, and ebook."
+  },
+  {
+    "title": "Convertio",
+    "category": "FILE CONVERTERS",
+    "status": "TRUSTED",
+    "url": "https://convertio.co",
+    "desc": "Advanced online tool to convert files to any format without downloading software."
+  },
+  {
+    "title": "Zamzar",
+    "category": "FILE CONVERTERS",
+    "status": "ACTIVE",
+    "url": "https://www.zamzar.com",
+    "desc": "Fast, free online document, image, and media file conversion service."
+  },
+  {
+    "title": "Grammarly",
+    "category": "TEXT & WRITING",
+    "status": "TRUSTED",
+    "url": "https://www.grammarly.com",
+    "desc": "AI writing assistant that checks grammar, clarity, spelling, and style in real time."
+  },
+  {
+    "title": "QuillBot",
+    "category": "TEXT & WRITING",
+    "status": "ACTIVE",
+    "url": "https://quillbot.com",
+    "desc": "AI-powered paraphrasing, summarization, and tone enhancement tool."
+  },
+  {
+    "title": "WordCounter",
+    "category": "TEXT & WRITING",
+    "status": "ACTIVE",
+    "url": "https://wordcounter.net",
+    "desc": "Real-time word and character counter with keyword density and readability scoring."
+  },
+  {
+    "title": "QR Code Generator",
+    "category": "QR TOOLS",
+    "status": "TRUSTED",
+    "url": "https://www.qr-code-generator.com",
+    "desc": "Generate custom high-resolution QR codes with logos, colors, and frames."
+  },
+  {
+    "title": "QR Code Monkey",
+    "category": "QR TOOLS",
+    "status": "ACTIVE",
+    "url": "https://www.qrcode-monkey.com",
+    "desc": "Free customizable QR code maker with print quality vectors (SVG, PDF, EPS)."
+  },
+  {
+    "title": "Timeanddate",
+    "category": "DATE & TIME",
+    "status": "TRUSTED",
+    "url": "https://www.timeanddate.com",
+    "desc": "World clock, time zone converter, international meeting planner, and sunrise calculators."
+  },
+  {
+    "title": "Epoch Converter",
+    "category": "DATE & TIME",
+    "status": "ACTIVE",
+    "url": "https://www.epochconverter.com",
+    "desc": "Unix timestamp converter to human-readable date and time for software developers."
+  },
+  {
+    "title": "World Time Buddy",
+    "category": "DATE & TIME",
+    "status": "ACTIVE",
+    "url": "https://www.worldtimebuddy.com",
+    "desc": "Visual world clock, time zone converter, and online meeting scheduler."
+  },
+  {
+    "title": "UnitConverters",
+    "category": "UNIT CONVERTERS",
+    "status": "TRUSTED",
+    "url": "https://www.unitconverters.net",
+    "desc": "Comprehensive online conversion calculator for metric and imperial measurement units."
+  },
+  {
+    "title": "Convert Units",
+    "category": "UNIT CONVERTERS",
+    "status": "ACTIVE",
+    "url": "https://www.convertunits.com",
+    "desc": "Instant unit converter for length, area, volume, mass, pressure, and energy."
+  },
+  {
+    "title": "XE Currency",
+    "category": "CURRENCY CONVERTERS",
+    "status": "TRUSTED",
+    "url": "https://www.xe.com",
+    "desc": "Live foreign exchange rates, historical currency charts, and global money transfer tools."
+  },
+  {
+    "title": "Wise Currency Converter",
+    "category": "CURRENCY CONVERTERS",
+    "status": "TRUSTED",
+    "url": "https://wise.com/gb/currency-converter",
+    "desc": "Real mid-market exchange rate calculator without hidden markups."
+  }
+]

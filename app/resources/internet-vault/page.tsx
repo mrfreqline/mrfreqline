@@ -15,6 +15,7 @@ import mobileData from "@/data/vault/mobile.json";
 import osData from "@/data/vault/os-ecosystems.json";
 import imageData from "@/data/vault/image-tools.json";
 import videoData from "@/data/vault/video-tools.json";
+import utilitiesData from "@/data/vault/utilities.json";
 
 interface VaultSection {
   slug: string;
@@ -81,6 +82,13 @@ const sections: VaultSection[] = [
     description: "Hollywood NLE editors, lossless video cutters, FFmpeg transcoding utilities, and media server suites.",
     subcategories: ["Video Editors", "Encoders & Converters", "Screen Recording", "Media Players", "Downloaders"],
   },
+  {
+    slug: "utilities",
+    title: "Web & File Utilities",
+    count: utilitiesData.length,
+    description: "Online PDF processors, universal file converters, AI writing assistants, and everyday conversion tools.",
+    subcategories: ["PDF Tools", "File Converters", "Text & Writing", "QR Tools", "Date & Time", "Unit & Currency"],
+  },
 ];
 
 // All vault links compiled for global search
@@ -93,6 +101,7 @@ const allVaultLinks = [
   ...osData.map((l) => ({ ...l, section: "os-ecosystems", sectionName: "Linux & macOS" })),
   ...imageData.map((l) => ({ ...l, section: "image-tools", sectionName: "Image & Graphic Design" })),
   ...videoData.map((l) => ({ ...l, section: "video-tools", sectionName: "Video Production" })),
+  ...utilitiesData.map((l) => ({ ...l, section: "utilities", sectionName: "Web & File Utilities" })),
 ];
 
 const getFaviconUrl = (siteUrl: string) => {

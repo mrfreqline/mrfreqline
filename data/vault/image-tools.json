@@ -131,5 +131,68 @@
     "status": "TRUSTED",
     "url": "https://exiftool.org",
     "desc": "Phil Harvey's command-line application for reading, writing, and editing meta information in image files."
+  },
+  {
+    "title": "TinyPNG",
+    "category": "PHOTO COMPRESSORS",
+    "status": "TRUSTED",
+    "url": "https://tinypng.com",
+    "desc": "Smart lossy compression for WebP, PNG and JPEG images with minimal quality degradation."
+  },
+  {
+    "title": "Squoosh",
+    "category": "PHOTO COMPRESSORS",
+    "status": "TRUSTED",
+    "url": "https://squoosh.app",
+    "desc": "Google Chrome Labs browser-based image compression and format conversion powerhouse."
+  },
+  {
+    "title": "Compress JPEG",
+    "category": "PHOTO COMPRESSORS",
+    "status": "ACTIVE",
+    "url": "https://compressjpeg.com",
+    "desc": "Quickly reduce JPEG image file sizes in batches directly in your browser."
+  },
+  {
+    "title": "iLoveIMG",
+    "category": "PHOTO RESIZERS",
+    "status": "TRUSTED",
+    "url": "https://www.iloveimg.com",
+    "desc": "Resize, crop, convert, and compress images in bulk online."
+  },
+  {
+    "title": "ResizePixel",
+    "category": "PHOTO RESIZERS",
+    "status": "ACTIVE",
+    "url": "https://www.resizepixel.com",
+    "desc": "Clean and simple online image editor for resizing, cropping, and converting image files."
+  },
+  {
+    "title": "Adobe Express Resize",
+    "category": "PHOTO RESIZERS",
+    "status": "TRUSTED",
+    "url": "https://www.adobe.com/express/feature/image/resize",
+    "desc": "Resize images for social media, print, and custom dimensions with preset aspect ratios."
+  },
+  {
+    "title": "Remove.bg",
+    "category": "BACKGROUND REMOVERS",
+    "status": "TRUSTED",
+    "url": "https://www.remove.bg",
+    "desc": "AI-powered 100% automatic background removal for photos in seconds."
+  },
+  {
+    "title": "Photoroom",
+    "category": "BACKGROUND REMOVERS",
+    "status": "ACTIVE",
+    "url": "https://www.photoroom.com",
+    "desc": "Create studio-quality product photos and remove backgrounds instantly with AI."
+  },
+  {
+    "title": "Adobe Express Background Remover",
+    "category": "BACKGROUND REMOVERS",
+    "status": "TRUSTED",
+    "url": "https://www.adobe.com/express/feature/image/remove-background",
+    "desc": "Free online background removal powered by Adobe Photoshop AI algorithms."
   }
 ]

@@ -1,27 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core Site Pages -->
   <url>
     <loc>https://mrfreqline.vercel.app/</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://mrfreqline.vercel.app/prompts</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://mrfreqline.vercel.app/tech</loc>
-    <lastmod>2026-09-19</lastmod>
+    <loc>https://mrfreqline.vercel.app/resources</loc>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mrfreqline.vercel.app/resources</loc>
-    <lastmod>2026-09-19</lastmod>
+    <loc>https://mrfreqline.vercel.app/resources/best-free-websites</loc>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://mrfreqline.vercel.app/resources/internet-vault</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mrfreqline.vercel.app/resources/internet-vault/utilities</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mrfreqline.vercel.app/resources/essentials-toolkit</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mrfreqline.vercel.app/tools</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://mrfreqline.vercel.app/donate</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 65 Dedicated Tools (SEO Indexing) -->
+  <!-- Academic & Education -->
+  <url><loc>https://mrfreqline.vercel.app/tools/see-gpa-calculator</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/neb-gpa-calculator</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/cgpa-calculator</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/marks-gpa-converter</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/target-marks-calculator</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/pomodoro-timer</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/exam-countdown</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/attendance-calculator</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/percentage-calculator</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
+  <!-- Finance & Money -->
+  <url><loc>https://mrfreqline.vercel.app/tools/simple-compound-interest</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/loan-emi-calculator</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/sip-investment-calculator</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/fd-rd-calculator</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/profit-loss-calculator</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/discount-calculator</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/vat-calculator</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/salary-tax-calculator</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/savings-goal-calculator</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/currency-converter</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
+  <!-- Health & Fitness -->
+  <url><loc>https://mrfreqline.vercel.app/tools/calorie-bmr-calculator</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/water-intake-calculator</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/weight-goal-calculator</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/body-fat-calculator</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/bmi-calculator</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
+  <!-- PC & Gaming -->
+  <url><loc>https://mrfreqline.vercel.app/tools/mouse-sensitivity-converter</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/reaction-time-test</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/pc-bottleneck</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/psu-calculator</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/fps-calculator</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/speed-test</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/network-tool</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
+  <!-- Time & Date -->
+  <url><loc>https://mrfreqline.vercel.app/tools/stopwatch-countdown</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/world-clock-converter</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/age-calculator</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/date-difference</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/bs-ad-converter</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
+  <!-- Converters & Units -->
+  <url><loc>https://mrfreqline.vercel.app/tools/area-converter</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/volume-speed-converter</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/unit-converter</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
+  <!-- Text & Dev -->
+  <url><loc>https://mrfreqline.vercel.app/tools/text-cleaner-tools</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/preeti-unicode</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/ai-prompt-gen</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/json-formatter</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/word-counter</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/case-converter</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/color-converter</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/lorem-generator</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/markdown-preview</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/url-encoder</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
+  <!-- PDF & Media -->
+  <url><loc>https://mrfreqline.vercel.app/tools/pdf-merge</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/pdf-split</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/pdf-compress</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/pdf-to-image</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/image-to-pdf</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/text-to-pdf</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/image-compress</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/image-converter</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/yt-thumbnail</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
+  <!-- Security & Privacy -->
+  <url><loc>https://mrfreqline.vercel.app/tools/password-gen</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/file-hash</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/hash-generator</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/qr-generator</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/qr-scanner</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/uuid-gen</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mrfreqline.vercel.app/tools/base64</loc><lastmod>2026-09-20</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
 </urlset>

@@ -336,7 +336,9 @@ export default function BestFreeWebsites() {
                 href="/resources/essentials-toolkit"
                 className="flex items-center gap-2 rounded-full border border-[#00D2FF]/40 bg-[#00D2FF]/10 px-5 py-2 text-xs font-extrabold uppercase tracking-wider text-[#00D2FF] transition-all duration-300 hover:bg-[#00D2FF] hover:text-black hover:scale-105 shadow-[0_0_15px_rgba(0,210,255,0.2)]"
               >
-                <span>🛠️</span>
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
                 <span>Essential Toolkit</span>
               </Link>
             </div>
