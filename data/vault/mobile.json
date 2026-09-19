@@ -1,0 +1,86 @@
+[
+  {
+    "title": "F-Droid",
+    "category": "ANDROID & F-DROID",
+    "status": "TRUSTED",
+    "url": "https://f-droid.org",
+    "desc": "Installable catalogue of free and open-source software (FOSS) applications for Android."
+  },
+  {
+    "title": "Droid-ify",
+    "category": "ANDROID & F-DROID",
+    "status": "TRUSTED",
+    "url": "https://github.com/Droid-ify/client",
+    "desc": "Modern Material You client for F-Droid with fast repository syncing."
+  },
+  {
+    "title": "Aurora Store",
+    "category": "ANDROID APKS",
+    "status": "TRUSTED",
+    "url": "https://auroraoss.com",
+    "desc": "Open-source Google Play Store client providing anonymous downloads without Google Play Services."
+  },
+  {
+    "title": "APKMirror",
+    "category": "ANDROID APKS",
+    "status": "TRUSTED",
+    "url": "https://www.apkmirror.com",
+    "desc": "The most trusted safe archive for clean, original cryptographic APK binaries directly from developers."
+  },
+  {
+    "title": "Revanced Manager",
+    "category": "ANDROID MODS",
+    "status": "TRUSTED",
+    "url": "https://revanced.app",
+    "desc": "The official open-source patcher providing ad-free YouTube, SponsorBlock, background play, and UI customization."
+  },
+  {
+    "title": "NewPipe",
+    "category": "ANDROID APKS",
+    "status": "TRUSTED",
+    "url": "https://newpipe.net",
+    "desc": "Lightweight streaming frontend for YouTube on Android without Google Play Services or account tracking."
+  },
+  {
+    "title": "AltStore",
+    "category": "IOS SIDELOADING",
+    "status": "TRUSTED",
+    "url": "https://altstore.io",
+    "desc": "Sideload IPA apps onto your un-jailbroken iOS device using your personal Apple ID."
+  },
+  {
+    "title": "SideStore",
+    "category": "IOS SIDELOADING",
+    "status": "TRUSTED",
+    "url": "https://sidestore.io",
+    "desc": "Community fork of AltStore that refreshes sideloaded apps directly over on-device WireGuard without a PC."
+  },
+  {
+    "title": "TrollStore",
+    "category": "IOS SIDELOADING",
+    "status": "TRUSTED",
+    "url": "https://github.com/opa334/TrollStore",
+    "desc": "Permasigned IPA installer for supported iOS versions that bypasses the 7-day app certificate expiration."
+  },
+  {
+    "title": "iOS.cfw.guide",
+    "category": "JAILBREAKING & CFW",
+    "status": "TRUSTED",
+    "url": "https://ios.cfw.guide",
+    "desc": "The definitive step-by-step jailbreaking and rootless tweak guide for iPhone and iPad."
+  },
+  {
+    "title": "Shizuku",
+    "category": "ANDROID UTILITIES",
+    "status": "TRUSTED",
+    "url": "https://shizuku.rikka.app",
+    "desc": "Allows apps to use system APIs directly with ADB permissions without needing permanent root access."
+  },
+  {
+    "title": "Mihon",
+    "category": "ANDROID & F-DROID",
+    "status": "TRUSTED",
+    "url": "https://mihon.app",
+    "desc": "The modern successor to Tachiyomi for reading online manga, webtoons, and comics on Android."
+  }
+]

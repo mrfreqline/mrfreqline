@@ -1,0 +1,149 @@
+[
+  {
+    "title": "DaVinci Resolve",
+    "category": "VIDEO EDITORS",
+    "status": "TRUSTED",
+    "url": "https://www.blackmagicdesign.com/products/davinciresolve",
+    "desc": "Professional video editing, Hollywood-grade color correction, visual effects, and audio post-production."
+  },
+  {
+    "title": "LosslessCut",
+    "category": "VIDEO EDITORS",
+    "status": "TRUSTED",
+    "url": "https://github.com/mifi/lossless-cut",
+    "desc": "Swiss army knife for lossless video and audio trimming, cutting, and joining without re-encoding."
+  },
+  {
+    "title": "Kdenlive",
+    "category": "VIDEO EDITORS",
+    "status": "TRUSTED",
+    "url": "https://kdenlive.org/en",
+    "desc": "Powerful open-source multi-track video editor supporting non-linear video editing on Linux and Windows."
+  },
+  {
+    "title": "HandBrake",
+    "category": "ENCODERS & CONVERTERS",
+    "status": "TRUSTED",
+    "url": "https://handbrake.fr",
+    "desc": "Open-source video transcoder for converting video from nearly any format to a selection of modern codecs."
+  },
+  {
+    "title": "Shutter Encoder",
+    "category": "ENCODERS & CONVERTERS",
+    "status": "TRUSTED",
+    "url": "https://www.shutterencoder.com",
+    "desc": "Professional media converter GUI based on FFmpeg. Converts video, audio, and images for editing."
+  },
+  {
+    "title": "MKVToolNix",
+    "category": "ENCODERS & CONVERTERS",
+    "status": "TRUSTED",
+    "url": "https://mkvtoolnix.download",
+    "desc": "Set of tools to create, alter, split, join, and inspect Matroska (MKV) files under Linux and Windows."
+  },
+  {
+    "title": "OBS Studio",
+    "category": "SCREEN RECORDING & STREAM",
+    "status": "TRUSTED",
+    "url": "https://obsproject.com",
+    "desc": "Free and open-source software for video recording and live streaming with scene composition."
+  },
+  {
+    "title": "VDO.Ninja",
+    "category": "SCREEN RECORDING & STREAM",
+    "status": "TRUSTED",
+    "url": "https://vdo.ninja",
+    "desc": "Bring ultra-low-latency, high-quality peer-to-peer video from remote smartphones or webcams directly into OBS."
+  },
+  {
+    "title": "Cap.so",
+    "category": "SCREEN RECORDING & STREAM",
+    "status": "TRUSTED",
+    "url": "https://cap.so",
+    "desc": "Open-source, lightweight Loom alternative for recording desktop tutorials and walk-throughs."
+  },
+  {
+    "title": "MPV",
+    "category": "MEDIA PLAYERS",
+    "status": "TRUSTED",
+    "url": "https://mpv.io",
+    "desc": "Free, open-source, and cross-platform media player with GPU-accelerated video output and shader support."
+  },
+  {
+    "title": "uosc (for MPV)",
+    "category": "MEDIA PLAYERS",
+    "status": "TRUSTED",
+    "url": "https://github.com/tomasklaen/uosc",
+    "desc": "Feature-rich minimalist on-screen controller UI for MPV with thumbnail scrubbing and timeline preview."
+  },
+  {
+    "title": "MPC-HC (clsid2)",
+    "category": "MEDIA PLAYERS",
+    "status": "TRUSTED",
+    "url": "https://github.com/clsid2/mpc-hc",
+    "desc": "Extremely lightweight, open-source media player for Windows with native MadVR and yt-dlp integration."
+  },
+  {
+    "title": "Jellyfin",
+    "category": "MEDIA SERVERS",
+    "status": "TRUSTED",
+    "url": "https://jellyfin.org",
+    "desc": "The 100% free software media system that puts you in control of managing and streaming your media."
+  },
+  {
+    "title": "Syncplay",
+    "category": "MEDIA PLAYERS",
+    "status": "TRUSTED",
+    "url": "https://syncplay.pl",
+    "desc": "Synchronizes video playback across MPV, VLC, and MPC-HC instances so friends can watch together over the internet."
+  },
+  {
+    "title": "yt-dlp",
+    "category": "VIDEO DOWNLOADERS",
+    "status": "TRUSTED",
+    "url": "https://github.com/yt-dlp/yt-dlp",
+    "desc": "Feature-rich command-line audio/video downloader supporting thousands of video streaming platforms."
+  },
+  {
+    "title": "cobalt",
+    "category": "VIDEO DOWNLOADERS",
+    "status": "TRUSTED",
+    "url": "https://cobalt.tools",
+    "desc": "Clean, ad-free online media downloader for YouTube, Twitter/X, TikTok, Reddit, Instagram, and more."
+  },
+  {
+    "title": "Flowframes",
+    "category": "ENCODERS & CONVERTERS",
+    "status": "TRUSTED",
+    "url": "https://nmkd.itch.io/flowframes",
+    "desc": "Windows GUI application for video frame interpolation using artificial intelligence (RIFE / DAIN)."
+  },
+  {
+    "title": "Gyroflow",
+    "category": "VIDEO EDITORS",
+    "status": "TRUSTED",
+    "url": "https://gyroflow.xyz",
+    "desc": "Advanced open-source video stabilization tool based on logged motion data from gyro sensors."
+  },
+  {
+    "title": "OpenSubtitles",
+    "category": "SUBTITLES",
+    "status": "TRUSTED",
+    "url": "https://www.opensubtitles.com",
+    "desc": "Multi-language subtitle search and download catalog for movies, series, and anime."
+  },
+  {
+    "title": "Subdl",
+    "category": "SUBTITLES",
+    "status": "TRUSTED",
+    "url": "https://subdl.com",
+    "desc": "Fast and clean subtitle search engine with instant direct downloads and no popups."
+  },
+  {
+    "title": "Aegisub",
+    "category": "SUBTITLES",
+    "status": "TRUSTED",
+    "url": "https://github.com/arch1t3cht/Aegisub",
+    "desc": "Advanced subtitle editor for creating and timing ASS, SSA, and SRT subtitles with visual styling."
+  }
+]

@@ -1,0 +1,177 @@
+[
+  {
+    "title": "VSCodium",
+    "category": "EDITORS & IDES",
+    "status": "TRUSTED",
+    "url": "https://vscodium.com",
+    "desc": "Open-source, telemetry-free community build of Microsoft's Visual Studio Code."
+  },
+  {
+    "title": "Zed",
+    "category": "EDITORS & IDES",
+    "status": "TRUSTED",
+    "url": "https://zed.dev",
+    "desc": "High-performance, multi-threaded code editor written in Rust with built-in multiplayer collaboration."
+  },
+  {
+    "title": "Neovim",
+    "category": "EDITORS & IDES",
+    "status": "TRUSTED",
+    "url": "https://neovim.io",
+    "desc": "Hyperextensible Vim-based text editor built for high speed and Lua scripting."
+  },
+  {
+    "title": "LazyVim",
+    "category": "EDITORS & IDES",
+    "status": "TRUSTED",
+    "url": "https://www.lazyvim.org",
+    "desc": "Pre-configured Neovim distribution that turns Neovim into a modern IDE in seconds."
+  },
+  {
+    "title": "DevToys",
+    "category": "DEV UTILITIES",
+    "status": "TRUSTED",
+    "url": "https://devtoys.app",
+    "desc": "Offline Swiss Army knife for developers: JSON formatter, regex tester, JWT decoder, hash generator."
+  },
+  {
+    "title": "DevDocs",
+    "category": "DEV UTILITIES",
+    "status": "TRUSTED",
+    "url": "https://devdocs.io",
+    "desc": "Fast, clean documentation browser combining 100+ API docs with offline search."
+  },
+  {
+    "title": "Lazygit",
+    "category": "GIT & GITHUB",
+    "status": "TRUSTED",
+    "url": "https://github.com/jesseduffield/lazygit",
+    "desc": "Simple terminal UI for git commands that makes staging, branching, and rebasing fast."
+  },
+  {
+    "title": "Fork",
+    "category": "GIT & GITHUB",
+    "status": "TRUSTED",
+    "url": "https://git-fork.com",
+    "desc": "Fast and friendly visual Git desktop client with an interactive merge conflict solver."
+  },
+  {
+    "title": "Refined GitHub",
+    "category": "GIT & GITHUB",
+    "status": "TRUSTED",
+    "url": "https://github.com/refined-github/refined-github",
+    "desc": "Browser extension simplifying the GitHub interface and adding 200+ useful power features."
+  },
+  {
+    "title": "ripgrep (rg)",
+    "category": "TERMINAL & CLI",
+    "status": "TRUSTED",
+    "url": "https://github.com/BurntSushi/ripgrep",
+    "desc": "Line-oriented search tool that recursively searches current directories for regex patterns at blazing speeds."
+  },
+  {
+    "title": "bat",
+    "category": "TERMINAL & CLI",
+    "status": "TRUSTED",
+    "url": "https://github.com/sharkdp/bat",
+    "desc": "Cat clone with syntax highlighting and automatic Git integrations."
+  },
+  {
+    "title": "zoxide",
+    "category": "TERMINAL & CLI",
+    "status": "TRUSTED",
+    "url": "https://github.com/ajeetdsouza/zoxide",
+    "desc": "Smarter cd command inspired by z and autojump that remembers your most used folders."
+  },
+  {
+    "title": "Atuin",
+    "category": "TERMINAL & CLI",
+    "status": "TRUSTED",
+    "url": "https://atuin.sh",
+    "desc": "Replaces your existing shell history with an encrypted SQLite database and fuzzy search."
+  },
+  {
+    "title": "Coolify",
+    "category": "HOSTING & CLOUD",
+    "status": "TRUSTED",
+    "url": "https://coolify.io",
+    "desc": "Self-hosted, open-source alternative to Heroku, Netlify, and Vercel for any Linux VPS."
+  },
+  {
+    "title": "Uptime Kuma",
+    "category": "HOSTING & CLOUD",
+    "status": "TRUSTED",
+    "url": "https://github.com/louislam/uptime-kuma",
+    "desc": "Self-hosted monitoring tool that checks HTTP, TCP, and Ping status with a status page."
+  },
+  {
+    "title": "Hoppscotch",
+    "category": "DATABASES & APIS",
+    "status": "TRUSTED",
+    "url": "https://hoppscotch.io",
+    "desc": "Open-source, lightweight web alternative to Postman for testing REST, GraphQL, and WebSockets."
+  },
+  {
+    "title": "Bruno",
+    "category": "DATABASES & APIS",
+    "status": "TRUSTED",
+    "url": "https://www.usebruno.com",
+    "desc": "Fast, open-source offline API client that stores collections directly in your Git folder."
+  },
+  {
+    "title": "DBeaver",
+    "category": "DATABASES & APIS",
+    "status": "TRUSTED",
+    "url": "https://dbeaver.io",
+    "desc": "Universal database manager and SQL client supporting PostgreSQL, MySQL, SQLite, and MongoDB."
+  },
+  {
+    "title": "PocketBase",
+    "category": "DATABASES & APIS",
+    "status": "TRUSTED",
+    "url": "https://pocketbase.io",
+    "desc": "Single-file open-source backend with realtime SQLite database, authentication, and file storage."
+  },
+  {
+    "title": "shadcn/ui",
+    "category": "FRONTEND & UI",
+    "status": "TRUSTED",
+    "url": "https://ui.shadcn.com",
+    "desc": "Beautifully designed, accessible Tailwind CSS components that you copy directly into your apps."
+  },
+  {
+    "title": "Transform.tools",
+    "category": "FRONTEND & UI",
+    "status": "TRUSTED",
+    "url": "https://transform.tools",
+    "desc": "Instant polyglot web converter: JSON to TS, SVG to JSX, CSS to Tailwind, and HTML to JSX."
+  },
+  {
+    "title": "Can I Use?",
+    "category": "FRONTEND & UI",
+    "status": "TRUSTED",
+    "url": "https://caniuse.com",
+    "desc": "Up-to-date browser support tables for modern desktop and mobile front-end web technologies."
+  },
+  {
+    "title": "GHIDRA",
+    "category": "CYBERSECURITY & REVERSING",
+    "status": "TRUSTED",
+    "url": "https://github.com/NationalSecurityAgency/ghidra",
+    "desc": "NSA's free, open-source software reverse engineering suite with decompiler and disassembler."
+  },
+  {
+    "title": "Nmap",
+    "category": "CYBERSECURITY & REVERSING",
+    "status": "TRUSTED",
+    "url": "https://nmap.org",
+    "desc": "The industry standard utility for network discovery, port auditing, and vulnerability scanning."
+  },
+  {
+    "title": "HTTP Toolkit",
+    "category": "CYBERSECURITY & REVERSING",
+    "status": "TRUSTED",
+    "url": "https://httptoolkit.com",
+    "desc": "Intercept, inspect, and mock HTTP and HTTPS traffic from browsers, Android, and backends."
+  }
+]

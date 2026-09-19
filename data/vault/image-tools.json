@@ -1,0 +1,135 @@
+[
+  {
+    "title": "Photopea",
+    "category": "PHOTO EDITORS",
+    "status": "TRUSTED",
+    "url": "https://www.photopea.com",
+    "desc": "Full-featured online image editor with PSD, AI, Sketch, and RAW support. Photoshop clone in your browser."
+  },
+  {
+    "title": "Krita",
+    "category": "PHOTO EDITORS",
+    "status": "TRUSTED",
+    "url": "https://krita.org/en",
+    "desc": "Professional free and open-source painting program made by artists for concept art, illustration, and comics."
+  },
+  {
+    "title": "Inkscape",
+    "category": "VECTOR & DESIGN",
+    "status": "TRUSTED",
+    "url": "https://inkscape.org",
+    "desc": "Open-source professional vector graphics software for Windows, Mac OS X, and Linux."
+  },
+  {
+    "title": "Upscayl",
+    "category": "AI UPSCALERS",
+    "status": "TRUSTED",
+    "url": "https://upscayl.org",
+    "desc": "Free and open-source AI image upscaler for Linux, MacOS, and Windows using advanced deep learning."
+  },
+  {
+    "title": "Rembg",
+    "category": "AI UPSCALERS",
+    "status": "TRUSTED",
+    "url": "https://github.com/danielgatis/rembg",
+    "desc": "State-of-the-art open-source tool to remove image backgrounds automatically with deep neural networks."
+  },
+  {
+    "title": "Segment Anything",
+    "category": "AI UPSCALERS",
+    "status": "TRUSTED",
+    "url": "https://aidemos.meta.com/segment-anything",
+    "desc": "Meta AI's foundation model that can cut out and mask any object with a single click."
+  },
+  {
+    "title": "Blender",
+    "category": "3D & MODELING",
+    "status": "TRUSTED",
+    "url": "https://www.blender.org",
+    "desc": "Free and open-source 3D creation suite supporting modeling, rigging, animation, simulation, and rendering."
+  },
+  {
+    "title": "Poly Haven",
+    "category": "3D & TEXTURES",
+    "status": "TRUSTED",
+    "url": "https://polyhaven.com",
+    "desc": "The public 3D asset library offering 100% free CC0 HDRIs, PBR textures, and 3D models."
+  },
+  {
+    "title": "AmbientCG",
+    "category": "3D & TEXTURES",
+    "status": "TRUSTED",
+    "url": "https://ambientcg.com",
+    "desc": "Over 2,000 public domain procedural PBR materials and textures for game and architectural rendering."
+  },
+  {
+    "title": "Printables",
+    "category": "3D & PRINTING",
+    "status": "TRUSTED",
+    "url": "https://www.printables.com",
+    "desc": "High-quality 3D printing community database with tested, downloadable STL and 3MF models."
+  },
+  {
+    "title": "OrcaSlicer",
+    "category": "3D & PRINTING",
+    "status": "TRUSTED",
+    "url": "https://www.orcaslicer.com",
+    "desc": "Open-source 3D slicer for Bambu Lab, Prusa, and Voron printers with automated calibration features."
+  },
+  {
+    "title": "Aseprite",
+    "category": "PIXEL ART",
+    "status": "TRUSTED",
+    "url": "https://github.com/aseprite/aseprite",
+    "desc": "Animated sprite editor & pixel art tool for video games and indie animations."
+  },
+  {
+    "title": "LibreSprite",
+    "category": "PIXEL ART",
+    "status": "TRUSTED",
+    "url": "https://libresprite.github.io",
+    "desc": "Free and open-source fork of Aseprite for creating and animating 2D pixel art sprites."
+  },
+  {
+    "title": "PureRef",
+    "category": "PHOTO EDITORS",
+    "status": "TRUSTED",
+    "url": "https://www.pureref.com",
+    "desc": "Stand-alone canvas to organize your inspiration and reference images while modeling or painting."
+  },
+  {
+    "title": "Unsplash",
+    "category": "STOCK ASSETS",
+    "status": "TRUSTED",
+    "url": "https://unsplash.com",
+    "desc": "Beautiful, free images and photos that you can download and use for any commercial project."
+  },
+  {
+    "title": "Pexels",
+    "category": "STOCK ASSETS",
+    "status": "TRUSTED",
+    "url": "https://www.pexels.com",
+    "desc": "Free stock photos, royalty-free images, and high-resolution videos shared by creators."
+  },
+  {
+    "title": "Catbox",
+    "category": "STOCK ASSETS",
+    "status": "TRUSTED",
+    "url": "https://catbox.moe",
+    "desc": "Clean, uncompressed file and image hosting allowing direct embedding up to 200MB."
+  },
+  {
+    "title": "SauceNao",
+    "category": "IMAGE SEARCH & OSINT",
+    "status": "TRUSTED",
+    "url": "https://saucenao.com",
+    "desc": "Reverse image search engine specialized in finding exact artist sources from manga and anime crops."
+  },
+  {
+    "title": "ExifTool",
+    "category": "IMAGE SEARCH & OSINT",
+    "status": "TRUSTED",
+    "url": "https://exiftool.org",
+    "desc": "Phil Harvey's command-line application for reading, writing, and editing meta information in image files."
+  }
+]

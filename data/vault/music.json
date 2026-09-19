@@ -1,0 +1,107 @@
+[
+  {
+    "title": "SquidApp",
+    "category": "STREAMING",
+    "status": "TRUSTED",
+    "url": "https://squidapp.net",
+    "desc": "Stream ad-free music with high audio bitrate and playlist import tools."
+  },
+  {
+    "title": "spotDL",
+    "category": "LOSSLESS & DOWNLOADS",
+    "status": "TRUSTED",
+    "url": "https://spotdl.github.io/spotify-downloader",
+    "desc": "Download Spotify playlists, albums, and tracks with embedded metadata and album art."
+  },
+  {
+    "title": "Ripthat",
+    "category": "LOSSLESS & DOWNLOADS",
+    "status": "TRUSTED",
+    "url": "https://ripthat.net",
+    "desc": "Direct lossless audio download platform supporting Tidal, Qobuz, and Deezer FLAC tracks."
+  },
+  {
+    "title": "DoubleDouble",
+    "category": "LOSSLESS & DOWNLOADS",
+    "status": "TRUSTED",
+    "url": "https://doubledouble.top",
+    "desc": "Clean web tool to rip high-resolution FLAC and MP3 audio from major streaming platforms."
+  },
+  {
+    "title": "Radio Garden",
+    "category": "INTERNET RADIO",
+    "status": "TRUSTED",
+    "url": "https://radio.garden",
+    "desc": "Explore live global radio broadcasts by rotating an interactive 3D digital globe."
+  },
+  {
+    "title": "Navidrome",
+    "category": "STREAMING",
+    "status": "TRUSTED",
+    "url": "https://www.navidrome.org",
+    "desc": "Modern self-hosted music server and streamer compatible with all Subsonic clients."
+  },
+  {
+    "title": "Vital",
+    "category": "AUDIO PRODUCTION",
+    "status": "TRUSTED",
+    "url": "https://vital.audio",
+    "desc": "Visual spectral warping wavetable synthesizer plugin. Powerful free alternative to Serum."
+  },
+  {
+    "title": "Spitfire Audio LABS",
+    "category": "AUDIO PRODUCTION",
+    "status": "TRUSTED",
+    "url": "https://labs.spitfireaudio.com",
+    "desc": "Free virtual instruments and orchestral samples recorded by music technologists in London."
+  },
+  {
+    "title": "Surge XT",
+    "category": "AUDIO PRODUCTION",
+    "status": "TRUSTED",
+    "url": "https://surge-synthesizer.github.io",
+    "desc": "Feature-packed, open-source hybrid synthesizer with multiple synthesis engines and MPE."
+  },
+  {
+    "title": "Audacity",
+    "category": "AUDIO PRODUCTION",
+    "status": "TRUSTED",
+    "url": "https://www.audacityteam.org",
+    "desc": "Classic open-source, multi-track audio recorder and waveform editor."
+  },
+  {
+    "title": "Tenacity",
+    "category": "AUDIO PRODUCTION",
+    "status": "TRUSTED",
+    "url": "https://tenacityaudio.org",
+    "desc": "Privacy-focused, community-driven fork of Audacity without analytics or telemetry."
+  },
+  {
+    "title": "Deemix",
+    "category": "LOSSLESS & DOWNLOADS",
+    "status": "ACTIVE",
+    "url": "https://deemix.app",
+    "desc": "Library and GUI to download CD-quality FLAC and 320kbps MP3s directly from Deezer."
+  },
+  {
+    "title": "Free Music Archive (FMA)",
+    "category": "ROYALTY FREE & PRODUCTION",
+    "status": "TRUSTED",
+    "url": "https://freemusicarchive.org",
+    "desc": "Legal, curated repository of Creative Commons tracks for video creators and game developers."
+  },
+  {
+    "title": "Incompetech",
+    "category": "ROYALTY FREE & PRODUCTION",
+    "status": "TRUSTED",
+    "url": "https://incompetech.com",
+    "desc": "Kevin MacLeod's expansive library of royalty-free background and film score music."
+  },
+  {
+    "title": "SomaFM",
+    "category": "INTERNET RADIO",
+    "status": "TRUSTED",
+    "url": "https://somafm.com",
+    "desc": "Commercial-free, listener-supported internet radio with over 30 unique niche music channels."
+  }
+]

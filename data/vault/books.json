@@ -1,0 +1,128 @@
+[
+  {
+    "title": "Anna's Archive",
+    "category": "E-BOOKS & LIBRARIES",
+    "status": "TRUSTED",
+    "url": "https://annas-archive.org",
+    "desc": "The largest open-source shadow library search engine aggregating Sci-Hub, Library Genesis, and Z-Library."
+  },
+  {
+    "title": "Library Genesis (LibGen)",
+    "category": "E-BOOKS & LIBRARIES",
+    "status": "TRUSTED",
+    "url": "https://libgen.is",
+    "desc": "Definitive repository for millions of academic papers, scientific textbooks, and non-fiction books."
+  },
+  {
+    "title": "Standard Ebooks",
+    "category": "PUBLIC DOMAIN",
+    "status": "TRUSTED",
+    "url": "https://standardebooks.org",
+    "desc": "Beautifully formatted, professionally typeset public domain e-books free of digital DRM."
+  },
+  {
+    "title": "Project Gutenberg",
+    "category": "PUBLIC DOMAIN",
+    "status": "TRUSTED",
+    "url": "https://www.gutenberg.org",
+    "desc": "Over 70,000 free public domain e-books in EPUB and Kindle formats."
+  },
+  {
+    "title": "Open Library",
+    "category": "E-BOOKS & LIBRARIES",
+    "status": "ACTIVE",
+    "url": "https://openlibrary.org",
+    "desc": "Internet Archive initiative to create a web page for every book ever published."
+  },
+  {
+    "title": "PDF Drive",
+    "category": "E-BOOKS & LIBRARIES",
+    "status": "ACTIVE",
+    "url": "https://www.pdfdrive.com",
+    "desc": "Search engine for free PDF manuals, guides, tutorials, and books."
+  },
+  {
+    "title": "AudioBookBay (ABB)",
+    "category": "AUDIOBOOKS",
+    "status": "TRUSTED",
+    "url": "https://audiobookbay.lu",
+    "desc": "The premier community tracker and index for unabridged audiobooks in high audio quality."
+  },
+  {
+    "title": "LibriVox",
+    "category": "AUDIOBOOKS",
+    "status": "TRUSTED",
+    "url": "https://librivox.org",
+    "desc": "Free public-domain audiobooks read by volunteers from around the world."
+  },
+  {
+    "title": "Galactic Audiobook Finder",
+    "category": "AUDIOBOOKS",
+    "status": "ACTIVE",
+    "url": "https://galaxyaudiobook.com",
+    "desc": "Stream free audiobooks directly in your browser without accounts."
+  },
+  {
+    "title": "MangaDex",
+    "category": "COMICS & MANGA",
+    "status": "TRUSTED",
+    "url": "https://mangadex.org",
+    "desc": "The gold-standard ad-free manga reader and community scanlation archive with multi-language support."
+  },
+  {
+    "title": "ReadComicOnline",
+    "category": "COMICS & MANGA",
+    "status": "ACTIVE",
+    "url": "https://readcomiconline.li",
+    "desc": "Extensive library of Marvel, DC, and independent comic issues readable online in high quality."
+  },
+  {
+    "title": "GetComics",
+    "category": "COMICS & MANGA",
+    "status": "TRUSTED",
+    "url": "https://getcomics.org",
+    "desc": "Download complete comic collections and issues in CBR and CBZ formats."
+  },
+  {
+    "title": "Calibre",
+    "category": "E-READERS & CALIBRE",
+    "status": "TRUSTED",
+    "url": "https://calibre-ebook.com",
+    "desc": "The ultimate open-source e-book manager, format converter, and library catalog."
+  },
+  {
+    "title": "Kavita",
+    "category": "E-READERS & CALIBRE",
+    "status": "TRUSTED",
+    "url": "https://www.kavitareader.com",
+    "desc": "Fast, responsive self-hosted digital library for manga, comics, and e-books."
+  },
+  {
+    "title": "Audiobookshelf",
+    "category": "AUDIOBOOKS",
+    "status": "TRUSTED",
+    "url": "https://www.audiobookshelf.org",
+    "desc": "Self-hosted audiobook and podcast server with progress syncing across mobile apps."
+  },
+  {
+    "title": "KOReader",
+    "category": "E-READERS & CALIBRE",
+    "status": "TRUSTED",
+    "url": "https://koreader.rocks",
+    "desc": "Versatile document viewer supporting EPUB, PDF, and CBZ for E-Ink devices and Android."
+  },
+  {
+    "title": "Sci-Hub",
+    "category": "ACADEMIC & RESEARCH",
+    "status": "TRUSTED",
+    "url": "https://sci-hub.se",
+    "desc": "Pioneering academic platform providing free access to research papers behind paywalls."
+  },
+  {
+    "title": "CORE",
+    "category": "ACADEMIC & RESEARCH",
+    "status": "ACTIVE",
+    "url": "https://core.ac.uk",
+    "desc": "The world's largest aggregator of open-access research papers from repositories and journals."
+  }
+]

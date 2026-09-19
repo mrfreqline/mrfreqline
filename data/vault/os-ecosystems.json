@@ -1,0 +1,79 @@
+[
+  {
+    "title": "DistroWatch",
+    "category": "LINUX DISTRIBUTIONS",
+    "status": "TRUSTED",
+    "url": "https://distrowatch.com",
+    "desc": "News, package updates, and ranking database for all major and niche Linux operating systems."
+  },
+  {
+    "title": "Fedora Workstation",
+    "category": "LINUX DISTRIBUTIONS",
+    "status": "TRUSTED",
+    "url": "https://fedoraproject.org/workstation",
+    "desc": "Leading-edge, stable Linux distribution with pristine GNOME desktop and flatpak integration."
+  },
+  {
+    "title": "Pop!_OS",
+    "category": "LINUX DISTRIBUTIONS",
+    "status": "TRUSTED",
+    "url": "https://system76.com/pop",
+    "desc": "Ubuntu-based Linux OS with out-of-the-box NVIDIA graphics drivers, auto-tiling, and gaming optimizations."
+  },
+  {
+    "title": "Nobara Project",
+    "category": "LINUX DISTRIBUTIONS",
+    "status": "TRUSTED",
+    "url": "https://nobaraproject.org",
+    "desc": "Fedora-based Linux distro customized specifically for out-of-the-box PC gaming, streaming, and content creation."
+  },
+  {
+    "title": "Homebrew",
+    "category": "PACKAGE MANAGERS",
+    "status": "TRUSTED",
+    "url": "https://brew.sh",
+    "desc": "The missing package manager for macOS and Linux. Install thousands of CLI tools and GUI apps seamlessly."
+  },
+  {
+    "title": "ProtonDB",
+    "category": "GAMING & COMPATIBILITY",
+    "status": "TRUSTED",
+    "url": "https://www.protondb.com",
+    "desc": "Crowdsourced compatibility reports and launch parameters for running Windows games on Linux and Steam Deck."
+  },
+  {
+    "title": "Bottles",
+    "category": "GAMING & COMPATIBILITY",
+    "status": "TRUSTED",
+    "url": "https://usebottles.com",
+    "desc": "Easily manage Windows environments, launchers, and software on Linux using sandboxed Wine prefixes."
+  },
+  {
+    "title": "AppCleaner",
+    "category": "MACOS UTILITIES",
+    "status": "TRUSTED",
+    "url": "https://freemacsoft.net/appcleaner",
+    "desc": "Small application for macOS that thoroughly uninstalls apps and all their hidden leftover library files."
+  },
+  {
+    "title": "IINA",
+    "category": "MACOS UTILITIES",
+    "status": "TRUSTED",
+    "url": "https://iina.io",
+    "desc": "Modern media player for macOS based on MPV with native design, Touch Bar support, and Picture-in-Picture."
+  },
+  {
+    "title": "Rectangle",
+    "category": "MACOS UTILITIES",
+    "status": "TRUSTED",
+    "url": "https://rectangleapp.com",
+    "desc": "Free, open-source window manager for macOS that lets you snap and organize windows with keyboard shortcuts."
+  },
+  {
+    "title": "Flathub",
+    "category": "PACKAGE MANAGERS",
+    "status": "TRUSTED",
+    "url": "https://flathub.org",
+    "desc": "The primary app store and build service for distributing sandboxed Flatpak Linux desktop applications."
+  }
+]

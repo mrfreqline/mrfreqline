@@ -1,0 +1,93 @@
+[
+  {
+    "title": "qBittorrent",
+    "category": "TORRENT CLIENTS",
+    "status": "TRUSTED",
+    "url": "https://www.qbittorrent.org",
+    "desc": "The benchmark free, open-source, ad-free BitTorrent client with integrated search plugins."
+  },
+  {
+    "title": "qBittorrent Enhanced Edition",
+    "category": "TORRENT CLIENTS",
+    "status": "TRUSTED",
+    "url": "https://github.com/c0re100/qBittorrent-Enhanced-Edition",
+    "desc": "Fork of qBittorrent with automatic IP blocking for leechers and malicious peers."
+  },
+  {
+    "title": "Transmission",
+    "category": "TORRENT CLIENTS",
+    "status": "TRUSTED",
+    "url": "https://transmissionbt.com",
+    "desc": "Ultra-lightweight, battery-efficient BitTorrent client for macOS, Linux, and Windows."
+  },
+  {
+    "title": "Real-Debrid",
+    "category": "DEBRID SERVICES",
+    "status": "TRUSTED",
+    "url": "https://real-debrid.com",
+    "desc": "High-speed unrestricted multi-hoster downloader and instant cloud torrent caching service."
+  },
+  {
+    "title": "AllDebrid",
+    "category": "DEBRID SERVICES",
+    "status": "TRUSTED",
+    "url": "https://alldebrid.com",
+    "desc": "Fast multihoster service providing high-bandwidth links and instant magnet conversion."
+  },
+  {
+    "title": "Premiumize.me",
+    "category": "DEBRID SERVICES",
+    "status": "TRUSTED",
+    "url": "https://www.premiumize.me",
+    "desc": "All-in-one cloud downloader, personal cloud storage, and secure Usenet/torrent caching."
+  },
+  {
+    "title": "1337x",
+    "category": "PUBLIC TRACKERS",
+    "status": "TRUSTED",
+    "url": "https://1337x.to",
+    "desc": "The most widely used public torrent index with dedicated moderation for uploads."
+  },
+  {
+    "title": "TorrentGalaxy (TGx)",
+    "category": "PUBLIC TRACKERS",
+    "status": "TRUSTED",
+    "url": "https://torrentgalaxy.to",
+    "desc": "Modern public tracker with streaming previews, cover artwork, and verified groups."
+  },
+  {
+    "title": "Nyaa",
+    "category": "PUBLIC TRACKERS",
+    "status": "TRUSTED",
+    "url": "https://nyaa.si",
+    "desc": "The definitive East Asian and anime media BitTorrent repository on the internet."
+  },
+  {
+    "title": "Prowlarr",
+    "category": "INDEXERS & AUTOMATION",
+    "status": "TRUSTED",
+    "url": "https://prowlarr.com",
+    "desc": "Indexer manager integrating with your torrent and Usenet clients to automate searches."
+  },
+  {
+    "title": "Jackett",
+    "category": "INDEXERS & AUTOMATION",
+    "status": "TRUSTED",
+    "url": "https://github.com/Jackett/Jackett",
+    "desc": "API proxy server that translates queries into tracker-site-specific HTTP queries."
+  },
+  {
+    "title": "SABnzbd",
+    "category": "USENET",
+    "status": "TRUSTED",
+    "url": "https://sabnzbd.org",
+    "desc": "Open-source binary newsreader that automates downloading and extracting from Usenet."
+  },
+  {
+    "title": "NZBGet",
+    "category": "USENET",
+    "status": "TRUSTED",
+    "url": "https://nzbget.com",
+    "desc": "High-performance C++ Usenet downloader designed to run with minimal CPU and RAM usage."
+  }
+]

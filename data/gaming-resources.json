@@ -1,0 +1,401 @@
+[
+  {
+    "title": "Night Light Launcher",
+    "category": "LAUNCHERS",
+    "status": "TRUSTED",
+    "url": "https://github.com/onajlikezz/Nightlight-Launcher/releases",
+    "desc": "Lightweight custom launcher for streamlined game launching."
+  },
+  {
+    "title": "Hydra Launcher",
+    "category": "LAUNCHERS",
+    "status": "TRUSTED",
+    "url": "https://github.com/hydralauncher/hydra",
+    "desc": "Open-source game launcher with integrated download manager and client tracking."
+  },
+  {
+    "title": "Playnite",
+    "category": "LAUNCHERS",
+    "status": "TRUSTED",
+    "url": "https://playnite.link",
+    "desc": "Open-source video game library manager with support for 3rd party libraries like Steam, GOG, and Epic."
+  },
+  {
+    "title": "Heroic Games Launcher",
+    "category": "LAUNCHERS",
+    "status": "TRUSTED",
+    "url": "https://heroicgameslauncher.com",
+    "desc": "Native, open-source launcher for Epic Games, GOG, and Prime Gaming on Windows, Linux, and Mac."
+  },
+  {
+    "title": "LaunchBox",
+    "category": "LAUNCHERS",
+    "status": "TRUSTED",
+    "url": "https://www.launchbox-app.com",
+    "desc": "Attractive front-end for DOSBox, emulators, arcade cabinets, and modern PC games."
+  },
+  {
+    "title": "Pegasus",
+    "category": "LAUNCHERS",
+    "status": "TRUSTED",
+    "url": "https://pegasus-frontend.org",
+    "desc": "Customizable, graphical front-end for launching games across retro and modern platforms."
+  },
+  {
+    "title": "RetroArch",
+    "category": "LAUNCHERS",
+    "status": "TRUSTED",
+    "url": "https://www.retroarch.com",
+    "desc": "Frontend for emulators, game engines, and media players using the Libretro core API."
+  },
+  {
+    "title": "Lutris",
+    "category": "LAUNCHERS",
+    "status": "TRUSTED",
+    "url": "https://lutris.net",
+    "desc": "Open-source gaming platform that lets you install and manage games from various sources seamlessly."
+  },
+  {
+    "title": "Free Download Manager",
+    "category": "DOWNLOAD MANAGERS",
+    "status": "TRUSTED",
+    "url": "https://www.freedownloadmanager.org",
+    "desc": "Fast, safe, and efficient download accelerator and organizer supporting torrents."
+  },
+  {
+    "title": "Motrix",
+    "category": "DOWNLOAD MANAGERS",
+    "status": "TRUSTED",
+    "url": "https://motrix.app",
+    "desc": "Clean, full-featured download manager supporting HTTP, FTP, BitTorrent, and Magnet."
+  },
+  {
+    "title": "JDownloader 2",
+    "category": "DOWNLOAD MANAGERS",
+    "status": "TRUSTED",
+    "url": "https://jdownloader.org",
+    "desc": "Free, open-source download management tool with automated CAPTCHA solving and link grabbing."
+  },
+  {
+    "title": "FitGirl Repacks",
+    "category": "REPACKS & DOWNLOADS",
+    "status": "TRUSTED",
+    "url": "https://fitgirl-repacks.site",
+    "desc": "Repack community known for ultra-compressed, highly verified PC game installers."
+  },
+  {
+    "title": "DODI Repacks",
+    "category": "REPACKS & DOWNLOADS",
+    "status": "TRUSTED",
+    "url": "https://dodi-repacks.site",
+    "desc": "Trusted, fast-installing game repacks with multi-language packages and updates."
+  },
+  {
+    "title": "Anker Games",
+    "category": "REPACKS & DOWNLOADS",
+    "status": "TRUSTED",
+    "url": "https://ankergames.net",
+    "desc": "Curated direct download game library with fast cloud mirrors."
+  },
+  {
+    "title": "GOG-Games",
+    "category": "REPACKS & DOWNLOADS",
+    "status": "TRUSTED",
+    "url": "https://gog-games.to",
+    "desc": "DRM-free clean GOG installers with direct download mirrors and torrent options."
+  },
+  {
+    "title": "SteamRip",
+    "category": "REPACKS & DOWNLOADS",
+    "status": "TRUSTED",
+    "url": "https://steamrip.com",
+    "desc": "Direct pre-installed game downloads with automatic game updates and verified archives."
+  },
+  {
+    "title": "Lossless Scaling",
+    "category": "OPTIMIZATION & FPS",
+    "status": "TRUSTED",
+    "url": "https://store.steampowered.com/app/993090/Lossless_Scaling",
+    "desc": "Universal frame generation (LSFG) and state-of-the-art upscaling for any windowed game or emulator."
+  },
+  {
+    "title": "OptiScaler",
+    "category": "OPTIMIZATION & FPS",
+    "status": "TRUSTED",
+    "url": "https://github.com/cdozdil/OptiScaler",
+    "desc": "Drop-in middleware replacing DLSS with FSR 2/3 or XeSS on any graphics card."
+  },
+  {
+    "title": "DLSS Swapper",
+    "category": "OPTIMIZATION & FPS",
+    "status": "TRUSTED",
+    "url": "https://github.com/beeradmoore/dlss-swapper",
+    "desc": "Easily upgrade or downgrade DLSS, DLSS-G, and Ray Reconstruction DLLs in installed PC games."
+  },
+  {
+    "title": "Special K",
+    "category": "OPTIMIZATION & FPS",
+    "status": "TRUSTED",
+    "url": "https://www.special-k.info",
+    "desc": "Game mod framework providing ultra-low-latency frame pacing, HDR retrofitting, and performance graphs."
+  },
+  {
+    "title": "Magpie",
+    "category": "OPTIMIZATION & FPS",
+    "status": "TRUSTED",
+    "url": "https://github.com/Blinue/Magpie",
+    "desc": "All-in-one windowed fullscreen upscaling tool with FSR, Anime4K, and integer scaling."
+  },
+  {
+    "title": "DS4Windows (Ryochan7)",
+    "category": "CONTROLLER & INPUT",
+    "status": "TRUSTED",
+    "url": "https://github.com/Ryochan7/DS4Windows",
+    "desc": "Map and emulate Xbox 360 controller with DualShock 4 and DualSense over Bluetooth or USB."
+  },
+  {
+    "title": "DualSenseX",
+    "category": "CONTROLLER & INPUT",
+    "status": "TRUSTED",
+    "url": "https://github.com/Paliverse/DualSenseX",
+    "desc": "Brings native PS5 DualSense adaptive triggers and advanced haptic feedback to PC games."
+  },
+  {
+    "title": "AntiMicroX",
+    "category": "CONTROLLER & INPUT",
+    "status": "TRUSTED",
+    "url": "https://github.com/AntiMicroX/antimicrox",
+    "desc": "Graphical program to map keyboard keys and mouse controls to any gamepad."
+  },
+  {
+    "title": "x360ce",
+    "category": "CONTROLLER & INPUT",
+    "status": "TRUSTED",
+    "url": "https://www.x360ce.com",
+    "desc": "Xbox 360 Controller Emulator that allows generic controllers and arcade sticks to function as XInput."
+  },
+  {
+    "title": "Gamepadla",
+    "category": "CONTROLLER & INPUT",
+    "status": "TRUSTED",
+    "url": "https://gamepadla.com",
+    "desc": "Interactive controller latency database comparing polling rates, jitter, and response times."
+  },
+  {
+    "title": "Online-Fix",
+    "category": "MULTIPLAYER & LAN",
+    "status": "TRUSTED",
+    "url": "https://online-fix.me",
+    "desc": "Community providing verified multiplayer and co-op fixes for non-Steam games using Spacewar wrappers."
+  },
+  {
+    "title": "Nucleus Co-op",
+    "category": "MULTIPLAYER & LAN",
+    "status": "TRUSTED",
+    "url": "https://nucleus-coop.github.io",
+    "desc": "Free open-source tool enabling split-screen and multi-monitor local co-op on single-player PC games."
+  },
+  {
+    "title": "ZeroTier",
+    "category": "MULTIPLAYER & LAN",
+    "status": "TRUSTED",
+    "url": "https://www.zerotier.com",
+    "desc": "Modern virtual LAN and peer-to-peer mesh networking tool for private zero-config gaming sessions."
+  },
+  {
+    "title": "Radmin VPN",
+    "category": "MULTIPLAYER & LAN",
+    "status": "TRUSTED",
+    "url": "https://www.radmin-vpn.com",
+    "desc": "Free virtual local network software specifically optimized for low-latency LAN gaming."
+  },
+  {
+    "title": "Plutonium Project",
+    "category": "MULTIPLAYER & LAN",
+    "status": "TRUSTED",
+    "url": "https://plutonium.pw",
+    "desc": "Dedicated multiplayer client for classic Call of Duty games (BO1, BO2, MW3, WaW) with anti-cheat."
+  },
+  {
+    "title": "Ludusavi",
+    "category": "SAVE MANAGERS",
+    "status": "TRUSTED",
+    "url": "https://github.com/mtkennerly/ludusavi",
+    "desc": "Cross-platform tool to backup PC game saves automatically aware of 10,000+ PCGamingWiki paths."
+  },
+  {
+    "title": "SaveState",
+    "category": "SAVE MANAGERS",
+    "status": "TRUSTED",
+    "url": "https://savestate.cloud",
+    "desc": "Open-source cloud save synchronization tool for seamless save syncing across multiple PCs."
+  },
+  {
+    "title": "GameSave Manager",
+    "category": "SAVE MANAGERS",
+    "status": "TRUSTED",
+    "url": "https://www.gamesave-manager.com",
+    "desc": "Backup, restore, and transfer game save progress across machines and cloud drives."
+  },
+  {
+    "title": "Mod Organizer 2",
+    "category": "MOD MANAGERS & TRAINERS",
+    "status": "TRUSTED",
+    "url": "https://github.com/ModOrganizer2/modorganizer",
+    "desc": "Mod manager utilizing a Virtual File System (VFS) to keep base game files completely pristine."
+  },
+  {
+    "title": "Vortex",
+    "category": "MOD MANAGERS & TRAINERS",
+    "status": "TRUSTED",
+    "url": "https://www.nexusmods.com/site/mods/1",
+    "desc": "Official Nexus Mods desktop manager supporting hundreds of titles with one-click installation."
+  },
+  {
+    "title": "Thunderstore Mod Manager",
+    "category": "MOD MANAGERS & TRAINERS",
+    "status": "TRUSTED",
+    "url": "https://www.overwolf.com/app/thunderstore-thunderstore_mod_manager",
+    "desc": "Community mod manager for indie and Unity titles (Lethal Company, Valheim, Risk of Rain 2)."
+  },
+  {
+    "title": "FLiNG Trainer",
+    "category": "MOD MANAGERS & TRAINERS",
+    "status": "TRUSTED",
+    "url": "https://flingtrainer.com",
+    "desc": "Clean, standalone single-player trainers and game cheats with zero bundled malware."
+  },
+  {
+    "title": "WeMod",
+    "category": "MOD MANAGERS & TRAINERS",
+    "status": "TRUSTED",
+    "url": "https://www.wemod.com",
+    "desc": "Unified application offering verified single-player cheats, trainers, and overlay controls."
+  },
+  {
+    "title": "PCGamingWiki",
+    "category": "WIKIS & TRACKERS",
+    "status": "TRUSTED",
+    "url": "https://www.pcgamingwiki.com",
+    "desc": "Invaluable encyclopedia documenting game fixes, ultrawide patches, FOV modifications, and save paths."
+  },
+  {
+    "title": "HowLongToBeat",
+    "category": "WIKIS & TRACKERS",
+    "status": "TRUSTED",
+    "url": "https://howlongtobeat.com",
+    "desc": "Crowdsourced database tracking average game completion times for Main Story and 100% runs."
+  },
+  {
+    "title": "Backloggd",
+    "category": "WIKIS & TRACKERS",
+    "status": "TRUSTED",
+    "url": "https://www.backloggd.com",
+    "desc": "Track, log, rate, and organize your video game collection and backlogs."
+  },
+  {
+    "title": "GameStatus",
+    "category": "WIKIS & TRACKERS",
+    "status": "TRUSTED",
+    "url": "https://gamestatus.info",
+    "desc": "Real-time tracker showing crack and DRM bypass status for upcoming and released PC games."
+  },
+  {
+    "title": "Hacks.guide",
+    "category": "CONSOLE HOMEBREW",
+    "status": "TRUSTED",
+    "url": "https://hacks.guide",
+    "desc": "Step-by-step custom firmware guides for Nintendo Switch, 3DS, Wii U, and PS Vita."
+  },
+  {
+    "title": "Switch Hacks Guide",
+    "category": "CONSOLE HOMEBREW",
+    "status": "TRUSTED",
+    "url": "https://switch.hacks.guide",
+    "desc": "Definitive guide to installing Atmosphère custom firmware safely on Nintendo Switch."
+  },
+  {
+    "title": "3DS Hacks Guide",
+    "category": "CONSOLE HOMEBREW",
+    "status": "TRUSTED",
+    "url": "https://3ds.hacks.guide",
+    "desc": "Complete, foolproof guide to installing Luma3DS CFW on Nintendo 3DS and 2DS consoles."
+  },
+  {
+    "title": "Insignia",
+    "category": "CONSOLE HOMEBREW",
+    "status": "TRUSTED",
+    "url": "https://insignia.live",
+    "desc": "Free replacement online service restoring Xbox Live multiplayer for original Xbox consoles."
+  },
+  {
+    "title": "Prism Launcher",
+    "category": "MINECRAFT TOOLS",
+    "status": "TRUSTED",
+    "url": "https://prismlauncher.org",
+    "desc": "Custom open-source Minecraft launcher with built-in Modrinth and CurseForge modpack support."
+  },
+  {
+    "title": "Sodium (Modrinth)",
+    "category": "MINECRAFT TOOLS",
+    "status": "TRUSTED",
+    "url": "https://modrinth.com/mod/sodium",
+    "desc": "Next-generation open-source rendering engine that dramatically boosts Minecraft frame rates."
+  },
+  {
+    "title": "Chunk Base",
+    "category": "MINECRAFT TOOLS",
+    "status": "TRUSTED",
+    "url": "https://www.chunkbase.com",
+    "desc": "Visual interactive map finder for Minecraft seeds, biomes, fortresses, and structures."
+  },
+  {
+    "title": "PaperMC",
+    "category": "MINECRAFT TOOLS",
+    "status": "TRUSTED",
+    "url": "https://papermc.io",
+    "desc": "High-performance Minecraft server software designed to eliminate lag and maximize TPS."
+  },
+  {
+    "title": "Blockbench",
+    "category": "MINECRAFT TOOLS",
+    "status": "TRUSTED",
+    "url": "https://www.blockbench.net",
+    "desc": "3D low-poly model editor designed specifically for Minecraft entities, blocks, and textures."
+  },
+  {
+    "title": "PKHeX",
+    "category": "FRANCHISE TOOLS",
+    "status": "TRUSTED",
+    "url": "https://projectpokemon.org/home/files/file/1-pkhex",
+    "desc": "Core Pokémon save editor supporting Generational saves from Gen 1 to Gen 9."
+  },
+  {
+    "title": "Pokémon Showdown",
+    "category": "FRANCHISE TOOLS",
+    "status": "TRUSTED",
+    "url": "https://pokemonshowdown.com",
+    "desc": "Competitive Pokémon battle simulator with full Smogon rulesets and team builders."
+  },
+  {
+    "title": "CS Demo Manager",
+    "category": "FRANCHISE TOOLS",
+    "status": "TRUSTED",
+    "url": "https://cs-demo-manager.com",
+    "desc": "Advanced Counter-Strike 2 match replay analyzer tracking heatmaps, economy, and utility."
+  },
+  {
+    "title": "FiveM",
+    "category": "FRANCHISE TOOLS",
+    "status": "TRUSTED",
+    "url": "https://fivem.net",
+    "desc": "Multiplayer modification framework enabling custom dedicated roleplay and drift servers for GTA V."
+  },
+  {
+    "title": "GZDoom",
+    "category": "FRANCHISE TOOLS",
+    "status": "TRUSTED",
+    "url": "https://zdoom.org",
+    "desc": "Feature-rich source port for classic Doom with modern hardware acceleration and mod support."
+  }
+]
