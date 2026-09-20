@@ -1,11 +1,30 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Best Free Developer Tools, IDEs & Web APIs | Internet Vault | MrFreqline",
-  description: "Curated collection of free developer resources: code editors, terminal utilities, free cloud hosting, REST APIs, Git tools, and cybersecurity references.",
-  keywords: ["developer tools", "free ides", "git tools", "free cloud hosting", "developer apis", "programming resources"],
+  title: "Best Free Developer Tools, Coding Utilities, Free IDEs & APIs | MrFreqline",
+  description: "Curated collection of 100+ free developer tools: online coding utilities, code formatters, free IDEs, regex testers, git tools, free cloud hosting, and developer APIs.",
+  keywords: [
+    "free developer tools",
+    "best developer tools",
+    "free coding tools",
+    "web developer tools online",
+    "free dev tools",
+    "developer utilities",
+    "free ides",
+    "git tools",
+    "free cloud hosting",
+    "developer apis",
+    "programming resources free",
+  ],
   alternates: {
     canonical: "https://mrfreqline.vercel.app/resources/internet-vault/developer",
+  },
+  openGraph: {
+    title: "Best Free Developer Tools, Coding Utilities, Free IDEs & APIs | MrFreqline",
+    description: "Curated collection of 100+ free developer tools, IDEs, code utilities, and APIs.",
+    url: "https://mrfreqline.vercel.app/resources/internet-vault/developer",
+    siteName: "MrFreqline",
+    type: "website",
   },
 };
 

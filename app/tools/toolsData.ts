@@ -1241,7 +1241,7 @@ export const TOOLS_DIRECTORY: Record<ToolId, ToolSEOItem> = {
     badge: "Popular",
     seoTitle: "Free PDF Merge Online - Combine Multiple PDF Files Privately | MrFreqline",
     seoDescription: "Combine multiple PDF files into a single organized document online. 100% free, client-side in-browser processing with zero file uploads to external servers.",
-    keywords: ["merge pdf online", "combine pdf files", "pdf joiner free", "merge pdf without upload", "private pdf merge"],
+    keywords: ["merge pdf online", "combine pdf files", "pdf converter", "free pdf converter", "pdf joiner free", "merge pdf without upload", "private pdf merge"],
     shortDescription: "Combine multiple PDF documents into a single organized file.",
     features: [
       "Merge unlimited PDF documents into one single file",
@@ -1266,7 +1266,7 @@ export const TOOLS_DIRECTORY: Record<ToolId, ToolSEOItem> = {
     category: "PDF & Media",
     seoTitle: "Free PDF Split Online - Extract Pages from PDF Documents | MrFreqline",
     seoDescription: "Extract specific pages or page ranges from any PDF document. Free, in-browser client-side PDF splitter with zero privacy compromises.",
-    keywords: ["split pdf online", "extract pages from pdf", "pdf separator free", "separate pdf pages online"],
+    keywords: ["split pdf online", "extract pages from pdf", "pdf converter", "free pdf converter", "pdf separator free", "separate pdf pages online"],
     shortDescription: "Extract specific pages or page ranges (e.g. 1-3, 5) into new PDFs.",
     features: [
       "Extract single pages, multiple pages, or custom page ranges (e.g. 1-4, 7, 9-12)",
@@ -1291,7 +1291,7 @@ export const TOOLS_DIRECTORY: Record<ToolId, ToolSEOItem> = {
     category: "PDF & Media",
     seoTitle: "Free PDF Compressor Online - Reduce PDF File Size Privately | MrFreqline",
     seoDescription: "Compress and reduce the file size of PDF documents in your browser. Streamline objects and deduplicate internal resources with 100% privacy.",
-    keywords: ["compress pdf online", "reduce pdf file size", "shrink pdf free", "compress pdf without upload"],
+    keywords: ["compress pdf online", "reduce pdf file size", "shrink pdf free", "pdf converter", "free pdf converter", "compress pdf without upload"],
     shortDescription: "Optimize PDF structure and deduplicate internal streams to reduce file size.",
     features: [
       "Reduces PDF file size by stripping redundant structures and optimizing object streams",
@@ -1316,7 +1316,7 @@ export const TOOLS_DIRECTORY: Record<ToolId, ToolSEOItem> = {
     category: "PDF & Media",
     seoTitle: "Convert PDF to Image Online - PDF to JPG & PNG Converter | MrFreqline",
     seoDescription: "Convert PDF pages into high-resolution JPG or PNG images directly in your browser. Free, fast, and completely confidential with zero server uploads.",
-    keywords: ["pdf to image", "convert pdf to png", "pdf to jpg online free", "extract images from pdf"],
+    keywords: ["pdf to image", "pdf converter", "free pdf converter", "convert pdf to png", "pdf to jpg online free", "extract images from pdf"],
     shortDescription: "Convert PDF pages into high-resolution PNG or JPG image files.",
     features: [
       "Convert PDF pages into high-resolution PNG or JPEG images",
@@ -1341,7 +1341,7 @@ export const TOOLS_DIRECTORY: Record<ToolId, ToolSEOItem> = {
     category: "PDF & Media",
     seoTitle: "Convert Image to PDF Online - JPG, PNG & WebP to PDF | MrFreqline",
     seoDescription: "Convert images into a formatted PDF document. Combine multiple JPG, PNG, and WebP pictures into a single organized PDF. 100% client-side.",
-    keywords: ["image to pdf", "jpg to pdf converter", "png to pdf free", "combine images into pdf"],
+    keywords: ["image to pdf", "pdf converter", "free pdf converter", "jpg to pdf converter", "png to pdf free", "combine images into pdf"],
     shortDescription: "Compile multiple JPG and PNG images into a clean paginated PDF document.",
     features: [
       "Compile single or multiple JPG, PNG, and WebP images into a single PDF",
@@ -1366,7 +1366,7 @@ export const TOOLS_DIRECTORY: Record<ToolId, ToolSEOItem> = {
     category: "PDF & Media",
     seoTitle: "Text to PDF Converter - Convert Plain Text & Notes to PDF | MrFreqline",
     seoDescription: "Convert plain text, code, or meeting notes into a clean, formatted A4 PDF document online. Free, fast, client-side, and ready to print.",
-    keywords: ["text to pdf", "convert text to pdf online", "txt to pdf converter", "create pdf from text"],
+    keywords: ["text to pdf", "pdf converter", "free pdf converter", "convert text to pdf online", "txt to pdf converter", "create pdf from text"],
     shortDescription: "Convert plain text notes or code into formatted A4 PDF documents.",
     features: [
       "Instant transformation of raw text or notes into formatted A4 PDFs",
@@ -1417,7 +1417,7 @@ export const TOOLS_DIRECTORY: Record<ToolId, ToolSEOItem> = {
     category: "PDF & Media",
     seoTitle: "Free Image Converter Online - Convert JPG, PNG & WebP | MrFreqline",
     seoDescription: "Convert images between JPG, PNG, and WebP formats instantly in your browser. Fast, free, client-side conversion with zero image uploads.",
-    keywords: ["jpg to png converter", "png to jpg online", "convert image to webp", "image format converter free"],
+    keywords: ["image converter online", "free image converter", "jpg to png converter", "png to jpg online", "convert image to webp", "image format converter free"],
     shortDescription: "Convert images between JPG, PNG, and WebP formats instantly in your browser.",
     features: [
       "Convert between JPG, PNG, and WebP formats with one click",
