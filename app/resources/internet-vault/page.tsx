@@ -117,12 +117,17 @@ export default function InternetVaultHub() {
   const [searchQuery, setSearchQuery] = useState("");
 
   const searchResults = searchQuery.trim()
-    ? allVaultLinks.filter(
-        (l) =>
-          l.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          l.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          (l.desc && l.desc.toLowerCase().includes(searchQuery.toLowerCase()))
-      )
+    ? allVaultLinks.filter((l: any) => {
+        const q = searchQuery.trim().toLowerCase();
+        return (
+          (l.title && l.title.toLowerCase().includes(q)) ||
+          (l.category && l.category.toLowerCase().includes(q)) ||
+          (l.desc && l.desc.toLowerCase().includes(q)) ||
+          (l.url && l.url.toLowerCase().includes(q)) ||
+          (l.author && l.author.toLowerCase().includes(q)) ||
+          (l.sectionName && l.sectionName.toLowerCase().includes(q))
+        );
+      })
     : [];
 
   return (
@@ -159,10 +164,10 @@ export default function InternetVaultHub() {
           <div className="mt-8">
             <input
               type="text"
-              placeholder="Search across all vault sections (e.g. 'Photopea', 'HandBrake', 'Git', 'FLAC')..."
+              placeholder="Search across all vault sections (e.g. 'Photopea', 'HandBrake', 'Git', 'FLAC', 'Anime')..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-xl border border-white/10 bg-white/5 px-5 py-3.5 text-sm text-white placeholder-white/40 transition-all duration-300 focus:border-[#00D2FF] focus:outline-none focus:ring-1 focus:ring-[#00D2FF]"
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-5 py-3.5 text-base sm:text-sm text-white placeholder-white/40 transition-all duration-300 focus:border-[#00D2FF] focus:outline-none focus:ring-1 focus:ring-[#00D2FF]"
             />
           </div>
 

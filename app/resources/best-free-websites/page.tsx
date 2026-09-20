@@ -12,26 +12,48 @@ export const dynamic = "force-dynamic";
 
 const defaultLinks = [
   // Free Courses
-  { title: "freeCodeCamp", category: "Free Courses", status: "TRUSTED", url: "https://www.freecodecamp.org" },
-  { title: "Harvard CS50 (edX)", category: "Free Courses", status: "TRUSTED", url: "https://www.edx.org/course/introduction-computer-science-harvardx-cs50x" },
-  { title: "Odin Project", category: "Free Courses", status: "TRUSTED", url: "https://www.theodinproject.com" },
-  { title: "MIT OpenCourseWare", category: "Free Courses", status: "TRUSTED", url: "https://ocw.mit.edu" },
-  { title: "Coursera (Audit Mode)", category: "Free Courses", status: "ACTIVE", url: "https://www.coursera.org" },
-  { title: "Khan Academy", category: "Free Courses", status: "TRUSTED", url: "https://www.khanacademy.org" },
-  { title: "Sololearn", category: "Free Courses", status: "ACTIVE", url: "https://www.sololearn.com" },
-  { title: "Class Central", category: "Free Courses", status: "ACTIVE", url: "https://www.classcentral.com" },
-  { title: "Full Stack Open", category: "Free Courses", status: "TRUSTED", url: "https://fullstackopen.com" },
-  { title: "Kaggle Learn", category: "Free Courses", status: "ACTIVE", url: "https://www.kaggle.com/learn" },
+  { title: "LabEx", category: "Free Courses", status: "TRUSTED", url: "https://labex.io", especiallyFor: "Software Developers, DevOps & Linux Learners" },
+  { title: "freeCodeCamp", category: "Free Courses", status: "TRUSTED", url: "https://www.freecodecamp.org", especiallyFor: "Full-Stack Web Developers" },
+  { title: "Harvard CS50 (edX)", category: "Free Courses", status: "TRUSTED", url: "https://www.edx.org/course/introduction-computer-science-harvardx-cs50x", especiallyFor: "Computer Science Beginners & High School/College Students" },
+  { title: "MIT OpenCourseWare", category: "Free Courses", status: "TRUSTED", url: "https://ocw.mit.edu", especiallyFor: "STEM, Physics, Engineering & Mathematics" },
+  { title: "MIT Open Learning Library", category: "Free Courses", status: "TRUSTED", url: "https://openlearning.mit.edu", especiallyFor: "Self-Paced College Coursework & Engineering" },
+  { title: "The Odin Project", category: "Free Courses", status: "TRUSTED", url: "https://www.theodinproject.com", especiallyFor: "Ruby on Rails & JavaScript Full-Stack Devs" },
+  { title: "Full Stack Open", category: "Free Courses", status: "TRUSTED", url: "https://fullstackopen.com", especiallyFor: "Modern React, Node.js, GraphQL & TypeScript" },
+  { title: "Kaggle Learn", category: "Free Courses", status: "TRUSTED", url: "https://www.kaggle.com/learn", especiallyFor: "Data Science, Machine Learning & Python" },
+  { title: "Coursera (Free Audit)", category: "Free Courses", status: "ACTIVE", url: "https://www.coursera.org", especiallyFor: "College Students & Professional Certifications" },
+  { title: "edX (Free Audit)", category: "Free Courses", status: "ACTIVE", url: "https://www.edx.org", especiallyFor: "University Level Computer Science & Business" },
+  { title: "openSAP", category: "Free Courses", status: "TRUSTED", url: "https://open.sap.com", especiallyFor: "Enterprise Software, Cloud Architecture & Business Management" },
+  { title: "Saylor Academy", category: "Free Courses", status: "TRUSTED", url: "https://www.saylor.org", especiallyFor: "Free College Credit & Degree Transfer Courses" },
+  { title: "OpenStax", category: "Free Courses", status: "TRUSTED", url: "https://openstax.org", especiallyFor: "Free Peer-Reviewed College Textbooks & General Students" },
+  { title: "Khan Academy", category: "Free Courses", status: "TRUSTED", url: "https://www.khanacademy.org", especiallyFor: "K-12, SAT Prep, Math & Science Basics" },
+  { title: "Class Central", category: "Free Courses", status: "ACTIVE", url: "https://www.classcentral.com", especiallyFor: "Aggregator for 100,000+ Free Online MOOCs" },
+  { title: "Cognitive Class", category: "Free Courses", status: "TRUSTED", url: "https://cognitiveclass.ai", especiallyFor: "IBM-Certified Cloud Computing, AI & Data Science" },
+  { title: "Microsoft Learn", category: "Free Courses", status: "TRUSTED", url: "https://learn.microsoft.com", especiallyFor: "Azure Cloud, C#, .NET & DevOps Engineers" },
+  { title: "Sololearn", category: "Free Courses", status: "ACTIVE", url: "https://www.sololearn.com", especiallyFor: "Bite-Sized Mobile Programming Lessons" },
+  { title: "Scrimba (Free Tier)", category: "Free Courses", status: "ACTIVE", url: "https://scrimba.com", especiallyFor: "Interactive Code-in-Video Frontend Tutorials" },
+  { title: "Great Learning Academy", category: "Free Courses", status: "ACTIVE", url: "https://www.mygreatlearning.com/academy", especiallyFor: "Management, Digital Marketing & AI Fundamentals" },
 
   // Student Tools
-  { title: "GitHub Student Pack", category: "Student Tools", status: "TRUSTED", url: "https://education.github.com/pack" },
-  { title: "Notion Education", category: "Student Tools", status: "TRUSTED", url: "https://www.notion.so/product/notion-for-education" },
-  { title: "Figma for Students", category: "Student Tools", status: "TRUSTED", url: "https://www.figma.com/education" },
-  { title: "JetBrains Student License", category: "Student Tools", status: "TRUSTED", url: "https://www.jetbrains.com/community/education/#students" },
-  { title: "Canva for Education", category: "Student Tools", status: "ACTIVE", url: "https://www.canva.com/education" },
-  { title: "Spotify Student + Hulu", category: "Student Tools", status: "ACTIVE", url: "https://www.spotify.com/us/student" },
-  { title: "Overleaf (LaTeX)", category: "Student Tools", status: "ACTIVE", url: "https://www.overleaf.com" },
-  { title: "Autodesk Student Access", category: "Student Tools", status: "ACTIVE", url: "https://www.autodesk.com/education/edu-software" },
+  { title: "GitHub Student Developer Pack", category: "Student Tools", status: "TRUSTED", url: "https://education.github.com/pack", especiallyFor: "Computer Science & Software Developers" },
+  { title: "Notion for Education", category: "Student Tools", status: "TRUSTED", url: "https://www.notion.so/product/notion-for-education", especiallyFor: "All Students, Notes & Lecture Organization" },
+  { title: "Figma for Education", category: "Student Tools", status: "TRUSTED", url: "https://www.figma.com/education", especiallyFor: "UI/UX, Product & Graphic Design Students" },
+  { title: "JetBrains Student License", category: "Student Tools", status: "TRUSTED", url: "https://www.jetbrains.com/community/education/#students", especiallyFor: "Computer Science, Java, Python & C++ Devs" },
+  { title: "Overleaf (LaTeX)", category: "Student Tools", status: "TRUSTED", url: "https://www.overleaf.com", especiallyFor: "STEM, Mathematics & Academic Research Papers" },
+  { title: "Zotero", category: "Student Tools", status: "TRUSTED", url: "https://www.zotero.org", especiallyFor: "Thesis Writers, Research Citations & Bibliography" },
+  { title: "Mendeley", category: "Student Tools", status: "ACTIVE", url: "https://www.mendeley.com", especiallyFor: "Academic Research & PDF Reference Management" },
+  { title: "Semantic Scholar", category: "Student Tools", status: "TRUSTED", url: "https://www.semanticscholar.org", especiallyFor: "AI-Powered Scientific Literature Search" },
+  { title: "SciSpace (Typeset.io)", category: "Student Tools", status: "ACTIVE", url: "https://typeset.io", especiallyFor: "Research Paper Explanations & Literature Review" },
+  { title: "Connected Papers", category: "Student Tools", status: "TRUSTED", url: "https://www.connectedpapers.com", especiallyFor: "Visual Academic Graph Exploration & Citations" },
+  { title: "GeoGebra", category: "Student Tools", status: "TRUSTED", url: "https://www.geogebra.org", especiallyFor: "Math, Geometry, Calculus & Graphing Students" },
+  { title: "Wolfram Alpha", category: "Student Tools", status: "TRUSTED", url: "https://www.wolframalpha.com", especiallyFor: "Mathematics, Physics, Chemistry & Engineering" },
+  { title: "Tableau for Students", category: "Student Tools", status: "TRUSTED", url: "https://www.tableau.com/academic/students", especiallyFor: "Business, Management & Data Analytics Students" },
+  { title: "Trello", category: "Student Tools", status: "ACTIVE", url: "https://trello.com", especiallyFor: "Project Management, Agile Sprints & Group Work" },
+  { title: "Obsidian", category: "Student Tools", status: "TRUSTED", url: "https://obsidian.md", especiallyFor: "Markdown Second Brain & Research Knowledge Graph" },
+  { title: "Canva for Education", category: "Student Tools", status: "ACTIVE", url: "https://www.canva.com/education", especiallyFor: "Presentations, Infographics & Posters" },
+  { title: "Autodesk Student Access", category: "Student Tools", status: "ACTIVE", url: "https://www.autodesk.com/education/edu-software", especiallyFor: "Architecture, Mechanical & Civil Engineering" },
+  { title: "Grammarly (Free)", category: "Student Tools", status: "ACTIVE", url: "https://www.grammarly.com", especiallyFor: "Essay Proofreading & Grammar Checking" },
+  { title: "QuillBot", category: "Student Tools", status: "ACTIVE", url: "https://quillbot.com", especiallyFor: "Paraphrasing, Grammar & Sentence Polishing" },
+  { title: "Spotify Student + Hulu", category: "Student Tools", status: "ACTIVE", url: "https://www.spotify.com/us/student", especiallyFor: "Study Focus, Lo-Fi & Student Lifestyle" },
 
   // Movies & Shows
   { title: "Dulo", category: "Movies & Shows", status: "ACTIVE", url: "https://dulo.tv" },
@@ -220,6 +242,20 @@ const defaultLinks = [
   { title: "VLC Media Player", category: "Free Softwares", status: "TRUSTED", url: "https://www.videolan.org/vlc" },
   { title: "LibreOffice", category: "Free Softwares", status: "ACTIVE", url: "https://www.libreoffice.org" },
   { title: "GIMP", category: "Free Softwares", status: "ACTIVE", url: "https://www.gimp.org" },
+  { title: "OBS Studio", category: "Free Softwares", status: "TRUSTED", url: "https://obsproject.com" },
+  { title: "Audacity", category: "Free Softwares", status: "TRUSTED", url: "https://www.audacityteam.org" },
+  { title: "HandBrake", category: "Free Softwares", status: "TRUSTED", url: "https://handbrake.fr" },
+  { title: "ShareX", category: "Free Softwares", status: "TRUSTED", url: "https://getsharex.com" },
+  { title: "Everything (Voidtools)", category: "Free Softwares", status: "TRUSTED", url: "https://www.voidtools.com" },
+  { title: "Notepad++", category: "Free Softwares", status: "TRUSTED", url: "https://notepad-plus-plus.org" },
+  { title: "Blender", category: "Free Softwares", status: "TRUSTED", url: "https://www.blender.org" },
+  { title: "BleachBit", category: "Free Softwares", status: "TRUSTED", url: "https://www.bleachbit.org" },
+  { title: "Rufus", category: "Free Softwares", status: "TRUSTED", url: "https://rufus.ie" },
+  { title: "KeePassXC", category: "Free Softwares", status: "TRUSTED", url: "https://keepassxc.org" },
+  { title: "qBittorrent", category: "Free Softwares", status: "TRUSTED", url: "https://www.qbittorrent.org" },
+  { title: "Calibre", category: "Free Softwares", status: "TRUSTED", url: "https://calibre-ebook.com" },
+  { title: "Krita", category: "Free Softwares", status: "TRUSTED", url: "https://krita.org" },
+  { title: "Inkscape", category: "Free Softwares", status: "TRUSTED", url: "https://inkscape.org" },
 
   // Download Managers
   {
@@ -238,6 +274,78 @@ const defaultLinks = [
       youtubeUrl: "https://www.youtube.com/results?search_query=free+download+manager+tutorial",
     },
   },
+  {
+    title: "JDownloader 2",
+    category: "Download Managers",
+    status: "TRUSTED",
+    url: "https://jdownloader.org",
+    guide: {
+      steps: [
+        "Download the installer from the official website.",
+        "Run the installer and complete the setup.",
+        "Enable LinkGrabber to catch download links automatically.",
+      ],
+      warning: "Always download software from the official website.",
+      youtubeUrl: "https://www.youtube.com/results?search_query=how+to+use+jdownloader+2",
+    },
+  },
+  {
+    title: "Motrix",
+    category: "Download Managers",
+    status: "TRUSTED",
+    url: "https://motrix.app",
+    guide: {
+      steps: [
+        "Download Motrix for Windows, Mac, or Linux.",
+        "Install and optionally install the browser extension.",
+        "Paste direct links or torrent magnet links for accelerated downloads.",
+      ],
+      youtubeUrl: "https://www.youtube.com/results?search_query=how+to+use+motrix+download+manager",
+    },
+  },
+  {
+    title: "AB Download Manager",
+    category: "Download Managers",
+    status: "TRUSTED",
+    url: "https://abdownloadmanager.com",
+  },
+  {
+    title: "Xtreme Download Manager (XDM)",
+    category: "Download Managers",
+    status: "ACTIVE",
+    url: "https://xtremedownloadmanager.com",
+  },
+  {
+    title: "Tartube (yt-dlp GUI)",
+    category: "Download Managers",
+    status: "TRUSTED",
+    url: "https://tartube.sourceforge.io",
+  },
+
+  // Drama
+  { title: "DramaCool", category: "Drama", status: "TRUSTED", url: "https://dramacool.ch" },
+  { title: "KissAsian", category: "Drama", status: "ACTIVE", url: "https://kissasian.lu" },
+  { title: "MyDramaList", category: "Drama", status: "TRUSTED", url: "https://mydramalist.com" },
+  { title: "AsianWiki", category: "Drama", status: "TRUSTED", url: "https://asianwiki.com" },
+  { title: "Viki", category: "Drama", status: "TRUSTED", url: "https://www.viki.com" },
+  { title: "WatchAsian", category: "Drama", status: "ACTIVE", url: "https://watchasian.la" },
+  { title: "ViewAsian", category: "Drama", status: "ACTIVE", url: "https://viewasian.co" },
+  { title: "DramaNice", category: "Drama", status: "ACTIVE", url: "https://dramanice.site" },
+  { title: "KdramaHood", category: "Drama", status: "ACTIVE", url: "https://kdramahood.com" },
+
+  // Trackers & Database
+  { title: "AniList", category: "Trackers & Database", status: "TRUSTED", url: "https://anilist.co" },
+  { title: "MyAnimeList", category: "Trackers & Database", status: "TRUSTED", url: "https://myanimelist.net" },
+  { title: "Kitsu", category: "Trackers & Database", status: "ACTIVE", url: "https://kitsu.io" },
+  { title: "Simkl", category: "Trackers & Database", status: "TRUSTED", url: "https://simkl.com" },
+  { title: "MangaUpdates (Baka-Updates)", category: "Trackers & Database", status: "TRUSTED", url: "https://www.mangaupdates.com" },
+  { title: "Trakt.tv", category: "Trackers & Database", status: "TRUSTED", url: "https://trakt.tv" },
+  { title: "Letterboxd", category: "Trackers & Database", status: "TRUSTED", url: "https://letterboxd.com" },
+  { title: "The Movie Database (TMDb)", category: "Trackers & Database", status: "TRUSTED", url: "https://www.themoviedb.org" },
+  { title: "AniDB", category: "Trackers & Database", status: "ACTIVE", url: "https://anidb.net" },
+  { title: "LiveChart.me", category: "Trackers & Database", status: "TRUSTED", url: "https://www.livechart.me" },
+  { title: "Anime-Planet", category: "Trackers & Database", status: "ACTIVE", url: "https://www.anime-planet.com" },
+  { title: "TV Time", category: "Trackers & Database", status: "ACTIVE", url: "https://www.tvtime.com" },
 ];
 
 const categories = [
@@ -246,6 +354,8 @@ const categories = [
   "Anime",
   "Cartoons",
   "Manga",
+  "Drama",
+  "Trackers & Database",
   "Live TV & Sports",
   "Apps",
   "Free Softwares",
@@ -338,9 +448,13 @@ export default function BestFreeWebsites() {
   const filteredLinks = links.filter((link) => {
     const matchesCategory =
       activeCategory === "All" || (link.category || "").toLowerCase() === activeCategory.toLowerCase();
+    const query = searchQuery.trim().toLowerCase();
+    if (!query) return matchesCategory;
     const matchesSearch =
-      (link.title || "").toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (link.category || "").toLowerCase().includes(searchQuery.toLowerCase());
+      (link.title || "").toLowerCase().includes(query) ||
+      (link.category || "").toLowerCase().includes(query) ||
+      (link.url || "").toLowerCase().includes(query) ||
+      (link.especiallyFor || "").toLowerCase().includes(query);
     return matchesCategory && matchesSearch;
   });
 
@@ -436,6 +550,13 @@ export default function BestFreeWebsites() {
                     <h3 className="text-lg font-bold text-white">{link.title}</h3>
                   </div>
                   <p className="mt-2 text-sm text-white/50">{link.category}</p>
+                  {link.especiallyFor && (
+                    <div className="mt-2.5">
+                      <span className="inline-flex items-center gap-1 rounded-md bg-[#00D2FF]/10 border border-[#00D2FF]/25 px-2.5 py-1 text-xs font-semibold text-[#00D2FF]">
+                        🎯 Especially for: {link.especiallyFor}
+                      </span>
+                    </div>
+                  )}
                 </div>
                 <div className="mt-6 flex items-center gap-3 border-t border-white/10 pt-4">
                   <a

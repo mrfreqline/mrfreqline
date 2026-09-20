@@ -103,5 +103,55 @@
     "status": "TRUSTED",
     "url": "https://somafm.com",
     "desc": "Commercial-free, listener-supported internet radio with over 30 unique niche music channels."
+  },
+  {
+    "title": "listen.moe",
+    "category": "INTERNET RADIO",
+    "status": "TRUSTED",
+    "url": "https://listen.moe",
+    "desc": "Community-funded, ad-free Japanese music and anime soundtrack radio station streaming in high-bitrate Opus."
+  },
+  {
+    "title": "AnimeThemes.moe",
+    "category": "STREAMING",
+    "status": "TRUSTED",
+    "url": "https://animethemes.moe",
+    "desc": "Non-profit open archive of high-definition anime opening and ending sequence videos and credit songs."
+  },
+  {
+    "title": "R/a/dio",
+    "category": "INTERNET RADIO",
+    "status": "TRUSTED",
+    "url": "https://r-a-d.io",
+    "desc": "24/7 dedicated online anime and Japanese music internet radio station run by the anime community."
+  },
+  {
+    "title": "VGMdb",
+    "category": "ROYALTY FREE & PRODUCTION",
+    "status": "TRUSTED",
+    "url": "https://vgmdb.net",
+    "desc": "Comprehensive community database of video game, anime, and Japanese media music releases and composers."
+  },
+  {
+    "title": "VocaDB",
+    "category": "STREAMING",
+    "status": "TRUSTED",
+    "url": "https://vocadb.net",
+    "desc": "Complete database and streaming hub for Vocaloid, UTAU, and Synthesizer V original songs and producers."
+  },
+  {
+    "title": "Karaoke Mugen",
+    "category": "AUDIO PRODUCTION & VSTS",
+    "status": "TRUSTED",
+    "url": "https://mugen.karaokes.moe",
+    "desc": "Free, open-source anime karaoke party application with a massive database of timed anime songs."
+  },
+  {
+    "title": "KHInsider Video Game Music",
+    "category": "LOSSLESS & DOWNLOADS",
+    "status": "TRUSTED",
+    "url": "https://downloads.khinsider.com",
+    "desc": "Massive archive of downloadable video game and Japanese anime game soundtracks in MP3 and FLAC."
   }
 ]
+

@@ -122,6 +122,7 @@ const categories = [
   "CONSOLE HOMEBREW",
   "WIKIS & TRACKERS",
   "FRANCHISE TOOLS",
+  "GAMING QUIZZES",
 ];
 
 const initialGamingList: ResourceLink[] = [
@@ -143,6 +144,62 @@ export default function GamingFreeResources() {
     title: string;
     guide: GuideData;
   } | null>(null);
+
+  // Restore category from URL or sessionStorage on mount
+  useEffect(() => {
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlCat = urlParams.get("category");
+      const storedCat = sessionStorage.getItem("mrfreqline_gaming_cat");
+      const targetCat = urlCat || storedCat;
+      if (targetCat && categories.some((c) => c.toUpperCase() === targetCat.toUpperCase())) {
+        const found = categories.find((c) => c.toUpperCase() === targetCat.toUpperCase());
+        if (found) setActiveCategory(found);
+      }
+    } catch {}
+  }, []);
+
+  // Sync category on back/forward browser slide gestures
+  useEffect(() => {
+    const onPopState = () => {
+      try {
+        if (selectedGuide) {
+          setSelectedGuide(null);
+          return;
+        }
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlCat = urlParams.get("category");
+        if (urlCat) {
+          const found = categories.find((c) => c.toUpperCase() === urlCat.toUpperCase());
+          if (found) setActiveCategory(found);
+        } else {
+          const storedCat = sessionStorage.getItem("mrfreqline_gaming_cat");
+          if (storedCat) {
+            const found = categories.find((c) => c.toUpperCase() === storedCat.toUpperCase());
+            if (found) setActiveCategory(found);
+          } else {
+            setActiveCategory("ALL");
+          }
+        }
+      } catch {}
+    };
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, [selectedGuide]);
+
+  const handleCategoryChange = (cat: string) => {
+    setActiveCategory(cat);
+    try {
+      sessionStorage.setItem("mrfreqline_gaming_cat", cat);
+      const url = new URL(window.location.href);
+      if (cat === "ALL") {
+        url.searchParams.delete("category");
+      } else {
+        url.searchParams.set("category", cat);
+      }
+      window.history.replaceState(null, "", url.toString());
+    } catch {}
+  };
 
   // Fetch dynamically added links from your admin API panel
   useEffect(() => {
@@ -172,10 +229,13 @@ export default function GamingFreeResources() {
   const filteredLinks = gamingResources.filter((link) => {
     const matchesCategory =
       activeCategory === "ALL" ||
-      link.category?.toUpperCase() === activeCategory;
+      link.category?.trim().toUpperCase() === activeCategory.trim().toUpperCase();
+    const query = searchQuery.trim().toLowerCase();
+    if (!query) return matchesCategory;
     const matchesSearch =
-      link.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      link.category?.toLowerCase().includes(searchQuery.toLowerCase());
+      link.title?.toLowerCase().includes(query) ||
+      link.category?.toLowerCase().includes(query) ||
+      link.url?.toLowerCase().includes(query);
     return matchesCategory && matchesSearch;
   });
 
@@ -236,7 +296,7 @@ export default function GamingFreeResources() {
               return (
                 <button
                   key={cat}
-                  onClick={() => setActiveCategory(cat)}
+                  onClick={() => handleCategoryChange(cat)}
                   className={`rounded-full px-5 py-2.5 text-xs font-extrabold uppercase tracking-wider transition-all duration-200 ${
                     isActive
                       ? "bg-[#00d2ff] text-black shadow-[0_0_20px_rgba(0,210,255,0.6)]"

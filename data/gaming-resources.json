@@ -397,5 +397,62 @@
     "status": "TRUSTED",
     "url": "https://zdoom.org",
     "desc": "Feature-rich source port for classic Doom with modern hardware acceleration and mod support."
+  },
+  {
+    "title": "Prydwen.gg",
+    "category": "WIKIS & TRACKERS",
+    "status": "TRUSTED",
+    "url": "https://www.prydwen.gg",
+    "desc": "Elite tier lists, meta character builds, and team composition guides for modern gacha and RPG titles."
+  },
+  {
+    "title": "Game8",
+    "category": "WIKIS & TRACKERS",
+    "status": "TRUSTED",
+    "url": "https://game8.co",
+    "desc": "Massive gaming wiki and walkthrough network covering quest guides, collectibles, and boss strategies."
+  },
+  {
+    "title": "Genshin.gg",
+    "category": "WIKIS & TRACKERS",
+    "status": "TRUSTED",
+    "url": "https://genshin.gg",
+    "desc": "Interactive character builds, weapon tier lists, artifact recommendations, and team synergies."
+  },
+  {
+    "title": "SEELIE.me",
+    "category": "WIKIS & TRACKERS",
+    "status": "TRUSTED",
+    "url": "https://seelie.me",
+    "desc": "Comprehensive material farming calculator and talent ascension planner."
+  },
+  {
+    "title": "WuWa Tracker",
+    "category": "WIKIS & TRACKERS",
+    "status": "TRUSTED",
+    "url": "https://wuwatracker.com",
+    "desc": "Wish history importer, pity counter, and convene probability statistics tracker."
+  },
+  {
+    "title": "AnimeMusicQuiz (AMQ)",
+    "category": "GAMING QUIZZES",
+    "status": "TRUSTED",
+    "url": "https://animemusicquiz.com",
+    "desc": "Competitive online multiplayer guessing game where players compete to identify anime by soundtrack clips."
+  },
+  {
+    "title": "AniGuessr",
+    "category": "GAMING QUIZZES",
+    "status": "TRUSTED",
+    "url": "https://aniguessr.com",
+    "desc": "Interactive video game challenging players to deduce anime titles from blurred or zoomed screenshot frames."
+  },
+  {
+    "title": "AniDaily",
+    "category": "GAMING QUIZZES",
+    "status": "TRUSTED",
+    "url": "https://anidaily.com",
+    "desc": "Daily Wordle-inspired anime deduction game with clue trees and genre hints."
   }
 ]
+

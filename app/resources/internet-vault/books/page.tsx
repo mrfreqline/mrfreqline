@@ -31,14 +31,18 @@ export default function VaultBooksPage() {
   const [activeCategory, setActiveCategory] = useState("ALL");
   const [searchQuery, setSearchQuery] = useState("");
 
-  const filteredLinks = rawData.filter((link) => {
+  const filteredLinks = rawData.filter((link: any) => {
     const matchesCategory =
       activeCategory === "ALL" ||
       link.category.toUpperCase() === activeCategory.toUpperCase();
+    const q = searchQuery.trim().toLowerCase();
+    if (!q) return matchesCategory;
     const matchesSearch =
-      link.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      link.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (link.desc && link.desc.toLowerCase().includes(searchQuery.toLowerCase()));
+      (link.title && link.title.toLowerCase().includes(q)) ||
+      (link.category && link.category.toLowerCase().includes(q)) ||
+      (link.desc && link.desc.toLowerCase().includes(q)) ||
+      (link.author && link.author.toLowerCase().includes(q)) ||
+      (link.url && link.url.toLowerCase().includes(q));
     return matchesCategory && matchesSearch;
   });
 
@@ -85,7 +89,7 @@ export default function VaultBooksPage() {
               placeholder="Search books, authors, libraries, or readers..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm text-white placeholder-white/40 transition-all duration-300 focus:border-[#00D2FF] focus:outline-none focus:ring-1 focus:ring-[#00D2FF]"
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-base sm:text-sm text-white placeholder-white/40 transition-all duration-300 focus:border-[#00D2FF] focus:outline-none focus:ring-1 focus:ring-[#00D2FF]"
             />
 
             {/* Category Filter Navbar */}
