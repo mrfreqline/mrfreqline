@@ -266,6 +266,85 @@ export default function LiveToolsWorkbench({ initialToolId = null }: { initialTo
   const [search, setSearch] = useState("");
   const [favorites, setFavorites] = useState<string[]>([]);
 
+  // Restore category and active tool from URL or sessionStorage on mount
+  useEffect(() => {
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlCat = urlParams.get("category");
+      const urlTool = urlParams.get("tool") as ToolId | null;
+      const storedCat = sessionStorage.getItem("mrfreqline_active_category");
+
+      const targetCat = urlCat || storedCat;
+      if (targetCat && categories.some((c) => c.toLowerCase() === targetCat.toLowerCase())) {
+        const found = categories.find((c) => c.toLowerCase() === targetCat.toLowerCase());
+        if (found) setSelectedCategory(found);
+      }
+
+      if (urlTool && TOOL_LIST.some((t) => t.id === urlTool)) {
+        setActiveToolId(urlTool);
+      }
+    } catch {}
+  }, []);
+
+  // Sync state on mobile back/forward slide gestures (popstate)
+  useEffect(() => {
+    const onPopState = () => {
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlTool = urlParams.get("tool") as ToolId | null;
+        const urlCat = urlParams.get("category");
+
+        if (urlTool && TOOL_LIST.some((t) => t.id === urlTool)) {
+          setActiveToolId(urlTool);
+        } else {
+          setActiveToolId(null);
+        }
+
+        if (urlCat) {
+          const found = categories.find((c) => c.toLowerCase() === urlCat.toLowerCase());
+          if (found) setSelectedCategory(found);
+        } else {
+          const storedCat = sessionStorage.getItem("mrfreqline_active_category");
+          if (storedCat) {
+            const found = categories.find((c) => c.toLowerCase() === storedCat.toLowerCase());
+            if (found) setSelectedCategory(found);
+          } else {
+            setSelectedCategory("All");
+          }
+        }
+      } catch {}
+    };
+
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
+  const handleCategorySelect = (cat: ToolCategory) => {
+    setSelectedCategory(cat);
+    try {
+      sessionStorage.setItem("mrfreqline_active_category", cat);
+      const url = new URL(window.location.href);
+      if (cat === "All") {
+        url.searchParams.delete("category");
+      } else {
+        url.searchParams.set("category", cat);
+      }
+      window.history.replaceState(null, "", url.toString());
+    } catch {}
+  };
+
+  const closeTool = () => {
+    setActiveToolId(null);
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.delete("tool");
+      if (selectedCategory !== "All") {
+        url.searchParams.set("category", selectedCategory);
+      }
+      window.history.replaceState(null, "", url.toString());
+    } catch {}
+  };
+
   // Load favorites from localStorage
   useEffect(() => {
     try {
@@ -331,11 +410,11 @@ export default function LiveToolsWorkbench({ initialToolId = null }: { initialTo
           <div className="flex flex-wrap items-center gap-3 sm:gap-4">
             <button
               type="button"
-              onClick={() => setActiveToolId(null)}
+              onClick={closeTool}
               className="group flex items-center gap-2 rounded-xl border border-[var(--surface-border)] bg-[var(--surface-canvas)] px-3 py-1.5 sm:px-3.5 sm:py-2 text-xs font-bold text-[var(--text-muted)] transition-all hover:border-[var(--accent-primary)] hover:text-[var(--text-main)]"
             >
               <span className="transition-transform group-hover:-translate-x-0.5">&larr;</span>
-              <span>All Tools</span>
+              <span>Back to {selectedCategory === "All" ? "All Tools" : selectedCategory}</span>
             </button>
 
             <div className="flex items-center gap-2.5 sm:gap-3">
@@ -420,8 +499,8 @@ export default function LiveToolsWorkbench({ initialToolId = null }: { initialTo
               <button
                 key={cat}
                 type="button"
-                onClick={() => setSelectedCategory(cat)}
-                className={`rounded-xl px-4 py-2 text-xs font-bold transition-all ${
+                onClick={() => handleCategorySelect(cat)}
+                className={`rounded-xl px-3.5 sm:px-4 py-2 text-xs font-bold transition-all ${
                   isSelected
                     ? "bg-[var(--accent-primary)] text-black shadow-md font-extrabold"
                     : "border border-[var(--surface-border)] bg-[var(--surface-card)] text-[var(--text-muted)] hover:border-[var(--accent-primary)] hover:text-[var(--text-main)]"
@@ -439,20 +518,20 @@ export default function LiveToolsWorkbench({ initialToolId = null }: { initialTo
             placeholder={`Search all ${TOOL_LIST.length} tools (e.g. 'GPA', 'EMI', 'Preeti', 'PDF')...`}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full rounded-xl border border-[var(--surface-border)] bg-[var(--surface-card)] px-4 py-2.5 text-xs text-[var(--text-main)] placeholder-[var(--text-subtle)] focus:border-[var(--accent-primary)] focus:outline-none"
+            className="w-full rounded-xl border border-[var(--surface-border)] bg-[var(--surface-card)] px-4 py-2.5 text-base sm:text-xs text-[var(--text-main)] placeholder-[var(--text-subtle)] focus:border-[var(--accent-primary)] focus:outline-none"
           />
         </div>
       </div>
 
       {/* Responsive Grid of Tool Cards */}
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {filteredTools.map((tool) => {
           const isFav = favorites.includes(tool.id);
           return (
             <Link
               key={tool.id}
-              href={`/tools/${tool.id}`}
-              className="group relative flex flex-col justify-between rounded-2xl border border-[var(--surface-border)] bg-[var(--surface-card)] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-primary)]/40 hover:shadow-lg hover:shadow-[var(--accent-glow-subtle)]"
+              href={`/tools/${tool.id}?category=${encodeURIComponent(tool.category)}`}
+              className="group relative flex flex-col justify-between rounded-2xl border border-[var(--surface-border)] bg-[var(--surface-card)] p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-primary)]/40 hover:shadow-lg hover:shadow-[var(--accent-glow-subtle)]"
             >
               <div>
                 <div className="flex items-center justify-between">

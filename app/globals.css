@@ -669,9 +669,28 @@ html[data-mode="light"] footer {
   --font-mono: var(--font-geist-mono);
 }
 
+html,
+body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Prevent mobile browsers (Chrome, Safari, Brave) from auto-zooming into inputs on tap */
+@media (max-width: 768px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
 }

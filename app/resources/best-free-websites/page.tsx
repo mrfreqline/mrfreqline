@@ -260,6 +260,69 @@ export default function BestFreeWebsites() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedGuide, setSelectedGuide] = useState<{ title: string; guide: any } | null>(null);
 
+  // Restore category from URL or sessionStorage on mount
+  useEffect(() => {
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlCat = urlParams.get("category");
+      const storedCat = sessionStorage.getItem("mrfreqline_best_free_cat");
+      const targetCat = urlCat || storedCat;
+      if (targetCat && categories.some((c) => c.toLowerCase() === targetCat.toLowerCase())) {
+        const found = categories.find((c) => c.toLowerCase() === targetCat.toLowerCase());
+        if (found) setActiveCategory(found);
+      }
+    } catch {}
+  }, []);
+
+  // Sync category on back/forward browser slide gestures
+  useEffect(() => {
+    const onPopState = (e: PopStateEvent) => {
+      try {
+        if (selectedGuide) {
+          setSelectedGuide(null);
+          return;
+        }
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlCat = urlParams.get("category");
+        if (urlCat) {
+          const found = categories.find((c) => c.toLowerCase() === urlCat.toLowerCase());
+          if (found) setActiveCategory(found);
+        } else {
+          const storedCat = sessionStorage.getItem("mrfreqline_best_free_cat");
+          if (storedCat) {
+            const found = categories.find((c) => c.toLowerCase() === storedCat.toLowerCase());
+            if (found) setActiveCategory(found);
+          } else {
+            setActiveCategory("All");
+          }
+        }
+      } catch {}
+    };
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, [selectedGuide]);
+
+  const handleCategoryChange = (cat: string) => {
+    setActiveCategory(cat);
+    try {
+      sessionStorage.setItem("mrfreqline_best_free_cat", cat);
+      const url = new URL(window.location.href);
+      if (cat === "All") {
+        url.searchParams.delete("category");
+      } else {
+        url.searchParams.set("category", cat);
+      }
+      window.history.replaceState(null, "", url.toString());
+    } catch {}
+  };
+
+  const openGuide = (item: { title: string; guide: any }) => {
+    setSelectedGuide(item);
+    try {
+      window.history.pushState({ modal: true }, "");
+    } catch {}
+  };
+
   // Fetch items from the backend API/admin panel dynamically
   useEffect(() => {
     fetch("/api/links")
@@ -294,12 +357,12 @@ export default function BestFreeWebsites() {
     <>
       <Header />
       <AdsterraPopunder activeCategory={activeCategory} />
-      <main className="min-h-screen px-6 pt-24 pb-16 bg-[#07090e] text-white font-sans">
+      <main className="min-h-screen w-full max-w-full overflow-x-hidden px-3.5 sm:px-6 pt-24 pb-16 bg-[#07090e] text-white font-sans">
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col gap-4 border-b border-white/10 pb-6 md:flex-row md:items-center md:justify-between">
             <div>
-              <h1 className="text-4xl font-black tracking-tight text-white">Best Free Websites</h1>
-              <p className="mt-2 text-white/60">Verified, tested links — safe and working.</p>
+              <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-white">Best Free Websites</h1>
+              <p className="mt-2 text-xs sm:text-sm text-white/60">Verified, tested links — safe and working.</p>
             </div>
             <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-right">
               <span className="text-2xl font-bold text-[#00D2FF]">{filteredLinks.length}</span>
@@ -313,15 +376,15 @@ export default function BestFreeWebsites() {
               placeholder="Search by name or category..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm text-white placeholder-white/40 focus:border-[#00D2FF] focus:outline-none focus:ring-1 focus:ring-[#00D2FF] transition-all duration-300"
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 sm:px-5 py-3 text-base sm:text-sm text-white placeholder-white/40 focus:border-[#00D2FF] focus:outline-none focus:ring-1 focus:ring-[#00D2FF] transition-all duration-300"
             />
             {/* Category Navbar */}
             <div className="flex flex-wrap items-center gap-2 pt-2">
               {categories.map((cat) => (
                 <button
                   key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`rounded-full px-5 py-2 text-xs font-bold uppercase tracking-wider transition-all duration-300 transform active:scale-95 ${
+                  onClick={() => handleCategoryChange(cat)}
+                  className={`rounded-full px-4 sm:px-5 py-2 text-xs font-bold uppercase tracking-wider transition-all duration-300 transform active:scale-95 ${
                     activeCategory.toLowerCase() === cat.toLowerCase()
                       ? "bg-[#00D2FF] text-black shadow-[0_0_20px_rgba(0,210,255,0.6)] scale-105 font-extrabold"
                       : "border border-white/10 bg-white/5 text-white/70 hover:border-white/30 hover:bg-white/15"
@@ -386,7 +449,7 @@ export default function BestFreeWebsites() {
                   </a>
                   {link.guide && (
                     <button
-                      onClick={() => setSelectedGuide({ title: link.title, guide: link.guide })}
+                      onClick={() => openGuide({ title: link.title, guide: link.guide })}
                       className="ml-auto rounded-lg border border-[#00D2FF]/40 bg-[#00D2FF]/10 px-3 py-1.5 text-xs font-bold text-[#00D2FF] transition-all duration-200 hover:bg-[#00D2FF] hover:text-black hover:scale-[1.02]"
                     >
                       Setup Guide

@@ -103,16 +103,16 @@ export default function ToolPageClient({ tool }: { tool: ToolSEOItem }) {
               <span>{copiedUrl ? "Copied Link!" : "Share"}</span>
             </button>
 
-            {/* Open in All-in-One Studio */}
+            {/* Open in All-in-One Studio with active category */}
             <Link
-              href="/resources/essentials-toolkit"
+              href={`/resources/essentials-toolkit?category=${encodeURIComponent(tool.category)}`}
               className="flex items-center gap-1.5 rounded-xl border border-[var(--surface-border)] bg-[var(--surface-canvas)] px-3 py-1.5 sm:px-3.5 sm:py-2 text-xs font-bold text-[var(--text-muted)] transition-all hover:border-[var(--accent-primary)] hover:text-[var(--text-main)] shadow-sm"
-              title="Open full studio with all tools"
+              title={`Return to ${tool.category} tools`}
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
               </svg>
-              <span>All Tools Hub</span>
+              <span>{tool.category}</span>
             </Link>
           </div>
         </div>

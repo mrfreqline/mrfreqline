@@ -154,7 +154,10 @@ export default async function ToolPage({ params }: PageProps) {
             Home
           </Link>
           <span>/</span>
-          <Link href="/resources/essentials-toolkit" className="hover:text-[var(--text-main)] transition">
+          <Link
+            href={`/resources/essentials-toolkit?category=${encodeURIComponent(tool.category)}`}
+            className="hover:text-[var(--text-main)] transition"
+          >
             Essentials Toolkit
           </Link>
           <span>/</span>
